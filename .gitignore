@@ -1,0 +1,187 @@
+#========================================
+# General rules
+#========================================
+# --------------------------------
+# Git merge
+# --------------------------------
+*.orig
+
+# --------------------------------
+# Visual Studio
+# --------------------------------
+*.suo
+*.user
+/.vs/
+/**/.vscode
+
+# --------------------------------
+# Roslyn
+# --------------------------------
+*.sln.ide/
+
+# --------------------------------
+# MsTest
+# --------------------------------
+/TestResults/
+
+# --------------------------------
+# NuGet
+# --------------------------------
+packages/
+
+# --------------------------------
+# NodeJS
+# --------------------------------
+/**/node_modules
+npm-debug.log
+/**/deep-build.lock
+
+# --------------------------------
+# JetBrains products
+# --------------------------------
+_ReSharper.*/
+/DotCover/
+.idea/
+*.iml
+
+# --------------------------------
+# NCrunch product
+# --------------------------------
+/**/*.ncrunchproject
+_NCrunch_*/
+*.ncrunchsolution
+
+# --------------------------------
+# Talentsoft tooling
+# --------------------------------
+/Build/
+/tmp/
+/publishedresources/
+UserTools
+confs-output/
+
+# --------------------------------
+# Karma
+# --------------------------------
+karma.user.json
+debug.log
+coverage
+
+# --------------------------------
+# Azure projects
+# --------------------------------
+/**/csx/
+
+# --------------------------------
+# C# projects
+# --------------------------------
+/**/obj/
+/**/bin/*
+
+# --------------------------------
+# SQL projects
+# --------------------------------
+/**/*.dbmdl
+/**/*.jfm
+
+# --------------------------------
+# Foundation WebTests projects
+# --------------------------------
+/**/user.config
+
+#========================================
+# Project rules
+#========================================
+# --------------------------------
+# Documentation project
+# --------------------------------
+Documentation/Api/src/*.doc.js
+Documentation/Main/_build
+TalentSoft.sln.GhostDoc.xml
+
+# --------------------------------
+# WebSite project
+# --------------------------------
+# Temp folder
+/WebSite/temp/*
+!/WebSite/temp/Web.Config
+
+# Avoid that developers commit local changes in the default connectionStrings file.
+/WebSite/SiteSettings/connectionStrings.config
+
+# Web API documentation
+/WebSite/documentation
+/WebSite/api/documentation/*
+!/WebSite/api/documentation/Web.config
+
+# WebPack projects
+/WebSite/Areas/**/dist/
+
+*.vsext
+/package-lock.json
+yarn-error.log
+
+nCrunch*.*
+/WebSite/Areas/Directory/Directory.code-workspace
+
+# --------------------------------
+# nyc
+# --------------------------------
+coverage
+.nyc_output
+.vs
+/talentsoft-ko-components/
+
+#Ignore thumbnails created by Windows
+Thumbs.db
+#Ignore files built by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.cache
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+.vs/
+#Nuget packages folder
+packages/
+*.dll
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.cache
+*.cache
+*.cache
