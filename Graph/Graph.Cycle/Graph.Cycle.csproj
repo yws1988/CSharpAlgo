@@ -57,7 +57,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Graph.Base\Graph.Base.csproj">
+    <ProjectReference Include="..\Graph.Base\Graph.Base.csproj">
       <Project>{80e8db11-0381-4d61-9bbe-e886f11ae0fd}</Project>
       <Name>Graph.Base</Name>
     </ProjectReference>

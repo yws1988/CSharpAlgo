@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdjacencyListEdgeWeight.cs" />
-    <Compile Include="AdjacencyList.cs" />
-    <Compile Include="AdjacencyMatrix.cs" />
-    <Compile Include="GraphHelper.cs" />
+    <Compile Include="Entities\AdjacencyListEdgeWeight.cs" />
+    <Compile Include="Entities\AdjacencyList.cs" />
+    <Compile Include="Entities\AdjacencyMatrix.cs" />
+    <Compile Include="Helper\BuilderHelper.cs" />
+    <Compile Include="Helper\GraphHelper.cs" />
     <Compile Include="GraphVertexEdge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

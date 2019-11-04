@@ -45,7 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FindMotherVertex.cs" />
+    <Compile Include="Helper\BFS\BFSIterationHelper.cs" />
+    <Compile Include="Helper\DFS\DFSIterationHelper.cs" />
     <Compile Include="IDDF.cs" />
+    <Compile Include="Interfaces\BFS\IBFSIteration.cs" />
+    <Compile Include="Interfaces\DFS\IDFSIteration.cs" />
     <Compile Include="KCore.cs" />
     <Compile Include="LongestPath.cs" />
     <Compile Include="FindLongestPath.cs" />
@@ -56,11 +60,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Graph.Base\Graph.Base.csproj">
+    <ProjectReference Include="..\Graph.Base\Graph.Base.csproj">
       <Project>{80e8db11-0381-4d61-9bbe-e886f11ae0fd}</Project>
       <Name>Graph.Base</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
