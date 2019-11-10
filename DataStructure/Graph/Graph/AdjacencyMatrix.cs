@@ -1,12 +1,9 @@
-﻿namespace Graph.Base
+﻿namespace DataStructure.Graph.Graph
 {
-    using System;
-
     public class AdjacencyMatrix
     {
         public int[,] Value;
         public int N { get; set; }
-        public int E { get; set; }
         public bool IsDirected { get; set; }
 
         public AdjacencyMatrix(int[,] graph)
@@ -18,7 +15,6 @@
         public AdjacencyMatrix(int n, bool isDirected = false)
         {
             N = n;
-            E = 0;
             Value = new int[N, N];
             IsDirected = isDirected;
         }
@@ -30,18 +26,17 @@
             {
                 Value[des, src] = 1;
             }
-            ++E;
         }
 
-        public void Print()
+        public int this[int src, int des]
         {
-            for (int i = 0; i < N; i++)
+            get
             {
-                for (int j = 0; j < N; j++)
-                {
-                    Console.Write(Value[i,j] + " ");
-                }
-                Console.WriteLine();
+                return Value[src, des];
+            }
+            set
+            {
+                Value[src, des] = value;
             }
         }
     }

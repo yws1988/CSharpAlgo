@@ -1,6 +1,5 @@
-﻿namespace Graph.Base
+﻿namespace DataStructure.Graph.Graph
 {
-    using System;
     using System.Collections.Generic;
 
     public class AdjacencyList<T>
@@ -28,21 +27,6 @@
             set
             {
                 G[index] = value;
-            }
-        }
-
-        public void DisplayGraphDFS(int start)
-        {
-            Console.Write(start+" ");
-            Visited[start] = true;
-
-            foreach (int i in G[start])
-            {
-                if (Visited[i] != true)
-                {
-                    DisplayGraphDFS(i);
-                    Visited[i] = true;
-                }
             }
         }
     }

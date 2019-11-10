@@ -1,21 +1,21 @@
-﻿namespace Graph.Base
+﻿namespace DataStructure.Graph.Graph
 {
     using System.Collections.Generic;
 
     public struct Node
     {
-        public int Idx { get; set; }
+        public int Index { get; set; }
         public int Weight { get; set; }
     }
 
-    public class AdjacencyListWeight
+    public class AdjacencyListWithEdgeWeight
     {
         public int V { get; set; }
         public List<Node>[] AdjList { get; set; }
         public bool[] Visited { get; set; }
         public bool IsDirected { get; set; }
 
-        public AdjacencyListWeight(int v, bool isDirected = false)
+        public AdjacencyListWithEdgeWeight(int v, bool isDirected = false)
         {
             V = v;
             AdjList = new List<Node>[V];
@@ -39,10 +39,10 @@
 
         public void AddEdge(int src, int des, int weight)
         {
-            AdjList[src].Add(new Node{Idx = des, Weight = weight});
+            AdjList[src].Add(new Node{Index = des, Weight = weight});
             if (!IsDirected)
             {
-                AdjList[des].Add(new Node {Idx = src, Weight = weight});
+                AdjList[des].Add(new Node {Index = src, Weight = weight});
             }
         }
 

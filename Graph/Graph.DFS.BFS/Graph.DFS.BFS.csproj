@@ -7,8 +7,8 @@
     <ProjectGuid>{02EFC24E-313F-4E51-98D7-A8A5AD179C05}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Algorithmne</RootNamespace>
-    <AssemblyName>Algorithmne</AssemblyName>
+    <RootNamespace>Graph.DFS.BFS</RootNamespace>
+    <AssemblyName>Graph.DFS.BFS</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,12 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DFS\DFSIteration.cs" />
     <Compile Include="FindMotherVertex.cs" />
-    <Compile Include="Helper\BFS\BFSIterationHelper.cs" />
-    <Compile Include="Helper\DFS\DFSIterationHelper.cs" />
+    <Compile Include="BFS\BFSIteration.cs" />
     <Compile Include="IDDF.cs" />
-    <Compile Include="Interfaces\BFS\IBFSIteration.cs" />
-    <Compile Include="Interfaces\DFS\IDFSIteration.cs" />
     <Compile Include="KCore.cs" />
     <Compile Include="LongestPath.cs" />
     <Compile Include="FindLongestPath.cs" />

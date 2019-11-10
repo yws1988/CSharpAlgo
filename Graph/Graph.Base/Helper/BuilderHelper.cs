@@ -1,18 +1,31 @@
 ﻿namespace Graph.Base.Helper
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     public static class BuilderHelper
     {
-        public static List<T>[] Build<T>(int v)
+        public static List<int>[] CreateListArray(int n)
         {
-
-            return new AdjacencyList<T>(v);
+            return Enumerable.Range(0, n).Select(s => new List<int>()).ToArray();
         }
 
-        public static void AddEdge<T>(this AdjacencyList<T> graph, int index, T value)
+        public static List<int>[] CreateListArray(int n, int[][] arr, bool isDirected = false)
         {
-            graph[index].Add(value);
+            var graph = Enumerable.Range(0, n).Select(s => new List<int>()).ToArray();
+            foreach (var item in arr)
+            {
+                int src = item[0];
+                int des = item[1];
+                graph[src].Add(des);
+
+                if (!isDirected)
+                {
+                    graph[des].Add(src);
+                }
+            }
+
+            return graph;
         }
     }
 }
