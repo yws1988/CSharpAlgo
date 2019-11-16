@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Helper\BuilderHelper.cs" />
     <Compile Include="Helper\GraphHelper.cs" />
-    <Compile Include="GraphVertexEdge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

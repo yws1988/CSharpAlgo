@@ -6,127 +6,127 @@ namespace Graph.Connectivity
 {
     public class ArticulationPoints
     {
-        public static bool[] Visited;
-        public static int[] Parents;
-        public static int[] Dist;
-        public static int[] Low;
-        public static int V;
-        public static int Step=0;
-        public static bool[] Ap;
+        public static int Step;
 
-        public static void PrintAP(int[,] graph)
+        public static bool[] GetAllArticulationPoints(List<int>[] graph)
         {
-            V = graph.GetLength(0);
-            Visited = new bool[V];
-            Parents = new int[V];
-            Dist = new int[V];
-            Low = new int[V];
-            Ap = new bool[V];
-            for (int i = 0; i < V; i++)
+            Step = 0;
+            int v = graph.Length;
+            bool[] visited = new bool[v];
+            int[] parents = new int[v];
+            int[] dist = new int[v];
+            int[] low = new int[v];
+            bool[] isArticulationPoints = new bool[v];
+            for (int i = 0; i < v; i++)
             {
-                Parents[i] = -1;
+                parents[i] = -1;
             }
 
-            DFS(0, graph);
+            DFS(0, graph, visited, dist, low, parents, isArticulationPoints);
 
-            for (int i = 0; i < V; i++)
-            {
-                Console.Write(Dist[i] + " ");
-            }
-
-            Console.WriteLine();
-
-            for (int i = 0; i < V; i++)
-            {
-                Console.Write(Low[i] + " ");
-            }
-
-            Console.WriteLine();
-
-            for (int i = 0; i < V; i++)
-            {
-                Console.Write(Ap[i] + " ");
-            }
+            return isArticulationPoints;
         }
 
-        public static void DFS(int s, int[,] graph)
+        public static void DFS(int s, List<int>[] graph, bool[] vs, int[] dist, int[] low, int[] parents, bool[] isArticulationPoints)
         {
-            Visited[s] = true;
-            Dist[s] = ++Step;
-            Low[s] = Step;
+            vs[s] = true;
+            dist[s] = ++Step;
+            low[s] = Step;
 
             int child = 0;
-            for (int i = 0; i < V; i++)
+            foreach (var c in graph[s])
             {
-                if (graph[s, i] == 1)
+                if (!vs[c])
                 {
-                    if (!Visited[i])
+                    child++;
+                    parents[c] = s;
+                    DFS(c, graph, vs, dist, low, parents, isArticulationPoints);
+                    low[s] = Math.Min(low[c], low[s]);
+                    if (parents[s] == -1 && child > 1)
                     {
-                        child++;
-                        Parents[i] = s;
-                        DFS(i, graph);
-                        Low[s] = Math.Min(Low[i], Low[s]);
-                        if (Parents[s] == -1 && child > 1)
-                        {
-                            Ap[s] = true;
-                        }
+                        isArticulationPoints[s] = true;
+                    }
 
-                        if (Parents[s] != -1 && Low[i]>= Dist[s])
-                        {
-                            Ap[s] = true;
-                        }
-                    }
-                    else if(Parents[s]!=i)
+                    if (parents[s] != -1 && low[c] >= dist[s])
                     {
-                        Low[s] = Math.Min(Dist[i], Low[s]);
+                        isArticulationPoints[s] = true;
                     }
-                }     
+                }
+                else if (parents[s] != c)
+                {
+                    low[s] = Math.Min(dist[c], low[s]);
+                }
             }
         }
 
-        public static void DfsStack(int root, List<int>[] graph)
+        public static bool[] GetAllArticulationPointsWithStack(List<int>[] graph)
+        {
+            Step = 0;
+            int v = graph.Length;
+            bool[] visited = new bool[v];
+            int[] parents = new int[v];
+            int[] dist = new int[v];
+            int[] low = new int[v];
+            bool[] isArticulationPoints = new bool[v];
+            for (int i = 0; i < v; i++)
+            {
+                parents[i] = -1;
+            }
+
+            DfsWithStack(0, graph, visited, dist, low, parents, isArticulationPoints);
+
+            return isArticulationPoints;
+        }
+
+        public static void DfsWithStack(int root, List<int>[] graph, bool[] visited, int[] dist, int[] low, int[] parents, bool[] isArticulationPoints)
         {
             Stack<int> stack = new Stack<int>();
             stack.Push(root);
 
             while (stack.Count > 0)
             {
-                var p = stack.Pop();
-                if (Visited[p])
+                var p = stack.Peek();
+
+                if (!visited[p])
                 {
-                    p = stack.Pop();
+                    visited[p] = true;
+                    dist[p] = ++Step;
+                    low[p] = Step;
+                }
 
-                    foreach (var c in graph[p])
-                    {
-                        if (c != Parents[p])
-                        {
-                            Low[p] = Math.Min(Low[c], Low[p]);
-                        }
-                    }
+                bool isPop = true;
 
-                    if (Parents[p] == root && stack.Any(s => !Visited[s]))
+                foreach (var c in graph[p])
+                {
+                    if (!visited[c])
                     {
-                        Ap[root] = true;
-                    }
-
-                    if (Parents[p] != -1 && Low[p] >= Dist[p])
-                    {
-                        Ap[p] = true;
+                        isPop = false;
+                        stack.Push(c);
+                        parents[c] = p;
                     }
                 }
-                else
-                {
-                    Visited[p] = true;
-                    Dist[p] = ++Step;
-                    Low[p] = Step;
 
+                if (isPop)
+                {
+                    p = stack.Pop();
+                    int child = 0;
                     foreach (var c in graph[p])
                     {
-                        if (!Visited[c])
+                        if (c!=parents[c])
                         {
-                            stack.Push(c);
-                            Parents[c] = p;
+                            child++;
+                            low[p] = Math.Min(dist[c], low[p]);
                         }
+                    }
+
+                    if(p == root && child > 1)
+                    {
+                        isArticulationPoints[p] = true;
+                    }
+
+                    if(p != root && child > 0 && low[p]>=dist[p])
+                    {
+                        isArticulationPoints[p] = true;
                     }
                 }
             }

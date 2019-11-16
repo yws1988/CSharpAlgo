@@ -1,150 +1,131 @@
 ﻿namespace Graph.Connectivity
 {
+    using DataStructure.Models;
     using System;
     using System.Collections.Generic;
 
     public class BiConnected
     {
-        public static bool[] Visited;
-        public static int[] Parents;
-        public static int[] Dist;
-        public static int[] Low;
-        public static int V;
-        public static int Step=1;
-        public static Stack<(int, int)> BiComponents;
+        public static int Step;
 
-        public static bool IsBiconnectedGraph(int[,] graph)
+        public static bool IsGraphBiConnected(List<int>[] graph)
         {
-            V = graph.GetLength(0);
-            Visited = new bool[V];
-            Parents = new int[V];
-            Dist = new int[V];
-            Low = new int[V];
-            for (int i = 0; i < V; i++)
+            Step = 0;
+            int v = graph.Length;
+            bool[] visited = new bool[v];
+            int[] parents = new int[v];
+            int[] dist = new int[v];
+            int[] low = new int[v];
+            for (int i = 0; i < v; i++)
             {
-                Parents[i] = -1;
+                parents[i] = -1;
             }
 
-            Dist[0] = Step;
-            Visited[0] = true;
-            return DFS(0, graph);
+            return DFS(0, graph, visited, dist, low, parents);
         }
 
-        public static bool DFS(int s, int[,] graph)
+        public static bool DFS(int s, List<int>[] graph, bool[] vs, int[] dist, int[] low, int[] parents)
         {
-            Visited[s] = true;
-            Dist[s] = ++Step;
-            Low[s] = Step;
+            vs[s] = true;
+            dist[s] = ++Step;
+            low[s] = Step;
 
             int child = 0;
-            for (int i = 0; i < V; i++)
+            foreach (var c in graph[s])
             {
-                if (graph[s, i] == 1)
+                if (!vs[c])
                 {
-                    if (!Visited[i])
+                    child++;
+                    parents[c] = s;
+                    if (!DFS(c, graph, vs, dist, low, parents)) return false;
+                    low[s] = Math.Min(low[c], low[s]);
+                    if (parents[s] == -1 && child > 1)
                     {
-                        child++;
-                        Parents[i] = s;
-                        if (!DFS(i, graph)) return false;
-                        Low[s] = Math.Min(Low[i], Low[s]);
-                        if (Parents[s] == -1 && child > 1)
-                        {
-                            return false;
-                        }
+                        return false;
+                    }
 
-                        if (Parents[s] != -1 && Low[i] >= Dist[s])
-                        {
-                            return false;
-                        }
-                    }
-                    else if (Parents[s] != i)
+                    if (parents[s] != -1 && low[c] >= dist[s])
                     {
-                        Low[s] = Math.Min(Dist[i], Low[s]);
+                        return false;
                     }
+                }
+                else if (parents[s] != c)
+                {
+                    low[s] = Math.Min(dist[c], low[s]);
                 }
             }
 
             return true;
         }
 
-
-        public static void PrintBiconnectedComponents(int[,] graph)
+        static List<List<Edge>> BiConnectedCompenents = new List<List<Edge>>();
+        public static void GetBiconnectedComponents(List<int>[] graph)
         {
-            V = graph.GetLength(0);
-            Visited = new bool[V];
-            Parents = new int[V];
-            Dist = new int[V];
-            Low = new int[V];
-            BiComponents = new Stack<(int, int)>();
-            for (int i = 0; i < V; i++)
+            Step = 0;
+            int v = graph.Length;
+            bool[] visited = new bool[v];
+            int[] parents = new int[v];
+            int[] dist = new int[v];
+            int[] low = new int[v];
+            for (int i = 0; i < v; i++)
             {
-                Parents[i] = -1;
+                parents[i] = -1;
             }
+            var edges = new Stack<Edge>();
 
-            Dist[0] = Step;
-            Visited[0] = true;
-            DFSComponents(0, graph);
-
-            Console.WriteLine("------------------");
-
-            while (BiComponents.Count>0)
-            {
-                var p = BiComponents.Pop();
-                Console.WriteLine($"{p.Item1}=>{p.Item2}");
-            }
+            DFSComponents(edges, 0, graph, visited, dist, low, parents);
         }
 
-        public static void DFSComponents(int s, int[,] graph)
+        public static void PushComponent(int s, int d, Stack<Edge> edges)
         {
-            Visited[s] = true;
-            Dist[s] = ++Step;
-            Low[s] = Step;
+            List<Edge> biComponents = new List<Edge>();
 
-            int child = 0;
-            for (int i = 0; i < V; i++)
-            {
-                if (graph[s, i] == 1)
-                {
-                    if (!Visited[i])
-                    {
-                        BiComponents.Push((s, i));
-                        child++;
-                        Parents[i] = s;
-                        DFSComponents(i, graph);
-                        Low[s] = Math.Min(Low[i], Low[s]);
-                        if (Parents[s] == -1 && child > 1)
-                        {
-                            PrintComponenent(s, i);
-                        }
-
-                        if (Parents[s] != -1 && Low[i] >= Dist[s])
-                        {
-                            PrintComponenent(s, i);
-                        }
-                    }
-                    else if (Parents[s] != i)
-                    {
-                        if (Dist[s] > Dist[i])
-                        {
-                            BiComponents.Push((s, i));
-                        }
-
-                        Low[s] = Math.Min(Dist[i], Low[s]);
-                    }
-                }
-            }
-        }
-
-
-        static void PrintComponenent(int s, int i)
-        {
-            Console.WriteLine("-----------------------");
-            (int, int) p;
+            Edge edge;
             do
             {
-                p = BiComponents.Pop();
-                Console.WriteLine($"{p.Item1}=>{p.Item2}");
-            } while (s != p.Item1 || i != p.Item2);
+                edge= edges.Pop();
+                biComponents.Add(edge);
+            } while (s != edge.Src || d != edge.Des);
+
+            BiConnectedCompenents.Add(biComponents);
+        }
+
+        public static void DFSComponents(Stack<Edge> edges, int s, List<int>[] graph, bool[] visited, int[] dist, int[] low, int[] parents)
+        {
+            visited[s] = true;
+            dist[s] = ++Step;
+            low[s] = Step;
+
+            int child = 0;
+            foreach (var c in graph[s])
+            {
+                if (!visited[c])
+                {
+                    child++;
+                    parents[c] = s;
+                    edges.Push(new Edge(s, c));
+                    DFSComponents(edges, c, graph, visited, dist, low, parents);
+                    low[s] = Math.Min(low[c], low[s]);
+                    if (parents[s] == -1 && child > 1)
+                    {
+                        PushComponent(s, c, edges);
+                    }
+
+                    if (parents[s] != -1 && low[c] >= dist[s])
+                    {
+                        PushComponent(s, c, edges);
+                    }
+                }
+                else if (parents[s] != c)
+                {
+                    if (dist[s] < dist[c])
+                    {
+                        edges.Push(new Edge(s, c));
+                    }
+
+                    low[s] = Math.Min(dist[c], low[s]);
+                }
+            }
         }
     }
 }

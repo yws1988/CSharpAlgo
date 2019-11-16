@@ -45,6 +45,8 @@
     <Compile Include="Graph\Graph\AdjacencyMatrix.cs" />
     <Compile Include="Graph\Heap\PriorityQueue.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Edge.cs" />
+    <Compile Include="Models\EdgeWithWeight.cs" />
     <Compile Include="Models\Point3D.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

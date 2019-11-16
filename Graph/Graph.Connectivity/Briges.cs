@@ -1,68 +1,57 @@
-﻿using System;
+﻿using DataStructure.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Graph.Connectivity
 {
     public class Briges
     {
-        public static bool[] Visited;
-        public static int[] Parents;
-        public static int[] Dist;
-        public static int[] Low;
-        public static int V;
-        public static int Step=1;
-        public static List<(int, int)> Bs;
+        public static int Step;
 
-        public static void PrintBriges(int[,] graph)
+        public static List<Edge> GetAllBriges(List<int>[] graph)
         {
-            V = graph.GetLength(0);
-            Visited = new bool[V];
-            Parents = new int[V];
-            Dist = new int[V];
-            Low = new int[V];
-            Bs = new List<(int, int)>();
-
-            for (int i = 0; i < V; i++)
+            var briges = new List<Edge>();
+            Step = 0;
+            int v = graph.Length;
+            bool[] visited = new bool[v];
+            int[] parents = new int[v];
+            int[] dist = new int[v];
+            int[] low = new int[v];
+            
+            for (int i = 0; i < v; i++)
             {
-                Parents[i] = -1;
+                parents[i] = -1;
             }
 
-            DFS(0, graph);
+            DFS(0, graph, visited, dist, low, parents, briges);
 
-            Console.WriteLine("All briges : ");
-            foreach (var item in Bs)
-            {
-                Console.WriteLine(item.Item1+" : "+item.Item2);
-            }
+            return briges;
         }
 
-        public static void DFS(int s, int[,] graph)
+        public static void DFS(int s, List<int>[] graph, bool[] vs, int[] dist, int[] low, int[] parents, List<Edge> briges)
         {
-            Visited[s] = true;
-            Dist[s] = ++Step;
-            Low[s] = Step;
+            vs[s] = true;
+            dist[s] = ++Step;
+            low[s] = Step;
 
             int child = 0;
-            for (int i = 0; i < V; i++)
+            foreach (var c in graph[s])
             {
-                if (graph[s, i] == 1)
+                if (!vs[c])
                 {
-                    if (!Visited[i])
-                    {
-                        child++;
-                        Parents[i] = s;
-                        DFS(i, graph);
-                        Low[s] = Math.Min(Low[i], Low[s]);
+                    child++;
+                    parents[c] = s;
+                    DFS(c, graph, vs, dist, low, parents, briges);
+                    low[s] = Math.Min(low[c], low[s]);
 
-                        if (Low[i] > Dist[s])
-                        {
-                            Bs.Add((s, i));
-                        }
-                    }
-                    else if (Parents[s] != i)
+                    if (low[c] > dist[s])
                     {
-                        Low[s] = Math.Min(Dist[i], Low[s]);
+                        briges.Add(new Edge(s, c));
                     }
+                }
+                else if (parents[s] != c)
+                {
+                    low[s] = Math.Min(dist[c], low[s]);
                 }
             }
         }
