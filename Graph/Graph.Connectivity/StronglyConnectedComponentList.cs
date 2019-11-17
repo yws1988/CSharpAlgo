@@ -6,24 +6,17 @@ namespace Graph.Connectivity
 {
     public class StronglyConnectedComponentList
     {
-        public AdjacencyList AdjList { get; set; }
-        public AdjacencyList ReverseAdjList { get; set; }
-        public Stack<int> Stack { get; set; }
-
-        public StronglyConnectedComponentList(AdjacencyList adjList)
+        public void PrintSCC(List<int>[] graph)
         {
-            AdjList = adjList;
-            Stack = new Stack<int>();
-        }
+            var stack = new Stack<int>();
+            int v = graph.Length;
+            bool[] visited = new bool[v];
 
-        public void PrintSCC()
-        {
-            // DFS over the adjacencyList$
-            for (int i = 0; i < AdjList.V; i++)
+            for (int i = 0; i < v; i++)
             {
-                if (AdjList.Visited[i] == false)
+                if (!visited[i])
                 {
-                    DFSsearching(i);
+                    DFSsearching(graph, i, visited, stack);
                 }
             }
 
@@ -40,19 +33,19 @@ namespace Graph.Connectivity
             }
         }
 
-        void DFSsearching(int i)
+        void DFSsearching(List<int>[] graph, int s, bool[] vs, Stack<int> stack)
         {
-            AdjList.Visited[i] = true;
+            vs[s] = true;
 
-            foreach (int s in AdjList.G[i])
+            foreach (int c in graph[s])
             {
-                if (AdjList.Visited[s] == false)
+                if (!vs[c])
                 {
-                    DFSsearching(s);
+                    DFSsearching(graph, c, vs, stack);
                 }
             }
 
-            Stack.Push(i);
+            stack.Push(s);
         }
 
         void DFSPrint(int i)
@@ -67,21 +60,6 @@ namespace Graph.Connectivity
 
 
             Console.Write(i + " ");
-        }
-
-        AdjacencyList GetTransposeGraph()
-        {
-            AdjacencyList reversGraph = new AdjacencyList(AdjList.V);
-
-            for (int i = 0; i < AdjList.V; i++)
-            {
-                foreach (int des in AdjList.G[i])
-                {
-                    reversGraph.G[des].Add(i);
-                }
-            }
-
-            return reversGraph;
         }
     }
 }

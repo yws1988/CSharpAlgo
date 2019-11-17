@@ -118,7 +118,7 @@
                 }
                 else if (parents[s] != c)
                 {
-                    if (dist[s] < dist[c])
+                    if (dist[s] > dist[c])
                     {
                         edges.Push(new Edge(s, c));
                     }

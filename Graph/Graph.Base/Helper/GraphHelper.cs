@@ -2,11 +2,11 @@
 {
     using System.Collections.Generic;
 
-    public class GraphHelper<T>
+    public class GraphHelper
     {
-        public static T[,] ConvertListToGraphMatrix(IList<(int, int, T)> list, int V, bool isDirected = false)
+        public static int[,] ConvertListToGraphMatrix(IList<(int, int, int)> list, int v, bool isDirected = false)
         {
-            T[,] graph = new T[V, V];
+            int[,] graph = new int[v, v];
             foreach (var item in list)
             {
                 graph[item.Item1, item.Item2] = item.Item3;
@@ -20,9 +20,9 @@
             return graph;
         }
 
-        public static int[,] ConvertListToGraphMatrix(IList<(int, int)> list, int V, bool isDirected = false)
+        public static int[,] ConvertListToGraphMatrix(IList<(int, int)> list, int v, bool isDirected = false)
         {
-            int[,] graph = new int[V, V];
+            int[,] graph = new int[v, v];
             foreach (var item in list)
             {
                 graph[item.Item1, item.Item2] = 1;
