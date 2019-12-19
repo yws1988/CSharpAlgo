@@ -1,4 +1,4 @@
-﻿namespace Graph.Base
+﻿namespace Utils.Graph.Helper
 {
     using System.Collections.Generic;
 

@@ -1,11 +1,11 @@
-﻿namespace Graph.Base.Helper
+﻿namespace Utils.Graph.Helper
 {
     using System.Collections.Generic;
     using System.Linq;
 
-    public static class BuilderHelper
+    public static class GraphBuilderHelper
     {
-        public static List<int>[] CreateListArray(int n)
+        public List<int>[] CreateListArray(int n)
         {
             return Enumerable.Range(0, n).Select(s => new List<int>()).ToArray();
         }

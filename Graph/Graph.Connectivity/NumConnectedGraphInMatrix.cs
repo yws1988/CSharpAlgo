@@ -1,37 +1,37 @@
-﻿using System;
-
-namespace Graph.Connectivity
+﻿namespace Graph.Connectivity
 {
     public class NumConnectedGraphInMatrix
     {
-        public static int[,] Graph { get; set; }
-        public static int V { get; set; }
+        // Following matrix have 4 connected components
+        //{1, 1, 0, 0, 0},
+        //{0, 1, 0, 0, 1},
+        //{1, 0, 0, 1, 1},
+        //{0, 0, 0, 0, 0},
+        //{1, 0, 1, 0, 0} 
 
-        public static void PrintConnectedGraphNum(int[,] graph)
+        public static int GetConnectedGraphNum(int[,] graph)
         {
-            Graph = graph;
-            V = graph.GetLength(0);
-
-            bool[,] vs = new bool[V, V];
+            int v = graph.GetLength(0);
+            bool[,] vs = new bool[v, v];
 
             int count = 0;
 
-            for (int i = 0; i < V; i++)
+            for (int i = 0; i < v; i++)
             {
-                for (int j = 0; j < V; j++)
+                for (int j = 0; j < v; j++)
                 {
                     if(graph[i, j]==1 && !vs[i, j])
                     {
                         count++;
-                        DFSUtil(i, j, vs);
+                        DFSUtil(graph, i, j, vs, v);
                     }
                 }
             }
 
-            Console.WriteLine($"Connected Graph Num {count}");
+            return count;
         }
 
-        static void DFSUtil(int i, int j, bool[,] vs)
+        static void DFSUtil(int[,] graph, int i, int j, bool[,] vs, int v)
         {
             vs[i, j] = true;
 
@@ -42,17 +42,17 @@ namespace Graph.Connectivity
                     if (m == 0 && h == 0) continue;
                     int tI = i + m;
                     int tJ = j + h;
-                    if(IsSafe(tI, tJ) && !vs[tI, tJ] && Graph[tI, tJ]==1)
+                    if(IsSafe(tI, tJ, v) && !vs[tI, tJ] && graph[tI, tJ]==1)
                     {
-                        DFSUtil(tI, tJ, vs);
+                        DFSUtil(graph, tI, tJ, vs, v);
                     }
                 }
             }
         }
 
-        static bool IsSafe(int i, int j)
+        static bool IsSafe(int i, int j, int v)
         {
-            return i >= 0 && i < V && j >= 0 && j < V;
+            return i >= 0 && i < v && j >= 0 && j < v;
         }
     }
 }

@@ -1,20 +1,15 @@
 ﻿namespace Graph.Connectivity
 {
-    using System;
-
     public class TransitiveClosureGraph
     {
-        public static int V;
-        public static bool[,] TransitiveGraph;
-
         // Warshall algorithme
-        public static void PrintWarshallMethod(int[,] graph)
+        public static bool[,] GetByWarshallMethod(int[,] graph)
         {
-            V = graph.GetLength(0);
-            TransitiveGraph = new bool[V, V];
-            for (int i = 0; i < V; i++)
+            int v = graph.GetLength(0);
+            var TransitiveGraph = new bool[v, v];
+            for (int i = 0; i < v; i++)
             {
-                for (int j = 0; j < V; j++)
+                for (int j = 0; j < v; j++)
                 {
                     if(graph[i, j] == 1)
                     {
@@ -23,56 +18,44 @@
                 }
             }
 
-            for (int i = 0; i < V; i++)
+            for (int i = 0; i < v; i++)
             {
-                for (int j = 0; j < V; j++)
+                for (int j = 0; j < v; j++)
                 {
-                    for (int k = 0; k < V; k++)
+                    for (int k = 0; k < v; k++)
                     {
                         TransitiveGraph[j, k] = TransitiveGraph[j, k] || (TransitiveGraph[j, i] && TransitiveGraph[i, k]);
                     }
                 }
             }
 
-            PrintTransitiveMatrix();
+            return TransitiveGraph;
         }
 
-        public static void PrintDFSMethod(int[,] graph)
+        // DFS method to get transitive closure graph
+        public static bool[,] GetTransitiveClosureGraphByDFS(int[,] graph)
         {
-            V = graph.GetLength(0);
-            TransitiveGraph = new bool[V, V];
-            for (int i = 0; i < V; i++)
+            int v = graph.GetLength(0);
+            var transitiveGraph = new bool[v, v];
+            for (int i = 0; i < v; i++)
             {
-                bool[] vs = new bool[V];
-                DFS(i, graph, vs, i);
+                bool[] vs = new bool[v];
+                DFS(i, graph, transitiveGraph, v, vs, i);
             }
 
-            PrintTransitiveMatrix();
+            return transitiveGraph;
         }
 
-        static void DFS(int i, int[,] graph, bool[] vs, int src)
+        static void DFS(int i, int[,] graph, bool[,] transiveGraph, int v, bool[] vs, int src)
         {
             vs[i] = true;
-            TransitiveGraph[src, i] = true;
-            for (int j = 0; j < V; j++)
+            transiveGraph[src, i] = true;
+            for (int j = 0; j < v; j++)
             {
                 if (graph[i, j]!=0 && !vs[j])
                 {
-                    DFS(j, graph, vs, src);
+                    DFS(j, graph, transiveGraph, v, vs, src);
                 }
-            }
-        }
-
-        static void PrintTransitiveMatrix()
-        {
-            for (int i = 0; i < V; i++)
-            {
-                for (int j = 0; j < V; j++)
-                {
-                    Console.Write(TransitiveGraph[i, j] ? "1 ":"0 ");
-                }
-
-                Console.WriteLine();
             }
         }
     }

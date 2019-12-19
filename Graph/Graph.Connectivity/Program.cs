@@ -1,8 +1,6 @@
 ﻿namespace Graph.Connectivity
 {
     using System;
-    using System.Collections.Generic;
-    using Graph.Base;
 
     class Program
     {

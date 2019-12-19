@@ -57,12 +57,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Graph.Base\Graph.Base.csproj">
-      <Project>{80e8db11-0381-4d61-9bbe-e886f11ae0fd}</Project>
-      <Name>Graph.Base</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

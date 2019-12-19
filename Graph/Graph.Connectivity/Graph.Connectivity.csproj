@@ -62,6 +62,10 @@
       <Project>{0cf9b7ec-8494-416c-955d-a566ca20f0fb}</Project>
       <Name>DataStructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Utils\Utils.csproj">
+      <Project>{7E719EA7-F582-41D1-97E2-87B016D0D42B}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="problem\NumConnectedGraphInMatrix.txt" />

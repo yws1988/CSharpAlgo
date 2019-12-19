@@ -1,39 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using Graph.Base;
+﻿using System.Collections.Generic;
+using Utils.Graph.Helper;
 
 namespace Graph.Connectivity
 {
     public class StronglyConnectedComponentList
     {
-        public void PrintSCC(List<int>[] graph)
+        public static int[] GetSCC(List<int>[] graph)
         {
             var stack = new Stack<int>();
             int v = graph.Length;
+
             bool[] visited = new bool[v];
 
             for (int i = 0; i < v; i++)
             {
                 if (!visited[i])
                 {
-                    DFSsearching(graph, i, visited, stack);
+                    DFS(i, visited, stack, graph);
                 }
             }
 
-            ReverseAdjList = GetTransposeGraph();
-
-            while (Stack.Count > 0)
+            var rGraph = GraphListHelper.GetTransposeGraph(graph);
+            
+            int[] scc = new int[v];
+            for (int i = 0; i < v; i++)
             {
-                int i = Stack.Pop();
-                if (ReverseAdjList.Visited[i] == false)
-                {
-                    DFSPrint(i);
-                    Console.Write(" :: ");
-                }
+                scc[i] = -1;
             }
+
+            int numCompoents = 0;
+            while (stack.Count > 0)
+            {
+                int i = stack.Pop();
+                if (scc[i]==-1)
+                {
+                    DFSComponents(i, scc, graph, numCompoents);
+                }
+                numCompoents++;
+            }
+
+            return scc;
         }
 
-        void DFSsearching(List<int>[] graph, int s, bool[] vs, Stack<int> stack)
+        static void DFS(int s, bool[] vs, Stack<int> stack, List<int>[] graph)
         {
             vs[s] = true;
 
@@ -41,25 +50,24 @@ namespace Graph.Connectivity
             {
                 if (!vs[c])
                 {
-                    DFSsearching(graph, c, vs, stack);
+                    DFS(c, vs, stack, graph);
                 }
             }
 
             stack.Push(s);
         }
 
-        void DFSPrint(int i)
+        static void DFSComponents(int s, int[] scc, List<int>[] graph, int num)
         {
-            ReverseAdjList.Visited[i] = true;
+            scc[s] = num;
 
-            foreach (int s in ReverseAdjList.G[i])
+            foreach (int c in graph[s])
             {
-                if (ReverseAdjList.Visited[s] == false)
-                    DFSPrint(s);
+                if (scc[c]==-1)
+                {
+                    DFSComponents(c, scc, graph, num);
+                }
             }
-
-
-            Console.Write(i + " ");
         }
     }
 }

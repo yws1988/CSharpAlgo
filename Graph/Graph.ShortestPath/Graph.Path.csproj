@@ -61,10 +61,6 @@
       <Project>{ba3e048e-5d0b-4b55-9b51-d9a8b5d20bed}</Project>
       <Name>Collection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Graph.Base\Graph.Base.csproj">
-      <Project>{80E8DB11-0381-4D61-9BBE-E886F11AE0FD}</Project>
-      <Name>Graph.Base</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Questions\MinimumWeightCycle.txt" />

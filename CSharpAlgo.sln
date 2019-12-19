@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Base", "Graph\Graph.Base\Graph.Base.csproj", "{80E8DB11-0381-4D61-9BBE-E886F11AE0FD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Connectivity", "Graph\Graph.Connectivity\Graph.Connectivity.csproj", "{7E34AFE3-842B-4E07-8B20-43F7F75F58D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Cycle", "Graph\Graph.Cycle\Graph.Cycle.csproj", "{7ECC1890-9015-43A6-8BC1-F122E6020DE4}"
@@ -35,16 +33,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Tree", "Graph\Graph.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Other", "Graph\Graph.Other\Graph.Other.csproj", "{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{0322854E-DA3F-461A-ACA1-D95956C670F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{7E719EA7-F582-41D1-97E2-87B016D0D42B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80E8DB11-0381-4D61-9BBE-E886F11AE0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80E8DB11-0381-4D61-9BBE-E886F11AE0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80E8DB11-0381-4D61-9BBE-E886F11AE0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80E8DB11-0381-4D61-9BBE-E886F11AE0FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7E34AFE3-842B-4E07-8B20-43F7F75F58D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7E34AFE3-842B-4E07-8B20-43F7F75F58D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E34AFE3-842B-4E07-8B20-43F7F75F58D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -89,12 +87,15 @@ Global
 		{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E719EA7-F582-41D1-97E2-87B016D0D42B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E719EA7-F582-41D1-97E2-87B016D0D42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E719EA7-F582-41D1-97E2-87B016D0D42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E719EA7-F582-41D1-97E2-87B016D0D42B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{80E8DB11-0381-4D61-9BBE-E886F11AE0FD} = {427CC021-4F70-47C3-8A03-BE83C181A859}
 		{7E34AFE3-842B-4E07-8B20-43F7F75F58D5} = {427CC021-4F70-47C3-8A03-BE83C181A859}
 		{7ECC1890-9015-43A6-8BC1-F122E6020DE4} = {427CC021-4F70-47C3-8A03-BE83C181A859}
 		{02EFC24E-313F-4E51-98D7-A8A5AD179C05} = {427CC021-4F70-47C3-8A03-BE83C181A859}
@@ -106,6 +107,7 @@ Global
 		{180F3DE8-5011-4D61-90E1-34835B2CDCFE} = {427CC021-4F70-47C3-8A03-BE83C181A859}
 		{E424EDB6-AA5A-491F-AEF7-8F3363C402AC} = {427CC021-4F70-47C3-8A03-BE83C181A859}
 		{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577} = {427CC021-4F70-47C3-8A03-BE83C181A859}
+		{7E719EA7-F582-41D1-97E2-87B016D0D42B} = {0322854E-DA3F-461A-ACA1-D95956C670F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3987C77-BDC5-4F2C-8E06-AE566FD808CC}

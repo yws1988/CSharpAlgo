@@ -1,11 +1,11 @@
-﻿namespace Graph.Base.Helper
+﻿namespace Utils.Graph.Helper
 {
     using System.Collections.Generic;
     using System.Linq;
 
     public class GraphListHelper
     {
-        static List<int>[] GetTransposeGraph(List<int>[] graph)
+        public static List<int>[] GetTransposeGraph(List<int>[] graph)
         {
             int v = graph.Length;
             var reversGraph = Enumerable.Range(0, v).Select(s => new List<int>()).ToArray();
