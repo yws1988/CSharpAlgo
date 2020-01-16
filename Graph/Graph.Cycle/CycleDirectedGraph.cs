@@ -1,35 +1,17 @@
 ﻿namespace Graph.Cycle
 {
-    using System;
-    using Graph.Base;
+    using System.Collections.Generic;
 
     public class CycleDirectedGraph
     {
-        public static AdjacencyList AdjList { get; set; }
-
-        public static void DetectCycle(AdjacencyList adjList)
+        public static bool DoesGraphContainsCycle(List<int>[] graph)
         {
-            AdjList = adjList;
-
-            if (HasCycle())
-            {
-                Console.WriteLine("There is a cyle");
-            }
-            else
-            {
-                Console.WriteLine("No cycle");
-            }
-
-        }
-
-        static bool HasCycle()
-        {
-            int v = AdjList.V;
+            int v = graph.Length;
             bool[] vs = new bool[v];
 
             for (int i = 0; i < v; i++)
             {
-                if (!vs[i] && DFSUtil(i, vs))
+                if (!vs[i] && DFSUtil(i, vs, graph))
                 {
                     return true;
                 }
@@ -37,18 +19,18 @@
             return false;
         }
 
-        static bool DFSUtil(int i, bool[] vs)
+        static bool DFSUtil(int i, bool[] vs, List<int>[] graph)
         {
             vs[i] = true;
 
-            foreach (int child in AdjList[i])
+            foreach (int child in graph[i])
             {
                 if (vs[child])
                 {
                     return true;
                 }
 
-                if (!vs[child] && DFSUtil(child, vs))
+                if (!vs[child] && DFSUtil(child, vs, graph))
                 {
                     return true;
                 }
