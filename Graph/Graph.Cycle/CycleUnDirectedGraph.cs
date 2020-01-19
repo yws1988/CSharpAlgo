@@ -1,60 +1,84 @@
 ﻿namespace Graph.Cycle
 {
-    using System;
-    using Graph.Base;
+    using System.Collections.Generic;
 
     public class CycleUnDirectedGraph
     {
-        public static AdjacencyList AdjList { get; set; }
-
-        public static void DetectCycle(AdjacencyList adjList)
+        public static bool DoesGraphContainCycle(List<int>[] graph)
         {
-            AdjList = adjList;
+            int v = graph.Length;
 
-            if (HasCycle())
-            {
-                Console.WriteLine("There is a cyle");
-            }
-            else
-            {
-                Console.WriteLine("No cycle");
-            }
-            
-        }
-
-        static bool HasCycle()
-        {
-            int v = AdjList.V;
             bool[] vs = new bool[v];
 
             for (int i = 0; i < v; i++)
             {
-                if (!vs[i] && DFSUtil(i, i, vs))
+                if (!vs[i] && DFSUtilDetectCycle(i, i, vs, graph))
                 {
                     return true;
                 }
             }
+
             return false;
         }
 
-        static bool DFSUtil(int i, int parent, bool[] vs)
+        private static bool DFSUtilDetectCycle(int i, int parent, bool[] vs, List<int>[] graph)
         {
             vs[i] = true;
 
-            foreach (int child in AdjList[i])
+            foreach (int child in graph[i])
             {
                 if (child!=parent && vs[child])
                 {
                     return true;
                 }
 
-                if (!vs[child] && DFSUtil(child, i, vs))
+                if (!vs[child] && DFSUtilDetectCycle(child, i, vs, graph))
                 {
                     return true;
                 }
             }
 
             return false;
+        }
+
+        // Count all the cyle with length n in an undirected graph
+
+        public static int CountNLengthCycle(List<int>[] graph, int n)
+        {
+            int v = graph.Length;
+            bool[] vs = new bool[v];
+            int num = 0;
+            for (int i = 0; i < v - (n - 1); i++)
+            {
+                DFSUtilCountCycle(i, vs, n - 1, i, graph, ref num);
+                vs[i] = true;
+            }
+
+            return (num / 2);
+        }
+
+        private static void DFSUtilCountCycle(int s, bool[] vs, int n, int src, List<int>[] graph, ref int num)
+        {
+            if (n == 0)
+            {
+                if (graph[s].Contains(src))
+                {
+                    num++;
+                }
+                return;
+            }
+
+            vs[s] = true;
+
+            foreach (var child in graph[s])
+            {
+                if (!vs[child])
+                {
+                    DFSUtilCountCycle(child, vs, n - 1, src, graph, ref num);
+                }
+            }
+
+            vs[s] = false;
         }
     }
 }

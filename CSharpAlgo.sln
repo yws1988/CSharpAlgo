@@ -37,6 +37,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{0322854E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{7E719EA7-F582-41D1-97E2-87B016D0D42B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Geometry", "Geometry", "{45993CD9-026E-4B37-BF7D-5C3493B22F7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry.Circle", "Geometry\Geometry.Circle\Geometry.Circle.csproj", "{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,10 @@ Global
 		{7E719EA7-F582-41D1-97E2-87B016D0D42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E719EA7-F582-41D1-97E2-87B016D0D42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E719EA7-F582-41D1-97E2-87B016D0D42B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +116,7 @@ Global
 		{E424EDB6-AA5A-491F-AEF7-8F3363C402AC} = {427CC021-4F70-47C3-8A03-BE83C181A859}
 		{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577} = {427CC021-4F70-47C3-8A03-BE83C181A859}
 		{7E719EA7-F582-41D1-97E2-87B016D0D42B} = {0322854E-DA3F-461A-ACA1-D95956C670F9}
+		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF} = {45993CD9-026E-4B37-BF7D-5C3493B22F7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3987C77-BDC5-4F2C-8E06-AE566FD808CC}
