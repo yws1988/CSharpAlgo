@@ -4,7 +4,7 @@
 
     public class BFSIteration
     {
-        public IList<int> GetBFSIterationList(List<int>[] graph, int src)
+        public static IList<int> GetBFSIterationList(List<int>[] graph, int src)
         {
             var result = new List<int>();
             int v = graph.Length;

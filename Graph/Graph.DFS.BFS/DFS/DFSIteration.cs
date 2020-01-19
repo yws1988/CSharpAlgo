@@ -4,7 +4,7 @@
 
     public class DFSIteration
     {
-        public IList<int> GetDFSIterationList(List<int>[] graph, int src)
+        public static IList<int> GetDFSIterationList(List<int>[] graph, int src)
         {
             var result = new List<int>();
             int v = graph.Length;
