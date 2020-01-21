@@ -44,12 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdjacencyMatrix.cs" />
-    <Compile Include="CycleNLengthUnDirectedGraph.cs" />
     <Compile Include="CycleUnDirectedGraph.cs" />
     <Compile Include="CycleDirectedGraph.cs" />
-    <Compile Include="CycleUnDirectedGraphFindUnion.cs" />
-    <Compile Include="MagicalIndices.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

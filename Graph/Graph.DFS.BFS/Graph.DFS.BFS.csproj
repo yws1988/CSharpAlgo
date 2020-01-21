@@ -45,12 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DFS\DFSIteration.cs" />
-    <Compile Include="FindMotherVertex.cs" />
     <Compile Include="BFS\BFSIteration.cs" />
-    <Compile Include="IDDF.cs" />
     <Compile Include="KCore.cs" />
     <Compile Include="LongestPath.cs" />
-    <Compile Include="FindLongestPath.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
