@@ -44,17 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LongestPath\LongestPathInDirectedAcyclicGraph.cs" />
     <Compile Include="MinimumGridAllDirectionCostPath.cs" />
     <Compile Include="MinimumWeightCycle.cs" />
     <Compile Include="MultiStageShortestPath.cs" />
-    <Compile Include="BellmanFordShortestPath.cs" />
+    <Compile Include="ShortestPath\BellmanFordShortestPath.cs" />
     <Compile Include="HamiltonianPath.cs" />
-    <Compile Include="DijsktraShortestPath.cs" />
+    <Compile Include="ShortestPath\DijsktraShortestPath.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MinimumMeanWeightCycle.cs" />
     <Compile Include="SalesmanTravelling.cs" />
-    <Compile Include="WarshallShortestPath.cs" />
+    <Compile Include="ShortestPath\WarshallShortestPath.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Collection\Collection.csproj">
