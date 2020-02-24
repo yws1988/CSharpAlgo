@@ -1,12 +1,12 @@
 ﻿namespace Graph.Flow
 {
-    using Graph.Base;
     using System.Collections.Generic;
     public class BiPartiteGraph
     {
-        public static bool IsGraphBipartite(AdjacencyMatrix graph)
+        public static bool IsGraphBipartite(List<int>[] graph)
         {
-            int[] color = new int[graph.N];
+            int n = graph.Length;
+            int[] color = new int[n];
 
             Queue<int> queue = new Queue<int>();
             queue.Enqueue(0);
@@ -14,26 +14,20 @@
 
             while (queue.Count > 0)
             {
-                int idx=queue.Dequeue();
-                for (int i = 0; i < graph.N; i++)
+                int p=queue.Dequeue();
+                foreach (var c in graph[p])
                 {
-                    if (i == idx) continue;
-
-                    if(graph.Value[idx, i] == 1)
+                    if(color[c] == 0)
                     {
-                        if (color[idx] == color[i])
-                        {
-                            return false;
-                        }
-
-                        if (color[i] == 0)
-                        {
-                            color[i] = 3 - color[idx];
-                            queue.Enqueue(i);
-                        }
+                        queue.Enqueue(c);
+                        color[c] = color[p] == 1 ? 2 : 1;
+                    }else if(color[c] == color[p])
+                    {
+                        return false;
                     }
                 }
             }
+
             return true;
         }
     }
