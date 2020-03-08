@@ -5,9 +5,14 @@
 
     public static class GraphBuilderHelper
     {
-        public List<int>[] CreateListArray(int n)
+        public static List<int>[] CreateListArray(int n)
         {
             return Enumerable.Range(0, n).Select(s => new List<int>()).ToArray();
+        }
+
+        public static HashSet<int>[] CreateSetArray(int n)
+        {
+            return Enumerable.Range(0, n).Select(s => new HashSet<int>()).ToArray();
         }
 
         public static List<int>[] CreateListArray(int n, int[][] arr, bool isDirected = false)

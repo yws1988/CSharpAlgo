@@ -45,7 +45,7 @@
                             {0, 0, 0, 0, 0, 0} 
                           };
 
-            STMinCutMaximumFlow.PrintMinCut(graph, 0, 5);
+            STMinCutMaximumFlow.GetMinCutEdges(graph, 0, 5);
         }
     }
 }

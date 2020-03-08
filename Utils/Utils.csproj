@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\ArrayHelper.cs" />
+    <Compile Include="Helper\ArrayHelper.cs" />
     <Compile Include="Helper\Graph\GraphBuilderHelper.cs" />
     <Compile Include="Helper\Graph\GraphHelper.cs" />
     <Compile Include="Helper\Graph\GraphListHelper.cs" />
     <Compile Include="Helper\Graph\GraphMatrixHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
