@@ -1,78 +1,81 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace Graph.Other
+namespace graph.Other
 {
-    public class LargestConnectedComponent
+    public class LargestConnectedComponentInGrid
     {
-        public static bool[,] IsVisited;
-        public static int[,] Graph;
-        public static int[,] Final;
-        public static int Max = 0;
-        public static int M;
-        public static int N;
-
-
-        public static void GetLargestConnectedComponent(int[,] graph)
+        public static int GetLargestConnectedComponent(int[,] graph)
         {
-            Graph = graph;
-            M = Graph.GetLength(0);
-            N = Graph.GetLength(1);
-            Final = new int[M, N];
+            int m = graph.GetLength(0);
+            int n = graph.GetLength(1);
+            var vs = new bool[m, n];
 
-            IsVisited = new bool[M, N];
-
-            int counter = 1;
-            int maxCounter = 1;
-            for (int i = 0; i < M; i++)
+            var area = new int[m, n];
+            int areaNum = 1;
+            int max = 0;
+            int maxAreaNum = 0;
+            for (int i = 0; i < m; i++)
             {
-                for (int j = 0; j < N; j++)
+                for (int j = 0; j < n; j++)
                 {
-                    if (!IsVisited[i,j])
+                    if (!vs[i, j])
                     {
-                        int val = Graph[i, j];
-                        int num = Search(i, j, val, counter);
-                        if (num > Max)
+                        int val = graph[i, j];
+                        int num = Search(graph, vs, i, j, val, areaNum, m, n, area);
+                        if (num > max)
                         {
-                            maxCounter = counter;
-                            Max = num;
+                            max = num;
+                            maxAreaNum = areaNum;
                         }
-                        counter++;
+                        areaNum++;
                     }
                 }
             }
 
-            Console.WriteLine($"The largest value is : {Max}");
-            for (int i = 0; i < M; i++)
-            {
-                for (int j = 0; j < N; j++)
-                {
-                    Console.Write(Final[i, j] == maxCounter ? Graph[i, j].ToString() : "*");
-                    Console.Write(' ');
-                }
-                Console.WriteLine();
-            }
+            return max;
         }
 
-        public static int Search(int i, int j, int val, int counter)
+        public static int Search(int[,] graph, bool[,] vs, int i, int j, int val, int counter, int m, int n, int[,] area)
         {
-            if (i < 0 || i >= M || j < 0 || j >= N) return 0;
+            if (i < 0 || i >= m || j < 0 || j >= n) return 0;
 
-            if (!IsVisited[i, j] && Graph[i, j]==val)
+            if (!vs[i, j] && graph[i, j] == val)
             {
-                IsVisited[i, j] = true;
-                Final[i, j] = counter;
-                int[] xMove = {1, -1, 0, 0};
-                int[] yMove = { 0, 0, 1, -1};
+                vs[i, j] = true;
+                area[i, j] = counter;
+                int[] xMove = { 1, -1, 0, 0 };
+                int[] yMove = { 0, 0, 1, -1 };
 
                 int c = 1;
                 for (int u = 0; u < 4; u++)
                 {
-                    c+=Search(i+xMove[u], j+yMove[u], val, counter);
+                    c += Search(graph, vs, i + xMove[u], j + yMove[u], val, counter, m, n, area);
                 }
                 return c;
             }
 
             return 0;
         }
+
+        public static List<(int, int)> GetArea(int[,] area, int areaNum)
+        {
+            var list = new List<(int, int)>();
+            int m = area.GetLength(0);
+            int n = area.GetLength(1);
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (area[i, j] == areaNum)
+                    {
+                        list.Add((i, j));
+                    }
+                }
+            }
+
+            return list;
+        }
     }
 }
+

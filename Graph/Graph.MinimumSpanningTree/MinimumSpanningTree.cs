@@ -2,15 +2,18 @@
 {
     using System;
     using System.Collections.Generic;
-    using Collection;
+    using System.Linq;
+    using DataStructure.Graph.Heap;
 
-    public class Pair:IComparable<Pair>
+    public class Pair : IComparable<Pair>
     {
+        public int Src { get; set; }
         public int Des { get; set; }
         public int Weight { get; set; }
 
-        public Pair(int d, int w)
+        public Pair(int s, int d, int w)
         {
+            Src = s;
             Des = d;
             Weight = w;
         }
@@ -23,50 +26,44 @@
 
     public class MinimumSpanningTree
     {
-        public static List<Pair>[] Graph;
-
-        public static void Set(int n)
+        public static int GetMinimumSpanningTree(List<Pair>[] graph, List<Pair> path)
         {
-            Graph = new List<Pair>[n];
-            for (int i = 0; i < n; i++)
-            {
-                Graph[i] = new List<Pair>();
-            }
-        }
-        
-        public static int GetMinimumSpanningTree()
-        {
+            path = new List<Pair>();
+            int v = graph.Length;
             int minCost = 0;
-            bool[] visited = new bool[Graph.Length];
-            PriorityQueue<Pair> queue = new PriorityQueue<Pair>();
-            foreach (var item in Graph[0])
+            bool[] visited = new bool[v];
+
+            var queue = new PriorityQueue<Pair>();
+            foreach (var item in graph[0])
             {
                 queue.Enqueue(item);
             }
             visited[0] = true;
-            while (queue.Count()>0)
+            while (queue.Count() > 0)
             {
                 var p = queue.Dequeue();
+                path.Add(p);
+
                 if (!visited[p.Des])
                 {
-                   minCost+=p.Weight;
-                   visited[p.Des] = true;
-                   foreach(var item in Graph[p.Des])
-                   {
+                    minCost += p.Weight;
+                    visited[p.Des] = true;
+                    foreach (var item in graph[p.Des])
+                    {
                         queue.Enqueue(item);
-                   }
+                    }
                 }
             }
 
             return minCost;
         }
 
-        public static void AddEdge(int s, int d, int w)
+        public static void GraphSetting(int n, int s, int d, int w)
         {
-            Graph[s].Add(new Pair(d, w));
-            Graph[d].Add(new Pair(s, w));
-        }
+            var graph = Enumerable.Range(0, n).Select(e => new List<Pair>()).ToArray();
 
-        
+            graph[s].Add(new Pair(s, d, w));
+            graph[d].Add(new Pair(d, s, w));
+        }
     }
 }

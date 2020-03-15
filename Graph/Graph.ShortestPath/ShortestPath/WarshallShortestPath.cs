@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Graph.ShortestPath
 {
     public class WarshallShortestPath
     {
-        public static int[,] Path;
-        public static int[,] Costs;
-
         public static int GetShortestPath(int start, int end, int[,] graph)
         {
             int v = graph.GetLength(0);
-            Path = new int[v,v];
-            Costs = new int[v, v];
+            var path = new int[v, v];
+            var costs = new int[v, v];
 
             for (int i = 0; i < v; i++)
             {
@@ -20,18 +18,17 @@ namespace Graph.ShortestPath
                 {
                     if (i != j)
                     {
-                        Costs[i, j] = graph[i, j] == 0 ? int.MaxValue : graph[i, j];
+                        costs[i, j] = graph[i, j] == 0 ? int.MaxValue : graph[i, j];
                     }
 
-                    if(Costs[i, j] != int.MaxValue)
+                    if (costs[i, j] != int.MaxValue)
                     {
-                        Path[i, j] = i;
+                        path[i, j] = i;
                     }
                     else
                     {
-                        Path[i, j] = -1;
+                        path[i, j] = -1;
                     }
-                    
                 }
             }
 
@@ -41,17 +38,17 @@ namespace Graph.ShortestPath
                 {
                     for (int j = 0; j < v; j++)
                     {
-                        if(Costs[i, k]!=int.MaxValue && Costs[k, j] != int.MaxValue)
+                        if (costs[i, k] != int.MaxValue && costs[k, j] != int.MaxValue)
                         {
-                            if(Costs[i, j] > Costs[i, k] + Costs[k, j])
+                            if (costs[i, j] > costs[i, k] + costs[k, j])
                             {
-                                Costs[i, j] = Costs[i, k] + Costs[k, j];
-                                Path[i, j] = Path[k, j];
+                                costs[i, j] = costs[i, k] + costs[k, j];
+                                path[i, j] = path[k, j];
                             }
                         }
                     }
 
-                    if(Costs[i, i] < 0)
+                    if (costs[i, i] < 0)
                     {
                         Console.WriteLine("There is a negative cycle");
                         return 0;
@@ -59,29 +56,26 @@ namespace Graph.ShortestPath
                 }
             }
 
-            PrintPath(start, end);
-            return Costs[start, end];
+            return costs[start, end];
         }
 
-        public static void PrintPath(int start, int end)
+        public static List<int> GetPath(int start, int end, int[,] path)
         {
-            if(Path[start, end] == -1)
+            if (path[start, end] == -1)
             {
                 Console.WriteLine("No Path");
-                return;
+                return null;
             }
 
-            Stack<int> s = new Stack<int>();
-            s.Push(end);
-            while(end != start)
+            Stack<int> stack = new Stack<int>();
+            stack.Push(end);
+            while (end != start)
             {
-                s.Push(Path[start, end]);
-                end = Path[start, end];
+                stack.Push(path[start, end]);
+                end = path[start, end];
             }
-            foreach(int i in s)
-            {
-                Console.Write($"{i}=>");
-            }
+
+            return stack.ToList();
         }
     }
 }

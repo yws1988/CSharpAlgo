@@ -1,89 +1,92 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Graph.ShortestPath
 {
     public class BellmanFordShortestPath
     {
-        public static int[,] Graph;
-        public static int V;
-        public static List<Edge> Edges=new List<Edge>();
-        public static int[] Parents;
-        public static int[] Weights;
-
-        // Doesn't contain negative cycle
-        public BellmanFordShortestPath(int[,] graph)
+        public int[] GetShortestPath(int[,] graph, int src)
         {
-            Graph = graph;
-            V = Graph.GetLength(0);
-            Parents = new int[V];
-            Weights = new int[V];
-        }
-
-        public void CalculateShortestPath(int src)
-        {
-            for (int i = 0; i < V; i++)
+            int v = graph.GetLength(0);
+            var edges = new List<Edge>();
+            for (int i = 0; i < v; i++)
             {
-                for (int j = 0; j < V; j++)
+                for (int j = 0; j < v; j++)
                 {
-                    if (Graph[i, j] != 0)
+                    if (graph[i, j] != 0)
                     {
-                        Edges.Add(new Edge(i, j, Graph[i, j]));
+                        edges.Add(new Edge(i, j, graph[i, j]));
                     }
                 }
             }
-            for (int i = 0; i < V; i++)
+
+            var weights = new int[v];
+            var parents = new int[v];
+
+            for (int i = 0; i < v; i++)
             {
                 if (i == src)
                 {
-                    Weights[i] = 0;
+                    weights[i] = 0;
                 }
                 else
                 {
-                    Weights[i] = int.MaxValue;
+                    weights[i] = int.MaxValue;
                 }
             }
-            
-            Calculate(src);
 
-            PrintShortestPathForEveryNode(src);
+            Calculate(v, weights, parents, edges);
+
+            if (ContainsNegativeCycle(weights, edges))
+            {
+                Console.WriteLine("Graph contains negative cycle");
+            }
+
+            return weights;
         }
 
-        static void Calculate(int src)
+        static void Calculate(int v, int[] weights, int[] parents, List<Edge> edges)
         {
-            for (int i = 1; i < V; i++)
+            for (int i = 1; i < v; i++)
             {
-                foreach (var e in Edges)
+                foreach (var e in edges)
                 {
-                    if (Weights[e.Src] != int.MaxValue && Weights[e.Des] > Weights[e.Src] + e.Weight)
+                    if (weights[e.Src] != int.MaxValue && weights[e.Des] > weights[e.Src] + e.Weight)
                     {
-                        Weights[e.Des] = Weights[e.Src] + e.Weight;
-                        Parents[e.Des] = e.Src;
+                        weights[e.Des] = weights[e.Src] + e.Weight;
+                        parents[e.Des] = e.Src;
                     }
                 }
             }
         }
 
-        void PrintShortestPathForEveryNode(int src)
+        public static bool ContainsNegativeCycle(int[] weights, List<Edge> edges)
+        {
+            foreach (var edge in edges)
+            {
+                if (weights[edge.Des] > weights[edge.Src] + edge.Weight)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public List<int> GetShortestPathForEveryNode(int src, int des, int[] parents)
         {
             Stack<int> path = new Stack<int>();
-            for (int i = 0; i < Weights.Length; i++)
-            {
-                Console.WriteLine($"Node {i}, shortest weight {Weights[i]}");
-                int p = i;
-                path.Push(p);
-                do
-                {
-                    path.Push(Parents[p]);
-                    p = Parents[p];
-                } while (p != src);
 
-                while (path.Count>0)
-                {
-                    Console.Write(path.Pop() + " => ");
-                }
-                Console.WriteLine();
-            }
+            int p = des;
+            path.Push(p);
+            do
+            {
+                path.Push(parents[p]);
+                p = parents[p];
+            } while (p != src);
+
+            return path.ToList();
         }
 
         public class Edge

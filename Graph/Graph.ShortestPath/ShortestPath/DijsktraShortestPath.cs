@@ -1,143 +1,129 @@
-﻿using System;
+﻿using DataStructure.Graph.Heap;
+using System;
 using System.Collections.Generic;
-using Collection;
+using System.Linq;
 
 namespace Graph.ShortestPath
 {
-    public class Node:IComparable<Node>
-    {
-        public int Weight { get; set; }
-
-        public int Index { get; set; }
-
-        public Node(int index, int weight)
-        {
-            Index = index;
-            Weight = weight;
-        }
-
-        public int CompareTo(Node other)
-        {
-            return this.Weight.CompareTo(other.Weight);
-        }
-    }
-
     public class DijsktraShortestPath
     {
-        public static int[,] Graph { get; set; }
-        public static List<Node>[] GraphList { get; set; }
-        public static int V { get; set; }
-        public static bool[] Visited { get; set; }
-        public static int[] Parents { get; set; }
-        public static int[] Weights { get; set; }
-        public static PriorityQueue<Node> NodeQueue { get; set; }
-
-        public DijsktraShortestPath(int[,] graph)
+        public static int[] GetShortestPath(int[,] graph, int src)
         {
-            Graph = graph;
-            V = Graph.GetLength(0);
-            GraphList = new List<Node>[V];
-            Visited = new bool[V];
-            Parents = new int[V];
-            Weights = new int[V];
-            NodeQueue = new PriorityQueue<Node>();
-        }
+            int v = graph.GetLength(0);
+            var weights = new int[v];
+            var parents = new int[v];
 
-        public static void Calculate(int src)
-        {
-            NodeQueue.Enqueue(new Node(src, 0));
-            Parents[src] = src;
-
-            while (NodeQueue.Count() > 0)
-            {
-                var node = NodeQueue.Dequeue();
-                int s = node.Index;
-                if (Visited[s]) continue;
-                Visited[s] = true;
-
-                for (int i = 0; i < V; i++)
-                { 
-                    if (Visited[i] == false && Graph[s, i] > 0)
-                    {
-                        if (Weights[i] > Weights[s] + Graph[s, i])
-                        {
-                            Weights[i] = Weights[s] + Graph[s, i];
-                            Parents[i] = s;
-                        }
-
-                        NodeQueue.Enqueue(new Node(i, Weights[i]));
-                    }
-                }
-            }
-        }
-
-        public static void CalculateGraphList(int src)
-        {
-            NodeQueue.Enqueue(new Node(src, 0));
-            Parents[src] = src;
-
-            while (NodeQueue.Count() > 0)
-            {
-                var nodeInfo = NodeQueue.Dequeue();
-                int s = nodeInfo.Index;
-                if (Visited[s]) continue;
-                Visited[s] = true;
-
-                for (int i = 0; i < GraphList[s].Count; i++)
-                {
-                    var e = GraphList[s][i];
-                    if (!Visited[e.Index])
-                    {
-                        if (Weights[e.Index] > Weights[s] + e.Weight)
-                        {
-                            Weights[e.Index] = Weights[s] + e.Weight;
-                            Parents[e.Index] = s;
-                        }
-
-                        NodeQueue.Enqueue(new Node(e.Index, Weights[s]));
-                    }
-                }
-            }
-        }
-
-        public void CalculateShortestPath(int src)
-        {
-            for (int i = 0; i < V; i++)
+            for (int i = 0; i < v; i++)
             {
                 if (i == src)
                 {
-                    Weights[i] = 0;
+                    weights[i] = 0;
                 }
                 else
                 {
-                    Weights[i] = int.MaxValue;
+                    weights[i] = int.MaxValue;
                 }
             }
-            
-            Calculate(src);
 
-            PrintShortestPathForEveryNode(src);
+            Calculate(graph, src, v, weights, parents);
+
+            //var path = GetShortestPathForEveryNode(src, des, parents);
+            return weights;
         }
 
-        private void PrintShortestPathForEveryNode(int src)
+        static void Calculate(int[,] graph, int src, int v, int[] weights, int[] parents)
+        {
+            var visited = new bool[v];
+            var queue = new PriorityQueue<Node>();
+
+            queue.Enqueue(new Node(src, 0));
+            parents[src] = src;
+
+            while (queue.Count() > 0)
+            {
+                var node = queue.Dequeue();
+                int s = node.Index;
+                if (visited[s]) continue;
+                visited[s] = true;
+
+                for (int i = 0; i < v; i++)
+                {
+                    if (!visited[i] && graph[s, i] > 0)
+                    {
+                        if (weights[i] > weights[s] + graph[s, i])
+                        {
+                            weights[i] = weights[s] + graph[s, i];
+                            parents[i] = s;
+                        }
+
+                        queue.Enqueue(new Node(i, weights[i]));
+                    }
+                }
+            }
+        }
+
+        static void Calculate(List<Node>[] graph, int src, int v, int[] weights, int[] parents)
+        {
+            var visited = new bool[v];
+            var queue = new Queue<Node>();
+
+            queue.Enqueue(new Node(src, 0));
+            parents[src] = src;
+
+            while (queue.Count() > 0)
+            {
+                var nodeInfo = queue.Dequeue();
+                int s = nodeInfo.Index;
+                if (visited[s]) continue;
+                visited[s] = true;
+
+                for (int i = 0; i < graph[s].Count; i++)
+                {
+                    var e = graph[s][i];
+                    if (!visited[e.Index])
+                    {
+                        if (weights[e.Index] > weights[s] + e.Weight)
+                        {
+                            weights[e.Index] = weights[s] + e.Weight;
+                            parents[e.Index] = s;
+                        }
+
+                        queue.Enqueue(new Node(e.Index, weights[s]));
+                    }
+                }
+            }
+        }
+
+        public List<int> GetShortestPathForEveryNode(int src, int des, int[] parents)
         {
             Stack<int> path = new Stack<int>();
-            for (int i = 0; i < Weights.Length; i++)
-            {
-                Console.WriteLine($"Node {i}, shortest weight {Weights[i]}");
-                int p = i;
-                path.Push(p);
-                do
-                {
-                    path.Push(Parents[p]);
-                    p = Parents[p];
-                } while (p != src);
 
-                while (path.Count>0)
-                {
-                    Console.Write(path.Pop() + " => ");
-                }
-                Console.WriteLine();
+            int p = des;
+            path.Push(p);
+            do
+            {
+                path.Push(parents[p]);
+                p = parents[p];
+            } while (p != src);
+
+            return path.ToList();
+        }
+
+        public class Node : IComparable<Node>
+        {
+            public int Weight { get; set; }
+
+            public int Index { get; set; }
+
+            public Node(int index, int weight)
+            {
+                Index = index;
+                Weight = weight;
+            }
+
+            public int CompareTo(Node other)
+            {
+                return this.Weight.CompareTo(other.Weight);
             }
         }
     }
