@@ -54,12 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="questions\VertexCoverApproximationr.txt" />
-    <Content Include="questions\MaximumBiPartiteMatching.txt" />
-    <Content Include="questions\BiPartiteGraph.txt" />
-    <Content Include="questions\FordFulkersonMaximumFlow.txt" />
-    <Content Include="questions\LargestConnectedComponent.txt" />
+    <Content Include="questions\LargestConnectedComponentInGrid.txt" />
     <Content Include="questions\MColoring.txt" />
-    <Content Include="questions\MinimumSpanningTree.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Collection\Collection.csproj">

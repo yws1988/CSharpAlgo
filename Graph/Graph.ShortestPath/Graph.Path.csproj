@@ -58,9 +58,9 @@
     <Compile Include="ShortestPath\WarshallShortestPath.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Collection\Collection.csproj">
-      <Project>{ba3e048e-5d0b-4b55-9b51-d9a8b5d20bed}</Project>
-      <Name>Collection</Name>
+    <ProjectReference Include="..\..\DataStructure\DataStructure.csproj">
+      <Project>{0CF9B7EC-8494-416C-955D-A566CA20F0FB}</Project>
+      <Name>DataStructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

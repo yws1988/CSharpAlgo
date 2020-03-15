@@ -44,8 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MinimumSpanningTree.cs" />
-    <Compile Include="SteinerTree.cs" />
-    <Compile Include="MinimumSpanningTreeMatrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,9 +51,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Collection\Collection.csproj">
-      <Project>{BA3E048E-5D0B-4B55-9B51-D9A8B5D20BED}</Project>
+    <ProjectReference Include="..\..\Collection\Collection.csproj">
+      <Project>{40828ec9-f4c6-4100-8af9-5de6bff9df61}</Project>
       <Name>Collection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataStructure\DataStructure.csproj">
+      <Project>{0CF9B7EC-8494-416C-955D-A566CA20F0FB}</Project>
+      <Name>DataStructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

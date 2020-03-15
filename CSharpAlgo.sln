@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Path", "Graph\Graph.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Tree", "Graph\Graph.Tree\Graph.Tree.csproj", "{E424EDB6-AA5A-491F-AEF7-8F3363C402AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Other", "Graph\Graph.Other\Graph.Other.csproj", "{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Excercise", "Graph\Graph.Other\Graph.Excercise.csproj", "{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{0322854E-DA3F-461A-ACA1-D95956C670F9}"
 EndProject
