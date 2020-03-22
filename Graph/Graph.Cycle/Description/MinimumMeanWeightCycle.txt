@@ -1,0 +1,6 @@
+﻿https://www.geeksforgeeks.org/karps-minimum-mean-average-weight-cycle-algorithm/
+
+Given a directed and strongly connected graph with non negative edge weighs. 
+We define mean weight of a cycle as the summation of all the edge weights of the cycle 
+divided by the no. of edges. 
+Our task is to find the minimum mean weight among all the directed cycles of the graph.

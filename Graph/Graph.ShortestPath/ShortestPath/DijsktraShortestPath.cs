@@ -7,6 +7,67 @@ namespace Graph.ShortestPath
 {
     public class DijsktraShortestPath
     {
+        public static int GetShortestPath(int[,] graph, int src, int des)
+        {
+            int v = graph.GetLength(0);
+            var weights = new int[v];
+            var parents = new int[v];
+
+            for (int i = 0; i < v; i++)
+            {
+                if (i == src)
+                {
+                    weights[i] = 0;
+                }
+                else
+                {
+                    weights[i] = int.MaxValue;
+                }
+            }
+
+            return Calculate(graph, src, des, v, weights, parents);
+        }
+        
+        static int Calculate(int[,] graph, int src, int des, int v, int[] weights, int[] parents)
+        {
+            var visited = new bool[v];
+            var queue = new PriorityQueue<Node>();
+
+            queue.Enqueue(new Node(src, 0));
+            parents[src] = src;
+
+            while (queue.Count() > 0)
+            {
+                var node = queue.Dequeue();
+                int s = node.Index;
+
+                if (s == des)
+                {
+                    return weights[des];
+                }
+
+                if (visited[s]) continue;
+                visited[s] = true;
+
+                for (int i = 0; i < v; i++)
+                {
+                    if (!visited[i] && graph[s, i] > 0)
+                    {
+                        if (weights[i] > weights[s] + graph[s, i])
+                        {
+                            weights[i] = weights[s] + graph[s, i];
+                            parents[i] = s;
+                        }
+
+                        queue.Enqueue(new Node(i, weights[i]));
+                    }
+                }
+            }
+
+            return int.MaxValue;
+        }
+
+
         public static int[] GetShortestPath(int[,] graph, int src)
         {
             int v = graph.GetLength(0);
@@ -43,9 +104,10 @@ namespace Graph.ShortestPath
             {
                 var node = queue.Dequeue();
                 int s = node.Index;
+
                 if (visited[s]) continue;
                 visited[s] = true;
-
+                
                 for (int i = 0; i < v; i++)
                 {
                     if (!visited[i] && graph[s, i] > 0)

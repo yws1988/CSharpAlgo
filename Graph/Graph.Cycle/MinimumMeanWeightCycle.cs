@@ -6,38 +6,34 @@ namespace Graph.ShortestPath
 {
     public class MinimumMeanWeightCycle
     {
-        public static int[,] Graph;
-        public static int V;
-        public static int[,] Dp;
-        public static List<(int, int)> Edges=new List<(int, int)>();
-
-        public static void PrintShortestAverageWeightCycle(int[,] cost)
+        public static double GetMinimumMeanWeightCycle(int[,] graph)
         {
-            Graph = cost;
-            V = Graph.GetLength(0);
-            Dp = new int[V + 1, V];
+            int v = graph.GetLength(0);
+            var dp = new int[v + 1, v];
+            var edges = new List<(int, int)>();
 
-            for (int i = 0; i <= V; i++)
+            for (int i = 0; i <= v; i++)
             {
-                for (int j = 0; j < V; j++)
+                for (int j = 0; j < v; j++)
                 {
-                    Dp[i, j] = int.MaxValue;
-                    if (i != V && Graph[i,j]!=int.MaxValue)
+                    dp[i, j] = int.MaxValue;
+
+                    if (i != v && graph[i,j] != int.MaxValue)
                     {
-                        Edges.Add((i, j));
+                        edges.Add((i, j));
                     }
                 }
             }
 
-            Dp[0, 0] = 0;
+            dp[0, 0] = 0;
 
-            for (int i = 1; i <= V; i++)
+            for (int i = 1; i <= v; i++)
             {
-                foreach (var e in Edges)
+                foreach (var e in edges)
                 {
                     int s = e.Item1;
                     int d = e.Item2;
-                    if (Dp[i - 1, s] != int.MaxValue)
+                    if (dp[i - 1, s] != int.MaxValue)
                     {
                         Dp[i, d] = Math.Min(Dp[i, d], Dp[i-1, s]+Graph[s, d]);
                     }
@@ -72,7 +68,7 @@ namespace Graph.ShortestPath
                 }
             }
 
-            Console.WriteLine(avg.Min());
+            return avg.Min();
         }
     }
 }
