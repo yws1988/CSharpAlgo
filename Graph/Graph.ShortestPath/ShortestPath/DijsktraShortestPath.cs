@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Graph.ShortestPath
+namespace graph.ShortestPath
 {
     public class DijsktraShortestPath
     {

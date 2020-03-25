@@ -1,8 +1,8 @@
-﻿namespace Graph.Tree
+﻿namespace graph.Tree
 {
     using System;
-    using Graph.Base;
-    using Graph.Tree.Base;
+    using graph.Base;
+    using graph.Tree.Base;
 
     public class Program
     {

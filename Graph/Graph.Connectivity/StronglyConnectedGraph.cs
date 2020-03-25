@@ -1,4 +1,4 @@
-﻿namespace Graph.Connectivity
+﻿namespace graph.Connectivity
 {
     using System.Collections.Generic;
     using System.Linq;

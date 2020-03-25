@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Graph.Connectivity
+namespace graph.Connectivity
 {
     public class Briges
     {

@@ -1,7 +1,7 @@
-﻿namespace Graph.Cycle
+﻿namespace graph.Cycle
 {
     using System;
-    using Graph.Base;
+    using graph.Base;
 
 
     public class Program

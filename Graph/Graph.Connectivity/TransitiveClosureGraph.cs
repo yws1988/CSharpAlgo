@@ -1,4 +1,4 @@
-﻿namespace Graph.Connectivity
+﻿namespace graph.Connectivity
 {
     public class TransitiveClosureGraph
     {

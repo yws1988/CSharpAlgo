@@ -1,4 +1,4 @@
-﻿namespace Graph.Tree
+﻿namespace graph.Tree
 {
     using System;
     using System.Collections.Generic;

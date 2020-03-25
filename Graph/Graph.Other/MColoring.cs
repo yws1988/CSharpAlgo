@@ -1,11 +1,11 @@
-﻿using Graph.Base;
+﻿using graph.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Graph.Other
+namespace graph.Other
 {
     public class MColoring
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace Graph.ShortestPath
+namespace graph.ShortestPath
 {
     using System;
-    using Graph.Base;
+    using graph.Base;
 
     public class Program
     {

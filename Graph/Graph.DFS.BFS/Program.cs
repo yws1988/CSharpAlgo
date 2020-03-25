@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Graph.Base;
+using graph.Base;
 
 namespace Algorithmne
 {

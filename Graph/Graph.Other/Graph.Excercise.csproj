@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="VertexCoverApproximation.cs" />
-    <Compile Include="LargestConnectedComponent.cs" />
+    <Compile Include="Connectivity\LargestConnectedComponent.cs" />
     <Compile Include="MColoring.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,15 +53,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="questions\VertexCoverApproximationr.txt" />
-    <Content Include="questions\LargestConnectedComponentInGrid.txt" />
-    <Content Include="questions\MColoring.txt" />
+    <Content Include="Description\VertexCoverApproximationr.txt" />
+    <Content Include="Description\connectivity\LargestConnectedComponentInGrid.txt" />
+    <Content Include="Description\MColoring.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Collection\Collection.csproj">
       <Project>{ba3e048e-5d0b-4b55-9b51-d9a8b5d20bed}</Project>
       <Name>Collection</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Description\path\" />
+    <Folder Include="Path\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

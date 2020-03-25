@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="CycleUnDirectedGraph.cs" />
     <Compile Include="CycleDirectedGraph.cs" />
+    <Compile Include="MinimumMeanWeightCycle.cs" />
+    <Compile Include="MinimumWeightCycle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,7 +55,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="questions\MagicalIndices.txt" />
+    <Content Include="Description\MagicalIndices.txt" />
+    <Content Include="Description\MinimumMeanWeightCycle.txt" />
+    <Content Include="Description\MinimumWeightCycle.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Graph.ShortestPath\Graph.Path.csproj">
+      <Project>{180f3de8-5011-4d61-90e1-34835b2cdcfe}</Project>
+      <Name>Graph.Path</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

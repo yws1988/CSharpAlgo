@@ -1,4 +1,4 @@
-﻿namespace Graph.Model
+﻿namespace graph.Model
 {
     public class EdgeWithWeight
     {

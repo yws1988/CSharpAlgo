@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Graph.ShortestPath
+namespace graph.Cycle
 {
+    /// <summary>
+    /// Karp’s minimum mean (or average) weight cycle algorithm
+    /// </summary>
     public class MinimumMeanWeightCycle
     {
         public static double GetMinimumMeanWeightCycle(int[,] graph)
@@ -18,7 +21,7 @@ namespace Graph.ShortestPath
                 {
                     dp[i, j] = int.MaxValue;
 
-                    if (i != v && graph[i,j] != int.MaxValue)
+                    if (i != v && graph[i, j] != int.MaxValue)
                     {
                         edges.Add((i, j));
                     }
@@ -35,35 +38,35 @@ namespace Graph.ShortestPath
                     int d = e.Item2;
                     if (dp[i - 1, s] != int.MaxValue)
                     {
-                        Dp[i, d] = Math.Min(Dp[i, d], Dp[i-1, s]+Graph[s, d]);
+                        dp[i, d] = Math.Min(dp[i, d], dp[i-1, s]+graph[s, d]);
                     }
                 }
             }
 
-            double[] avg = new double[V];
-            for (int i = 0; i < V; i++)
+            double[] avg = new double[v];
+            for (int i = 0; i < v; i++)
             {
                 avg[i] = double.MaxValue;
             }
 
-            for (int j = 0; j < V; j++)
+            for (int j = 0; j < v; j++)
             {
-                if (Dp[V, j] != int.MaxValue)
+                if (dp[v, j] != int.MaxValue)
                 {
-                    int minI = -1;
-                    int min = int.MaxValue;
-                    for (int i = 0; i < V; i++)
+                    int minIndex = -1;
+                    int min = int.MaxValue; 
+                    for (int i = 0; i < v; i++)
                     {
-                        if (Dp[i, j] < min)
+                        if (dp[i, j] < min)
                         {
-                            minI = i;
-                            min = Dp[i, j];
+                            minIndex = i;
+                            min = dp[i, j];
                         }
                     }
 
-                    if (minI != -1)
+                    if (minIndex != -1)
                     {
-                        avg[j] = (double)(Dp[V, j] - Dp[minI, j]) / (V - minI);
+                        avg[j] = (double)(dp[v, j] - dp[minIndex, j]) / (v - minIndex);
                     }
                 }
             }

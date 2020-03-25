@@ -1,9 +1,9 @@
-﻿namespace Graph.Other
+﻿namespace graph.Other
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Graph.Base;
+    using graph.Base;
 
     public class VertexCoverApproximation
     {

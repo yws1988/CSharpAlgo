@@ -1,4 +1,4 @@
-﻿namespace Graph.Flow
+﻿namespace graph.Flow
 {
     using System.Collections.Generic;
     public class BiPartiteGraph

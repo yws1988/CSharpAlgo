@@ -1,7 +1,7 @@
-﻿namespace Graph.Other
+﻿namespace graph.Other
 {
     using System;
-    using Graph.Base;
+    using graph.Base;
 
     class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace Graph.Flow
+﻿namespace graph.Flow
 {
     class Program
     {
