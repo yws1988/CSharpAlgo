@@ -2,16 +2,17 @@
 {
     using System;
 
-    public class TravellingSalesmanTravelling
+    public class TravellingSalesman
     {
-        public static void GetShortestPath(int[,] graph)
+        public static int GetShortestPath(int[,] graph)
         {
             int v = graph.GetLength(0);
+
             for (int i = 0; i < v; i++)
             {
                 for (int j = 0; j < v; j++)
                 {
-                    if(graph[i, j] == 0)
+                    if (graph[i, j] == 0)
                     {
                         graph[i, j] = int.MaxValue;
                     }
@@ -19,7 +20,7 @@
             }
 
             int max = (int)Math.Pow(2, v);
-            int[,] dp = new int[v,(int)Math.Pow(2, v)];
+            int[,] dp = new int[v, (int)Math.Pow(2, v)];
 
             for (int i = 0; i < v; i++)
             {
@@ -31,7 +32,7 @@
 
             for (int i = 1; i < v; i++)
             {
-                if(graph[i, 0] != int.MaxValue)
+                if (graph[i, 0] != int.MaxValue)
                 {
                     dp[i, 1 | (1 << i)] = graph[i, 0];
                 }
@@ -39,13 +40,13 @@
 
             for (int mask = 1; mask < max; mask++)
             {
-                for (int m = 1; m < v; m++)
+                for (int s = 1; s < v; s++)
                 {
-                    for (int v = 1; v < v; v++)
+                    for (int d = 1; d < v; d++)
                     {
-                        if (Graph[m, v]!=int.MaxValue && (mask >> m & 1) == 1 && (mask >> v & 1) == 1 && dp[v, mask & ~(1 << m)] != int.MaxValue)
+                        if (graph[s, d] != int.MaxValue && (mask >> s & 1) == 1 && (mask >> d & 1) == 1 && dp[d, mask & ~(1 << s)] != int.MaxValue)
                         {
-                            dp[m, mask] = Math.Min(dp[m, mask], dp[v, mask & ~(1<< m)] + Graph[m, v]);
+                            dp[s, mask] = Math.Min(dp[s, mask], dp[d, mask & ~(1 << s)] + graph[s, d]);
                         }
                     }
                 }
@@ -54,13 +55,14 @@
             int result = int.MaxValue;
             for (int i = 1; i < v; i++)
             {
-                if(Graph[0, i] != int.MaxValue && dp[i, max - 1]!=int.MaxValue)
+                if (graph[0, i] != int.MaxValue && dp[i, max - 1] != int.MaxValue)
                 {
-                    result = Math.Min(dp[i, max - 1]+Graph[0, i], result);
+                    result = Math.Min(dp[i, max - 1] + graph[0, i], result);
                 }
             }
 
-            Console.WriteLine(result);
+            return result;
         }
     }
 }
+

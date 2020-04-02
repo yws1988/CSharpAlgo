@@ -7,59 +7,43 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class Node
-    {
-        public int Num { get; set; }
-        public int Weight { get; set; }
-    }
-
     public class LongestPathInDirectedAcyclicGraph
     {
-        public const int INFI = int.MinValue;
-        public int WeightMax = int.MinValue;
-
         /// <summary>
         /// Get all the longest path from source s to all the other paths
         /// </summary>
         /// <param name="graph"></param>
         /// <param name="s">Source vertex</param>
         /// <returns></returns>
-        public static int[] CalculateLongestPathWithTopologicalOrder(List<Node>[] graph, int s)
+        public static int[] GetLongestPath(List<Node>[] graph, int s, int[] parents = null)
         {
             var stack = new Stack<int>();
             int n = graph.Length;
-            StartTopologicalSorting(graph, stack);
-            int[] weights = Enumerable.Range(0, n).Select(i => INFI).ToArray();
+            TopologicalSorting(graph, stack);
+            int[] weights = Enumerable.Range(0, n).Select(i => int.MinValue).ToArray();
             weights[s] = 0;
+            parents = Enumerable.Range(0, n).Select(i => -1).ToArray();
 
             do
             {
-                int numVertix = stack.Pop();
-                if (weights[numVertix] != INFI)
+                int p = stack.Pop();
+                if (weights[p] != int.MinValue)
                 {
-                    foreach (Node node in graph[numVertix])
+                    foreach (Node node in graph[p])
                     {
-                        if (weights[numVertix] + node.Weight > weights[node.Num])
+                        if (weights[p] + node.Weight > weights[node.Des])
                         {
-                            weights[node.Num] = weights[numVertix] + node.Weight;           
+                            weights[node.Des] = weights[p] + node.Weight;
+                            parents[node.Des] = p;
                         }
                     }
                 }
             } while (stack.Count > 0);
 
-            List<int> longestPath = new List<int>();
-            for (int i = 1; i < weights.Length; i++)
-            {
-                if (weights[i] != INFI && weights[i]>weights[i-1])
-                {
-                    longestPath.Add(i);
-                } 
-            }
-
             return weights;
         }
 
-        static void StartTopologicalSorting(List<Node>[] graph, Stack<int> stack)
+        static void TopologicalSorting(List<Node>[] graph, Stack<int> stack)
         {
             int n = graph.Length;
             var vs = new bool[n];
@@ -78,13 +62,19 @@
 
             foreach (Node node in graph[i])
             {
-                if (!vs[node.Num])
+                if (!vs[node.Des])
                 {
-                    TopologicalSortingUtil(graph, node.Num, vs, stack);
+                    TopologicalSortingUtil(graph, node.Des, vs, stack);
                 }
             }
 
             stack.Push(i);
+        }
+
+        public class Node
+        {
+            public int Des { get; set; }
+            public int Weight { get; set; }
         }
     }
 }
