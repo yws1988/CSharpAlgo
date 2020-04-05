@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Path", "Graph\Graph.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Tree", "Graph\Graph.Tree\Graph.Tree.csproj", "{E424EDB6-AA5A-491F-AEF7-8F3363C402AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Excercise", "Graph\Graph.Other\Graph.Excercise.csproj", "{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.Other", "Graph\Graph.Other\Graph.Other.csproj", "{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{0322854E-DA3F-461A-ACA1-D95956C670F9}"
 EndProject
@@ -39,7 +39,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Geometry", "Geometry", "{45993CD9-026E-4B37-BF7D-5C3493B22F7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry.Circle", "Geometry\Geometry.Circle\Geometry.Circle.csproj", "{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry", "Geometry\Geometry.Circle\Geometry.csproj", "{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTest", "Test\GraphTest\GraphTest.csproj", "{032D62F6-8179-4B6B-98DE-A1F9720DAC12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{032D62F6-8179-4B6B-98DE-A1F9720DAC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032D62F6-8179-4B6B-98DE-A1F9720DAC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032D62F6-8179-4B6B-98DE-A1F9720DAC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032D62F6-8179-4B6B-98DE-A1F9720DAC12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +123,7 @@ Global
 		{BA3CEB29-5BDE-46B5-B62F-3032D3FBE577} = {427CC021-4F70-47C3-8A03-BE83C181A859}
 		{7E719EA7-F582-41D1-97E2-87B016D0D42B} = {0322854E-DA3F-461A-ACA1-D95956C670F9}
 		{84D2C1C9-15F0-4E0A-B8C1-203455378ECF} = {45993CD9-026E-4B37-BF7D-5C3493B22F7F}
+		{032D62F6-8179-4B6B-98DE-A1F9720DAC12} = {7AA8226A-BB02-4F10-9249-941307F86412}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3987C77-BDC5-4F2C-8E06-AE566FD808CC}

@@ -7,10 +7,11 @@
     <ProjectGuid>{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Geometry.Circle</RootNamespace>
-    <AssemblyName>Geometry.Circle</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Geometry</RootNamespace>
+    <AssemblyName>Geometry</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,8 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circle.cs" />
+    <Compile Include="FindTheClosestDistanceOfPoints.cs" />
+    <Compile Include="FindTheClosestPathOfPoints.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="LinePointIntersect.cs" />
+    <Compile Include="MaximunPointsInOneLine.cs" />
+    <Compile Include="MergeIntervals.cs" />
+    <Compile Include="Numbers.cs" />
+    <Compile Include="OrientationTreePoints.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="Point3D.cs" />
+    <Compile Include="Polygon.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Range.cs" />
     <Compile Include="SmallestEnclosingCircle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Description\ClosestPaireOfPoints.txt" />
+    <Content Include="Description\FindTheClosestPathOfPoints.txt" />
+    <Content Include="Description\MaximunPointsInOneLine.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

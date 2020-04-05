@@ -3,7 +3,6 @@
 namespace graph.ShortestPath
 {
     using System;
-    using graph.Base;
 
     public class Program
     {
@@ -11,7 +10,6 @@ namespace graph.ShortestPath
 
         static void Main(string[] args)
         {
-
 
             //Shortest path with Djkast
             //Graph Djkast
@@ -109,16 +107,16 @@ namespace graph.ShortestPath
 
             //MinimumWeightCycle.PrintShortestWeightCycle(GraphHelper<int>.ConvertListToGraphMatrix(g, 9));
 
-            int[,] graph =
-            {
-                { 31, 100, 65, 12, 18 },
-                { 10, 13, 47, 157, 6 },
-                { 100, 113, 174, 11, 33 },
-                { 88, 124, 41, 20, 140 },
-                { 99, 32, 111, 41, 20 }
-            };
+            //int[,] graph =
+            //{
+            //    { 31, 100, 65, 12, 18 },
+            //    { 10, 13, 47, 157, 6 },
+            //    { 100, 113, 174, 11, 33 },
+            //    { 88, 124, 41, 20, 140 },
+            //    { 99, 32, 111, 41, 20 }
+            //};
 
-            MinimumGridAllDirectionCostPath.PrintShortestPath(graph);
+            //MinimumGridAllDirectionCostPath.PrintShortestPath(graph);
 
             Console.Read();
         }

@@ -10,6 +10,11 @@
             return Enumerable.Range(0, n).Select(s => new List<int>()).ToArray();
         }
 
+        public static List<T>[] CreateListArray<T>(int n)
+        {
+            return Enumerable.Range(0, n).Select(s => new List<T>()).ToArray();
+        }
+
         public static HashSet<int>[] CreateSetArray(int n)
         {
             return Enumerable.Range(0, n).Select(s => new HashSet<int>()).ToArray();

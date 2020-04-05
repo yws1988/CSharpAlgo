@@ -1,7 +1,6 @@
 ﻿namespace graph.Other
 {
     using System;
-    using graph.Base;
 
     class Program
     {

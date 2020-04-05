@@ -1,5 +1,6 @@
 ﻿namespace Algorithmne.Graph.Graph.Path.LongestPath
 {
+    using DataStructure.Models;
     //Given a Weighted Directed Acyclic Graph(DAG) and a source vertex s in it,
     //find the longest distances from s to all other vertices in the given graph.
 
@@ -15,7 +16,7 @@
         /// <param name="graph"></param>
         /// <param name="s">Source vertex</param>
         /// <returns></returns>
-        public static int[] GetLongestPath(List<Node>[] graph, int s, int[] parents = null)
+        public static int[] GetLongestPath(List<EdgeNode>[] graph, int s, out int[] parents)
         {
             var stack = new Stack<int>();
             int n = graph.Length;
@@ -29,12 +30,12 @@
                 int p = stack.Pop();
                 if (weights[p] != int.MinValue)
                 {
-                    foreach (Node node in graph[p])
+                    foreach (EdgeNode EdgeNode in graph[p])
                     {
-                        if (weights[p] + node.Weight > weights[node.Des])
+                        if (weights[p] + EdgeNode.Weight > weights[EdgeNode.Des])
                         {
-                            weights[node.Des] = weights[p] + node.Weight;
-                            parents[node.Des] = p;
+                            weights[EdgeNode.Des] = weights[p] + EdgeNode.Weight;
+                            parents[EdgeNode.Des] = p;
                         }
                     }
                 }
@@ -43,7 +44,7 @@
             return weights;
         }
 
-        static void TopologicalSorting(List<Node>[] graph, Stack<int> stack)
+        static void TopologicalSorting(List<EdgeNode>[] graph, Stack<int> stack)
         {
             int n = graph.Length;
             var vs = new bool[n];
@@ -56,25 +57,19 @@
             }
         }
 
-        static void TopologicalSortingUtil(List<Node>[] graph, int i, bool[] vs, Stack<int> stack)
+        static void TopologicalSortingUtil(List<EdgeNode>[] graph, int i, bool[] vs, Stack<int> stack)
         {
             vs[i] = true;
 
-            foreach (Node node in graph[i])
+            foreach (EdgeNode EdgeNode in graph[i])
             {
-                if (!vs[node.Des])
+                if (!vs[EdgeNode.Des])
                 {
-                    TopologicalSortingUtil(graph, node.Des, vs, stack);
+                    TopologicalSortingUtil(graph, EdgeNode.Des, vs, stack);
                 }
             }
 
             stack.Push(i);
-        }
-
-        public class Node
-        {
-            public int Des { get; set; }
-            public int Weight { get; set; }
         }
     }
 }

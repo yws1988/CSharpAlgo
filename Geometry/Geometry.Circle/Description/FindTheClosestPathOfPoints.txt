@@ -1,0 +1,10 @@
+﻿Find Simple Closed Path for a given set of points
+Given a set of points, connect the dots without crossing.
+
+Input: points[] = {(0, 3), (1, 1), (2, 2), (4, 4),
+                   (0, 0), (1, 2), (3, 1}, {3, 3}};
+
+Output: Connecting points in following order would
+        not cause any crossing
+       {(0, 0), (3, 1), (1, 1), (2, 2), (3, 3),
+        (4, 4), (1, 2), (0, 3)}

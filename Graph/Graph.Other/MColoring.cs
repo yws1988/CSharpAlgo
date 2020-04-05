@@ -1,35 +1,24 @@
-﻿using graph.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace graph.Other
+﻿namespace graph.Other
 {
     public class MColoring
     {
-        public static AdjacencyMatrix G;
-        public static int ColorNum;
-        public static int[] Colors;
-
-        public static void Solve(AdjacencyMatrix g, int m)
+        public static bool AssignColors(int[,] g, int colorNum, int[] colors)
         {
-            G = g;
-            ColorNum = m;
-            Colors = new int[G.N];
+            int n = g.GetLength(0);
+            colors = new int[n];
             bool isPossible = true;
 
-            for (int i = 0; i < G.N; i++)
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < ColorNum; j++)
+                for (int j = 1; j <= colorNum; j++)
                 {
-                    Colors[i] = j+1;
-                    if (IsSafe(i))
+                    colors[i] = j;
+                    if (IsSafe(g, n, i, colors))
                     {
                         break;
                     }
-                    if (j == ColorNum - 1)
+
+                    if (j == colorNum)
                     {
                         isPossible = false;
                         goto End;
@@ -38,25 +27,15 @@ namespace graph.Other
             }
 
             End:
-            if (isPossible)
-            {
-                for (int i = 0; i < G.N; i++)
-                {
-                    Console.Write(Colors[i]+" ");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Impossible");
-            }
+            return isPossible;
         }
 
-        public static bool IsSafe(int v)
+        public static bool IsSafe(int[,] g, int n, int v, int[] colors)
         {
-            for (int i = 0; i < G.N; i++)
+            for (int i = 0; i < n; i++)
             {
                 if (i == v) continue;
-                if(G.Value[v, i]==1 && Colors[v] == Colors[i])
+                if(g[v, i]==1 && colors[v] == colors[i])
                 {
                     return false;
                 }

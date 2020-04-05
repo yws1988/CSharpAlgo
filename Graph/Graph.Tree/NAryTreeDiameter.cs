@@ -5,47 +5,20 @@ namespace graph.Tree
 {
     public class NAryTreeDiameter
     {
-        static List<int>[] Tree { get; set; }
-        static int n;
-        static int[] depth;
-        static bool[] vs;
-
         public static int GetNAryTreeDiameter(List<int>[] tree)
         {
-            Tree = tree;
-            n = tree.Length;
-            depth = new int[n];
-            CalDepth();
-            vs = new bool[n];
-            return GetDiameter(0);
+            int n = tree.Length;
+            var depth = new int[n];
+            
+            return GetDiameter(tree, n, depth);
         }
 
-        private static int GetDiameter(int root)
-        {
-            vs[root] = true;
-            int max1 = 0, max2 = 0, max=0;
-            foreach (var c in Tree[root])
-            {
-                if (!vs[c])
-                {
-                    max = Math.Max(max, GetDiameter(c));
-                    if (max1 < depth[c])
-                    {
-                        max2 = max1;
-                        max1 = depth[c];
-                    }
-                }
-            }
-
-            return Math.Max(max, max1 + max2 + 1);
-        }
-
-        private static void CalDepth()
+        private static int GetDiameter(List<int>[] tree, int n, int[] depth)
         {
             Stack<int> stack = new Stack<int>();
             Queue<int> queue = new Queue<int>();
             queue.Enqueue(0);
-            vs = new bool[n];
+            var vs = new bool[n];
             vs[0] = true;
 
             while (queue.Count > 0)
@@ -53,7 +26,7 @@ namespace graph.Tree
                 int p = queue.Dequeue();
                 vs[p] = true;
                 stack.Push(p);
-                foreach (var c in Tree[p])
+                foreach (var c in tree[p])
                 {
                     if (!vs[c])
                     {
@@ -63,6 +36,7 @@ namespace graph.Tree
             }
 
             vs = new bool[n];
+            int diameter = 0;
             
             while (stack.Count > 0)
             {
@@ -70,13 +44,34 @@ namespace graph.Tree
                 vs[p] = true;
 
                 int d = 1;
-                foreach (var c in Tree[p])
+                foreach (var c in tree[p])
                 {
-                    d = Math.Max(d, 1+depth[c]);
+                    if (vs[c])
+                    {
+                        d = Math.Max(d, 1 + depth[c]);
+                    }
                 }
 
                 depth[p] = d;
+                diameter = Math.Max(diameter, GetSumOfTowGreatestChildDepth(tree, n, depth, p));
             }
+
+            return diameter;
+        }
+
+        private static int GetSumOfTowGreatestChildDepth(List<int>[] tree, int n, int[] depth, int root)
+        {
+            int max1 = 0, max2 = 0;
+            foreach (var c in tree[root])
+            {
+                if (max1 < depth[c])
+                {
+                    max2 = max1;
+                    max1 = depth[c];
+                }
+            }
+
+            return max1 + max2 + 1;
         }
     }
 }

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7E34AFE3-842B-4E07-8B20-43F7F75F58D5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Graph.Connectivity</RootNamespace>
     <AssemblyName>Graph.Connectivity</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +50,7 @@
     <Compile Include="BiConnected.cs" />
     <Compile Include="EulerianPathAndCircle.cs" />
     <Compile Include="Briges.cs" />
+    <Compile Include="LargestConnectedComponent.cs" />
     <Compile Include="NumConnectedGraphInMatrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +70,9 @@
       <Project>{7E719EA7-F582-41D1-97E2-87B016D0D42B}</Project>
       <Name>Utils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Description\LargestConnectedComponentInGrid.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
