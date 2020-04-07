@@ -1,12 +1,12 @@
-﻿namespace Maths.Geometric
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-    public class Numbers
+namespace Utils.Helper.Math
+{
+    public class NumberHelper
     {
         public static int GreatestCommonDivisor(int m, int n)
         {
-            while (n>0)
+            while (n > 0)
             {
                 int t = n;
                 n = m % n;

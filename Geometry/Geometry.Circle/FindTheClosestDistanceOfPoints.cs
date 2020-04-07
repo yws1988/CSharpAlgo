@@ -1,18 +1,18 @@
 ﻿namespace Geometric
 {
-    using Maths.Geometric;
+    using DataStructure.Models.Geometry;
     using System;
     using System.Linq;
 
     class FindTheClosestDistanceOfPoints
     {
-        public static double GetClosestPoints(Point[] ps)
+        public static double GetClosestPoints(Point<double>[] ps)
         {
             var orderedPs = ps.OrderBy(p => p.X).ToArray(); //nlogn
             return GetClosestDistance(orderedPs);
         }
 
-        public static double GetClosestDistance(Point[] ps)
+        public static double GetClosestDistance(Point<double>[] ps)
         {
             int n = ps.Count();
             if (n > 3)
@@ -40,7 +40,7 @@
             }
         }
 
-        public static double GetMinPointsDistance(Point[] ps)
+        public static double GetMinPointsDistance(Point<double>[] ps)
         {
             double min = double.MaxValue;
 
@@ -55,7 +55,7 @@
             return min;
         }
 
-        public static double GetTwoPointsDistance(Point p1, Point p2)
+        public static double GetTwoPointsDistance(Point<double> p1, Point<double> p2)
         {
             return Math.Sqrt(Math.Pow((p1.X - p2.X), 2) + Math.Pow((p1.Y - p2.Y), 2));
         }

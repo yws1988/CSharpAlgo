@@ -1,4 +1,4 @@
-﻿namespace graph.Tree.Base
+﻿namespace DataStructure.Models.Graph
 {
     public class Node
     {

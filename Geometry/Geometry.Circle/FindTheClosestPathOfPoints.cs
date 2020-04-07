@@ -1,6 +1,6 @@
 ﻿namespace Geometric
 {
-    using Maths.Geometric;
+    using Geometric;
     using System;
     using System.Linq;
 

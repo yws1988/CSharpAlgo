@@ -1,7 +1,7 @@
 ﻿namespace Geometric
 {
     using System.Linq;
-    using Maths.Geometric;
+    using Geometric;
     using System.Collections.Generic;
     using System;
 

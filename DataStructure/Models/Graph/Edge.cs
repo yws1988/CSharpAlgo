@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Models
+﻿namespace DataStructure.Models.Graph
 {
     public class Edge
     {

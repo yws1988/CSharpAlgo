@@ -1,4 +1,4 @@
-﻿namespace Maths.Geometric
+﻿namespace DataStructure.Models.Geometry
 {
     public class Line
     {
@@ -11,14 +11,6 @@
             A = a;
             B = b;
             C = c;
-        }
-
-        public static Line GetLineFromTwoPoint(Point p1, Point p2)
-        {
-            double a = p2.Y - p1.Y;
-            double b = p1.X - p2.X;
-            double c = -a * (p1.X) - b * (p1.Y);
-            return new Line(a, b, c);
         }
 
         public override string ToString()

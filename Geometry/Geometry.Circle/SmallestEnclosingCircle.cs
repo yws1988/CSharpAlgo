@@ -5,11 +5,10 @@
 
     public sealed class SmallestEnclosingCircle
     {
-
         /* 
-	        * Returns the smallest circle that encloses all the given points. Runs in expected O(n) time, randomized.
-	        * Note: If 0 points are given, a circle of radius -1 is returned. If 1 point is given, a circle of radius 0 is returned.
-	        */
+	    * Returns the smallest circle that encloses all the given points. Runs in expected O(n) time, randomized.
+	    * Note: If 0 points are given, a circle of radius -1 is returned. If 1 point is given, a circle of radius 0 is returned.
+	    */
         // Initially: No boundary points known
         public static Circle MakeCircle(IList<Point> points)
         {
@@ -151,8 +150,6 @@
             return true;
         }
     }
-
-
 
     public struct Point
     {
