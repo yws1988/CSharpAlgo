@@ -2,13 +2,12 @@
 {
     using DataStructure.Models.Geometry;
     using System;
-    using System.Linq;
 
     public class LinePointHelper
     {
         public static bool IsPointInLine(Point<double> l1, Point<double> l2, Point<double> p)
         {
-            if (ThreePointsOrientation.Orientation(l1, l2, p) == 0 && p.X >= Math.Min(l1.X, l2.X) && p.X <= Math.Max(l1.X, l2.X) && p.Y>= Math.Min(l1.Y, l2.Y) && p.Y<=Math.Max(l1.Y, l2.Y))
+            if (PointHelper.OrientationOfThreePoints(l1, l2, p) == 0 && p.X >= Math.Min(l1.X, l2.X) && p.X <= Math.Max(l1.X, l2.X) && p.Y>= Math.Min(l1.Y, l2.Y) && p.Y<=Math.Max(l1.Y, l2.Y))
             {
                 return true;
             }
@@ -16,7 +15,7 @@
             return false;
         }
 
-        public static Point GetIntersectPoint(Line abLine, Line cdLine)
+        public static Point<double> GetIntersectPoint(Line abLine, Line cdLine)
         {
             // Line AB represented as a1x + b1y = c1
             double a1 = abLine.A;
@@ -38,11 +37,11 @@
             {
                 double x = (b2 * c1 - b1 * c2) / determinant;
                 double y = (a1 * c2 - a2 * c1) / determinant;
-                return new Point(x, y);
+                return new Point<double>(x, y);
             }
         }
 
-        public static double GetPointToLineDistance(Line line, Point P)
+        public static double GetPointToLineDistance(Line line, Point<double> P)
         {
             // line ax+by+c=0
             double slop = 0;
@@ -67,7 +66,7 @@
             return Math.Sqrt(result);
         }
 
-        public static Line GetBestApproximateLine(Point[] ps)
+        public static Line GetBestApproximateLine(Point<double>[] ps)
         {
             int n = ps.Length;
             double m, c, sum_x = 0, sum_y = 0,
@@ -87,33 +86,5 @@
 
             return new Line(m,-1,c);
         }
-
-        public static Point GetMininumDistancesToPointInLineMethodDerive(Point[] ps, Line line)
-        {
-            double x, y;
-            int n = ps.Length;
-            double a, b;
-            if (line.B != 0)
-            {
-                a = -line.A / line.B;
-                b = -line.C / line.B;
-
-                double sumX = ps.Select(p => p.X).Sum();
-                double sumY = ps.Select(p => p.Y).Sum();
-                x = (sumY*a+sumX - n *a* b) / (n * (a * a + 1));
-                y = a * x + b;
-                return new Point(x, y);
-            }
-
-            if(line.B == 0)
-            {
-                x = -line.C / line.A;
-                y = ps.Select(p => p.Y).Average();
-                return new Point(x, y);
-            }
-
-            return null;
-        }
-
     }
 }

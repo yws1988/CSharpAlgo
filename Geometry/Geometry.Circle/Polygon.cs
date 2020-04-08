@@ -1,16 +1,19 @@
-﻿namespace Maths.Geometric
+﻿namespace Geometric
 {
+    using DataStructure.Models.Geometry;
+    using Geometry.Helper;
     using System;
     using System.Linq;
 
     public class Polygon
     {
-        public static Point[] Vs { get; set; }
+        public static Point<double>[] Points { get; set; }
 
         /// <summary>
         /// We can compute area of a polygon using Shoelace formula.
+        /// Vertex axis x values, axis y values
         /// </summary>
-        public static double GetPolygonArea(double[] X, double[] Y, int n)
+        public static double GetPolygonArea(double[] xs, double[] ys, int n)
         {
 
             // Initialze area
@@ -21,7 +24,7 @@
 
             for (int i = 0; i < n; i++)
             {
-                area += (X[j] + X[i]) * (Y[j] - Y[i]);
+                area += (xs[j] + xs[i]) * (ys[j] - ys[i]);
 
                 // j is previous vertex to i
                 j = i;
@@ -31,27 +34,27 @@
             return Math.Abs(area/2);
         }
 
-        public static bool IsInsidePoint(Point p)
+        public static bool IsPointInsidePolygon(Point<double> p)
         {
-            double maxX = Vs.Select(v => v.X).Max()+1;
-            int n = Vs.Count();
+            double maxX = Points.Select(v => v.X).Max()+1;
+            int n = Points.Count();
             for (int i = 0; i < n; i++)
             {
                 int next = i != n - 1 ? i + 1 : 0;
-                if (LPI.IsPointInLine(Vs[i], Vs[next], p))
+                if (LinePointHelper.IsPointInLine(Points[i], Points[next], p))
                 {
                     return true;
                 }
             }
 
             double y = p.Y;
-            Point newP = new Point(maxX, y);
+            Point<double> newP = new Point<double>(maxX, y);
 
             for (int i = 0; i <= n; i++)
             {
                 y += i;
-                newP = new Point(maxX, y);
-                if (Vs.Any(v => LPI.IsPointInLine(p, newP, v))){
+                newP = new Point<double>(maxX, y);
+                if (Points.Any(v => LinePointHelper.IsPointInLine(p, newP, v))){
                     continue;
                 }
                 break;
@@ -62,7 +65,7 @@
             for (int i = 0; i < n; i++)
             {
                 int next = i != n - 1 ? i + 1 : 0;
-                if (LPI.IsTwoLineIntersect(Vs[i], Vs[next], p, newP))
+                if (LineHelper.IsTwoLineIntersect(Points[i], Points[next], p, newP))
                 {
                     count++;
                 }

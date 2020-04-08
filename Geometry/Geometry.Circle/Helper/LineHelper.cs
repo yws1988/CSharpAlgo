@@ -1,6 +1,8 @@
 ﻿namespace Geometry.Helper
 {
     using DataStructure.Models.Geometry;
+    using DataStructure.Models.Math;
+    using Utils.Helper.Math;
 
     public class LineHelper
     {
@@ -14,7 +16,7 @@
 
         public static bool IsTwoLineIntersect(Point<double> p1, Point<double> p2, Point<double> q1, Point<double> q2)
         {
-            if ((OrientationTreePoint.Orientation(p1, p2, q1) != OTP.Orientation(p1, p2, q2)) && (OTP.Orientation(q1, q2, p1) != OTP.Orientation(q1, q2, p2)))
+            if ((PointHelper.OrientationOfThreePoints(p1, p2, q1) != PointHelper.OrientationOfThreePoints(p1, p2, q2)) && (PointHelper.OrientationOfThreePoints(q1, q2, p1) != PointHelper.OrientationOfThreePoints(q1, q2, p2)))
                 return true;
 
             var rangeX1 = new Range<double>(p1.X, p2.X);
@@ -22,7 +24,7 @@
             var rangeY1 = new Range<double>(p1.Y, p2.Y);
             var rangeY2 = new Range<double>(q1.Y, q2.Y);
 
-            if (OTP.Orientation(p1, p2, q1) == 0 && OTP.Orientation(p1, p2, q2) == 0 && rangeX1.IsOverlapped(rangeX2) && rangeY1.IsOverlapped(rangeY2))
+            if (PointHelper.OrientationOfThreePoints(p1, p2, q1) == 0 && PointHelper.OrientationOfThreePoints(p1, p2, q2) == 0 && RangeHeper.IsIntersect(rangeX1, rangeX2) && RangeHeper.IsIntersect(rangeY1,rangeY2))
             {
                 return true;
             }
@@ -33,13 +35,13 @@
         public static Point<double> GetIntersectPoint(Point<double> A, Point<double> B, Point<double> C, Point<double> D)
         {
             // Line AB represented as a1x + b1y = c1
-            Line abLine = Line.GetLineFromTwoPoint(A, B);
+            Line abLine = GetLineFromTwoPoint(A, B);
             double a1 = abLine.A;
             double b1 = abLine.B;
             double c1 = -abLine.C;
 
             // Line CD represented as a2x + b2y = c2
-            Line cdLine = Line.GetLineFromTwoPoint(C, D);
+            Line cdLine = GetLineFromTwoPoint(C, D);
             double a2 = cdLine.A;
             double b2 = cdLine.B;
             double c2 = -cdLine.C;
@@ -54,7 +56,7 @@
             {
                 double x = (b2 * c1 - b1 * c2) / determinant;
                 double y = (a1 * c2 - a2 * c1) / determinant;
-                return new Point(x, y);
+                return new Point<double>(x, y);
             }
         }
     }

@@ -46,9 +46,18 @@
     <Compile Include="Helper\Graph\GraphHelper.cs" />
     <Compile Include="Helper\Graph\GraphListHelper.cs" />
     <Compile Include="Helper\Graph\GraphMatrixHelper.cs" />
+    <Compile Include="Helper\Math\NumberHelper.cs" />
     <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataStructure\DataStructure.csproj">
+      <Project>{0CF9B7EC-8494-416C-955D-A566CA20F0FB}</Project>
+      <Name>DataStructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\Geometry\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

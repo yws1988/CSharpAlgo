@@ -45,10 +45,12 @@
     <Compile Include="Graph\Graph\AdjacencyMatrix.cs" />
     <Compile Include="Graph\Heap\PriorityQueue.cs" />
     <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\Edge.cs" />
-    <Compile Include="Models\TreeNode.cs" />
-    <Compile Include="Models\Point3D.cs" />
-    <Compile Include="Models\Point.cs" />
+    <Compile Include="Models\Geometry\Line.cs" />
+    <Compile Include="Models\Geometry\Point3DDouble.cs" />
+    <Compile Include="Models\Graph\Edge.cs" />
+    <Compile Include="Models\Geometry\Point.cs" />
+    <Compile Include="Models\Graph\TreeNode.cs" />
+    <Compile Include="Models\Geometry\Point3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
