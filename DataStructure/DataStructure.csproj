@@ -51,6 +51,7 @@
     <Compile Include="Models\Geometry\Point.cs" />
     <Compile Include="Models\Graph\TreeNode.cs" />
     <Compile Include="Models\Geometry\Point3D.cs" />
+    <Compile Include="Models\Math\Range.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

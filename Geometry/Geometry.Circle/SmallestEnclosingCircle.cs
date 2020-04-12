@@ -1,4 +1,4 @@
-﻿namespace Geometry.Circle
+﻿namespace Geometry
 {
     using System;
     using System.Collections.Generic;
@@ -10,7 +10,7 @@
 	    * Note: If 0 points are given, a circle of radius -1 is returned. If 1 point is given, a circle of radius 0 is returned.
 	    */
         // Initially: No boundary points known
-        public static Circle MakeCircle(IList<Point> points)
+        public static Circle GetCircle(IList<Point> points)
         {
             // Clone list to preserve the caller's data, do Durstenfeld shuffle
             List<Point> shuffled = new List<Point>(points);
@@ -28,7 +28,7 @@
             for (int i = 0; i < shuffled.Count; i++)
             {
                 Point p = shuffled[i];
-                if (c.r < 0 || !c.Contains(p))
+                if (c.radius < 0 || !c.Contains(p))
                     c = MakeCircleOnePoint(shuffled.GetRange(0, i + 1), p);
             }
             return c;
@@ -44,7 +44,7 @@
                 Point q = points[i];
                 if (!c.Contains(q))
                 {
-                    if (c.r == 0)
+                    if (c.radius == 0)
                         c = MakeDiameter(p, q);
                     else
                         c = MakeCircleTwoPoints(points.GetRange(0, i + 1), p, q);
@@ -71,34 +71,34 @@
                 // Form a circumcircle and classify it on left or right side
                 double cross = pq.Cross(r.Subtract(p));
                 Circle c = MakeCircumcircle(p, q, r);
-                if (c.r < 0)
+                if (c.radius < 0)
                     continue;
-                else if (cross > 0 && (left.r < 0 || pq.Cross(c.c.Subtract(p)) > pq.Cross(left.c.Subtract(p))))
+                else if (cross > 0 && (left.radius < 0 || pq.Cross(c.center.Subtract(p)) > pq.Cross(left.center.Subtract(p))))
                     left = c;
-                else if (cross < 0 && (right.r < 0 || pq.Cross(c.c.Subtract(p)) < pq.Cross(right.c.Subtract(p))))
+                else if (cross < 0 && (right.radius < 0 || pq.Cross(c.center.Subtract(p)) < pq.Cross(right.center.Subtract(p))))
                     right = c;
             }
 
             // Select which circle to return
-            if (left.r < 0 && right.r < 0)
+            if (left.radius < 0 && right.radius < 0)
                 return circ;
-            else if (left.r < 0)
+            else if (left.radius < 0)
                 return right;
-            else if (right.r < 0)
+            else if (right.radius < 0)
                 return left;
             else
-                return left.r <= right.r ? left : right;
+                return left.radius <= right.radius ? left : right;
         }
 
 
-        public static Circle MakeDiameter(Point a, Point b)
+        private static Circle MakeDiameter(Point a, Point b)
         {
             Point c = new Point((a.x + b.x) / 2, (a.y + b.y) / 2);
             return new Circle(c, Math.Max(c.Distance(a), c.Distance(b)));
         }
 
 
-        public static Circle MakeCircumcircle(Point a, Point b, Point c)
+        private static Circle MakeCircumcircle(Point a, Point b, Point c)
         {
             // Mathematical algorithm from Wikipedia: Circumscribed circle
             double ox = (Math.Min(Math.Min(a.x, b.x), c.x) + Math.Max(Math.Min(a.x, b.x), c.x)) / 2;
@@ -119,25 +119,21 @@
 
     public struct Circle
     {
-
         public static readonly Circle INVALID = new Circle(new Point(0, 0), -1);
-
         private const double MULTIPLICATIVE_EPSILON = 1 + 1e-14;
 
-
-        public Point c;   // Center
-        public double r;  // Radius
-
+        public Point center;   // Center
+        public double radius;  // Radius
 
         public Circle(Point c, double r)
         {
-            this.c = c;
-            this.r = r;
+            this.center = c;
+            this.radius = r;
         }
 
         public bool Contains(Point p)
         {
-            return c.Distance(p) <= r * MULTIPLICATIVE_EPSILON;
+            return center.Distance(p) <= radius * MULTIPLICATIVE_EPSILON;
         }
 
         public bool Contains(ICollection<Point> ps)

@@ -1,5 +1,4 @@
-﻿Find Simple Closed Path for a given set of points
-Given a set of points, connect the dots without crossing.
+﻿Find Simple Closed Path for a given set of points. Given a set of points, connect the dots without crossing.
 
 Input: points[] = {(0, 3), (1, 1), (2, 2), (4, 4),
                    (0, 0), (1, 2), (3, 1}, {3, 3}};

@@ -1,28 +1,28 @@
-﻿namespace Geometric
+﻿namespace Geometry
 {
-    using Geometric;
+    using DataStructure.Models.Geometry;
     using System;
     using System.Linq;
 
     class FindTheClosestPathOfPoints
     {
-        public static Point[] GetClosestPath(Point[] ps)
+        public static Point<double>[] GetClosestPath(Point<double>[] points)
         {
-            var sP = ps.OrderBy(p => p.Y).ThenBy(p => p.X).First();
-            var zeroPs = ps.Where(p=>p.X==sP.X).OrderBy(p=>p.Y).Skip(1);
-            var restPs = ps.Where(p => p.X != sP.X);
+            var startPoint = points.OrderBy(p => p.Y).ThenBy(p => p.X).First();
+            var zeroPoints = points.Where(p => p.X == startPoint.X).OrderBy(p => p.Y).Skip(1);
+            var restPoints = points.Where(p => p.X != startPoint.X).ToList();
 
-            foreach (var item in restPs)
+            foreach (var item in restPoints)
             {
-                double height = item.Y - sP.Y;
-                double distanceX = item.X - sP.X;
+                double height = item.Y - startPoint.Y;
+                double distanceX = item.X - startPoint.X;
                 item.Priority = height / distanceX;
             }
 
-            var restPsPositif = restPs.Where(p=>p.Priority>=0).OrderBy(p=>p.Priority).ThenBy(p=>Math.Abs(p.X-sP.X));
-            var restPsNegatif = restPs.Where(p => p.Priority < 0).OrderByDescending(p => p.Priority).ThenBy(p => Math.Abs(p.X - sP.X));
+            var restPsPositif = restPoints.Where(p=>p.Priority>=0).OrderBy(p=>p.Priority).ThenBy(p=> p.X);
+            var restPsNegatif = restPoints.Where(p => p.Priority < 0).OrderByDescending(p => p.Priority).ThenBy(p => Math.Abs(p.X - startPoint.X));
 
-            return new Point[] { sP }.Concat(restPsPositif).Concat(zeroPs).Concat(restPsNegatif).ToArray();
+            return new Point<double>[] { startPoint }.Concat(restPsPositif).Concat(zeroPoints).Concat(restPsNegatif).ToArray();
         }
     }
 }

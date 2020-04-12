@@ -47,6 +47,7 @@
     <Compile Include="Helper\Graph\GraphListHelper.cs" />
     <Compile Include="Helper\Graph\GraphMatrixHelper.cs" />
     <Compile Include="Helper\Math\NumberHelper.cs" />
+    <Compile Include="Helper\Math\RangeHelper.cs" />
     <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

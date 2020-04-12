@@ -1,18 +1,24 @@
-﻿namespace Geometric
+﻿namespace Geometry
 {
     using DataStructure.Models.Geometry;
+    using Geometry.Helper;
     using System;
     using System.Linq;
 
-    class FindTheClosestDistanceOfPoints
+    /// <summary>
+    /// Given an array of n points in the panel, and the problem is to find out the 
+    // closest pair of points in the array with divde and conquer method.
+    /// </summary>
+
+    class MinimumDistanceOfTwoPoints
     {
-        public static double GetClosestPoints(Point<double>[] ps)
+        public static double GetMinimumDistanceOfTwoPoints(Point<double>[] ps)
         {
             var orderedPs = ps.OrderBy(p => p.X).ToArray(); //nlogn
             return GetClosestDistance(orderedPs);
         }
 
-        public static double GetClosestDistance(Point<double>[] ps)
+        static double GetClosestDistance(Point<double>[] ps)
         {
             int n = ps.Count();
             if (n > 3)
@@ -28,7 +34,7 @@
                 {
                     for (int j = i+1; j < nS && Math.Abs(strip[i].Y-strip[j].Y)<mD; j++)
                     {
-                        mD = Math.Min(mD, GetTwoPointsDistance(strip[i], strip[j]));
+                        mD = Math.Min(mD, PointHelper.GetTwoPointsDistance(strip[i], strip[j]));
                     }
                 }
 
@@ -40,7 +46,7 @@
             }
         }
 
-        public static double GetMinPointsDistance(Point<double>[] ps)
+        static double GetMinPointsDistance(Point<double>[] ps)
         {
             double min = double.MaxValue;
 
@@ -48,16 +54,11 @@
             {
                 for (int j = i + 1; j < ps.Length; j++)
                 {
-                    min=Math.Min(min, GetTwoPointsDistance(ps[i], ps[j]));
+                    min=Math.Min(min, PointHelper.GetTwoPointsDistance(ps[i], ps[j]));
                 }
             }
 
             return min;
-        }
-
-        public static double GetTwoPointsDistance(Point<double> p1, Point<double> p2)
-        {
-            return Math.Sqrt(Math.Pow((p1.X - p2.X), 2) + Math.Pow((p1.Y - p2.Y), 2));
         }
     }
 }

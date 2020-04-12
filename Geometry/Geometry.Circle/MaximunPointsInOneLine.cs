@@ -1,15 +1,15 @@
-﻿namespace Geometric
+﻿namespace Geometry
 {
-    using System.Linq;
-    using Geometric;
-    using System.Collections.Generic;
+    using DataStructure.Models.Geometry;
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class MaximunPointsInOneLine
     {
         public const double INF = double.MaxValue;
 
-        public static int GetMax(Point[] ps)
+        public static int GetMax(Point<double>[] ps)
         {
             Dictionary<double, HashSet<int>> dicP = new Dictionary<double, HashSet<int>>();
 

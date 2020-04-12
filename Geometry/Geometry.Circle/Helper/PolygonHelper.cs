@@ -1,14 +1,11 @@
-﻿namespace Geometric
+﻿namespace Geometry.Helper
 {
     using DataStructure.Models.Geometry;
-    using Geometry.Helper;
     using System;
     using System.Linq;
 
-    public class Polygon
+    public class PolygonHelper
     {
-        public static Point<double>[] Points { get; set; }
-
         /// <summary>
         /// We can compute area of a polygon using Shoelace formula.
         /// Vertex axis x values, axis y values
@@ -34,14 +31,14 @@
             return Math.Abs(area/2);
         }
 
-        public static bool IsPointInsidePolygon(Point<double> p)
+        public static bool IsPointInsidePolygon(Point<double>[] vetexes, Point<double> p)
         {
-            double maxX = Points.Select(v => v.X).Max()+1;
-            int n = Points.Count();
+            double maxX = vetexes.Select(v => v.X).Max()+1;
+            int n = vetexes.Count();
             for (int i = 0; i < n; i++)
             {
                 int next = i != n - 1 ? i + 1 : 0;
-                if (LinePointHelper.IsPointInLine(Points[i], Points[next], p))
+                if (LinePointHelper.IsPointInLine(vetexes[i], vetexes[next], p))
                 {
                     return true;
                 }
@@ -54,7 +51,7 @@
             {
                 y += i;
                 newP = new Point<double>(maxX, y);
-                if (Points.Any(v => LinePointHelper.IsPointInLine(p, newP, v))){
+                if (vetexes.Any(v => LinePointHelper.IsPointInLine(p, newP, v))){
                     continue;
                 }
                 break;
@@ -65,7 +62,7 @@
             for (int i = 0; i < n; i++)
             {
                 int next = i != n - 1 ? i + 1 : 0;
-                if (LineHelper.IsTwoLineIntersect(Points[i], Points[next], p, newP))
+                if (LineHelper.IsTwoLineIntersect(vetexes[i], vetexes[next], p, newP))
                 {
                     count++;
                 }

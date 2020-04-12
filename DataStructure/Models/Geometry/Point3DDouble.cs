@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace DataStructure.Models.Geometry
+﻿namespace DataStructure.Models.Geometry
 {
+    using System;
+
     public class Point3DDouble
     {
         public double X { get; set; }
