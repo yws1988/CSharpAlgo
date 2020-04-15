@@ -1,19 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}</ProjectGuid>
+    <ProjectGuid>{2C0D34EF-DCBB-40F9-8E10-F78D122FFBE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Geometry</RootNamespace>
-    <AssemblyName>Geometry</AssemblyName>
+    <RootNamespace>BitOperation</RootNamespace>
+    <AssemblyName>BitOperation</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,12 +25,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -41,30 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MinimumDistanceOfTwoPoints.cs" />
-    <Compile Include="FindTheClosestPathOfPoints.cs" />
-    <Compile Include="Helper\LineHelper.cs" />
-    <Compile Include="Helper\Point3DHeper.cs" />
-    <Compile Include="Helper\LinePointHelper.cs" />
-    <Compile Include="MaximunPointsInOneLine.cs" />
-    <Compile Include="Helper\PointHelper.cs" />
-    <Compile Include="Helper\PolygonHelper.cs" />
-    <Compile Include="SmallestEnclosingCircle.cs" />
+    <Compile Include="Helper\BitMaskingHelper.cs" />
+    <Compile Include="AssignmentTaskWithMinumCost.cs" />
+    <Compile Include="BitMaskingCaps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Description\FindTheClosestPathOfPoints.txt" />
-    <Content Include="Description\MaximunPointsInOneLine.txt" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataStructure\DataStructure.csproj">
-      <Project>{0cf9b7ec-8494-416c-955d-a566ca20f0fb}</Project>
-      <Name>DataStructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Utils\Utils.csproj">
-      <Project>{7E719EA7-F582-41D1-97E2-87B016D0D42B}</Project>
-      <Name>Utils</Name>
-    </ProjectReference>
+    <Content Include="questions\BitmaskingCaps.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

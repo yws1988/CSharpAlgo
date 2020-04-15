@@ -70,5 +70,30 @@
 
             return res;
         }
+
+        // input list {1,2,3}
+        // output {1,2,3} {1,3,2} {2,1,3} {2,3,1} {3,1,2} {3,2,1}
+
+        public static IEnumerable<IEnumerable<T>> GetPermutations<T>(IEnumerable<T> list, int length)
+        {
+            if (length == 1) return list.Select(t => new T[] { t });
+
+            return GetPermutations(list, length - 1)
+                .SelectMany(t => list.Where(e => !t.Contains(e)),
+                    (t1, t2) => t1.Concat(new T[] { t2 }));
+        }
+
+        // input list {{1,2}, {3,4}, {5}}
+        // output list {{1,3,5},{1,4,5},{2,3,5},{2,4,5}}
+        public static IEnumerable<IEnumerable<T>> GetCombinations<T>(IEnumerable<IEnumerable<T>> lists)
+        {
+            var result = lists.First().Select(s => new T[] { s }.AsEnumerable<T>());
+            foreach (var list in lists.Skip(1))
+            {
+                result = result.SelectMany(s => list, (t1, t2) => t1.Concat(new T[] { t2 }));
+            }
+
+            return result;
+        }
     }
 }
