@@ -1,19 +1,17 @@
-﻿There 100 different types of caps each having a unique id from 1 to 100. Also, 
-there ‘n’ persons each having a collection of variable number of caps. 
-One day all of these persons decide to go in a party wearing a cap but to look unique they decided 
-that none them will wear the same type of cap. So, count the total number of arrangements or ways 
-such that none of them is wearing same type of cap.
+﻿There are one hundred ids from 1 to 100. There are n collection of variable. 
+Each collection contains numers between 1 to 100. 
+count the total number of arrangements to make each collection contains a 
+unique number.
 
 Constraints: 1 <= n <= 10 Example:
 
-First line contains value of n, next n lines contain collections 
-of all the n persons.
-Input: 
-3
-5 100 1     // Collection of first person.
-2           // Collection of second person.
-5 100       // Collection of second person.
+For example: 
+n=3
+5 100 1     // First Collection
+2           // Second Collection
+5 100       // Third Collection
 
 Output:
 4
+
 Explanation: All valid possible ways are (5, 2, 100),  (100, 2, 5), (1, 2, 5) and  (1, 2, 100)

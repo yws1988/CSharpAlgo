@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Helper\BitMaskingHelper.cs" />
     <Compile Include="AssignmentTaskWithMinumCost.cs" />
-    <Compile Include="BitMaskingCaps.cs" />
+    <Compile Include="NumberOfUniqueCollections.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
