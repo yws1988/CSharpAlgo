@@ -83,6 +83,41 @@
                     (t1, t2) => t1.Concat(new T[] { t2 }));
         }
 
+        public static IEnumerable<IEnumerable<T>> GetPermutationsWithBFS<T>(T[] array)
+        {
+            int n = array.Length;
+            bool[] vs = new bool[n];
+
+            var queue = new Queue<IEnumerable<T>>();
+
+            for (int i = 0; i < n; i++)
+            {
+                queue.Enqueue(new T[] { array[i] });
+            }
+
+            var result = new List<IEnumerable<T>>();
+
+            while (queue.Count > 0)
+            {
+                var node = queue.Dequeue();
+                if (node.Count() == n)
+                {
+                    result.Add(node);
+                    continue;
+                }
+
+                for (int i = 0; i < n; i++)
+                {
+                    if (!node.Contains(array[i]))
+                    {
+                        queue.Enqueue(node.Concat(new T[] { array[i] }));
+                    }
+                }
+            }
+
+            return result;
+        }
+
         // input list {{1,2}, {3,4}, {5}}
         // output list {{1,3,5},{1,4,5},{2,3,5},{2,4,5}}
         public static IEnumerable<IEnumerable<T>> GetCombinations<T>(IEnumerable<IEnumerable<T>> lists)
@@ -95,5 +130,7 @@
 
             return result;
         }
+
+
     }
 }

@@ -57,6 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PatternSearching", "Pattern
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternSearching", "PatternSearching\PatternSearching.csproj", "{4A1FC679-E57A-4565-9F6D-D417DC059935}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math", "Geometry\Math\Math.csproj", "{C7AC4EBC-025C-4951-A40D-5952B3B2502C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{4A1FC679-E57A-4565-9F6D-D417DC059935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A1FC679-E57A-4565-9F6D-D417DC059935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A1FC679-E57A-4565-9F6D-D417DC059935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7AC4EBC-025C-4951-A40D-5952B3B2502C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7AC4EBC-025C-4951-A40D-5952B3B2502C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7AC4EBC-025C-4951-A40D-5952B3B2502C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7AC4EBC-025C-4951-A40D-5952B3B2502C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +169,7 @@ Global
 		{BACF8168-477F-4997-BA40-B2C24C511CFB} = {7AA8226A-BB02-4F10-9249-941307F86412}
 		{5A160924-9EA9-4615-8330-F57942A944CD} = {7AA8226A-BB02-4F10-9249-941307F86412}
 		{4A1FC679-E57A-4565-9F6D-D417DC059935} = {B0366A0E-DD1A-45C5-B280-4884899F5413}
+		{C7AC4EBC-025C-4951-A40D-5952B3B2502C} = {45993CD9-026E-4B37-BF7D-5C3493B22F7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3987C77-BDC5-4F2C-8E06-AE566FD808CC}
