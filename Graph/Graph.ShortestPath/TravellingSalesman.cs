@@ -1,4 +1,10 @@
-﻿namespace graph.ShortestPath
+﻿/*
+ * Given a set of cities and distance between every pair of cities, 
+ * the problem is to find the shortest possible tour that visits every 
+ * city exactly once and returns to the starting point.
+ */
+ 
+namespace graph.ShortestPath
 {
     using System;
 

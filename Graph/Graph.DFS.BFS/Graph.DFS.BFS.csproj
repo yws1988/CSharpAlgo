@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Graph.DFS.BFS</RootNamespace>
-    <AssemblyName>Graph.DFS.BFS</AssemblyName>
+    <AssemblyName>CSharpAlgo.Graph.DFS.BFS</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
