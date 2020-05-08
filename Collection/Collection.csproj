@@ -43,6 +43,12 @@
   <ItemGroup>
     <Compile Include="Array\LongestArithmeticProgression.cs" />
     <Compile Include="Array\MaximizeBitonicSequenceSum.cs" />
+    <Compile Include="Array\MaximizeSumOfTwoSubArray.cs" />
+    <Compile Include="Array\MaximumSumOfSubArray.cs" />
+    <Compile Include="Array\MaximumSumRectangleInMatrix.cs" />
+    <Compile Include="Array\MaximumSumZeroRectangleInMatrix.cs" />
+    <Compile Include="Array\MaximumSumZeroSubArray.cs" />
+    <Compile Include="Array\SumOfArrayElementsLowerOrEqualThanK.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
