@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Geometry", "Geometry", "{45993CD9-026E-4B37-BF7D-5C3493B22F7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry", "Geometry\Geometry.Circle\Geometry.csproj", "{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry", "Geometry\Geometry\Geometry.csproj", "{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTest", "Test\GraphTest\GraphTest.csproj", "{032D62F6-8179-4B6B-98DE-A1F9720DAC12}"
 EndProject
@@ -53,7 +53,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsTest", "Test\UtilsTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitOperationTest", "Test\BitOperationTest\BitOperationTest.csproj", "{5A160924-9EA9-4615-8330-F57942A944CD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PatternSearching", "PatternSearching", "{B0366A0E-DD1A-45C5-B280-4884899F5413}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "String", "String", "{B0366A0E-DD1A-45C5-B280-4884899F5413}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternSearching", "PatternSearching\PatternSearching.csproj", "{4A1FC679-E57A-4565-9F6D-D417DC059935}"
 EndProject

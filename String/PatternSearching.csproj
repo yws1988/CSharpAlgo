@@ -42,6 +42,11 @@
   <ItemGroup>
     <Compile Include="ClosestPalindrome.cs" />
     <Compile Include="KMPSearching.cs" />
+    <Compile Include="LongestCommonSequence.cs" />
+    <Compile Include="LongestCommonSubstring.cs" />
+    <Compile Include="LongestPanlindromicSubstring.cs" />
+    <Compile Include="LongestRepeatedSequence.cs" />
+    <Compile Include="LongestSubSequence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

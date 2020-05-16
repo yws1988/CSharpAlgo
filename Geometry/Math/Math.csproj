@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BellNumber.cs" />
+    <Compile Include="BinomialCoefficient.cs" />
+    <Compile Include="CatalanNumber.cs" />
+    <Compile Include="DigitSum.cs" />
     <Compile Include="HungarianMatching.cs" />
+    <Compile Include="NumberOfEquationSolution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -61,7 +61,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Geometry\Geometry.Circle\Geometry.csproj">
+    <ProjectReference Include="..\..\Geometry\Geometry\Geometry.csproj">
       <Project>{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}</Project>
       <Name>Geometry</Name>
     </ProjectReference>
