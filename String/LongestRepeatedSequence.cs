@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// longest repeating subsequence
+// str = "aadsdkeke"
+// output = "adke"
 
 namespace AlgorithmExcercise.BranchAndBounds
 {
+    using System;
+    using System.Collections.Generic;
+
     public class LongestRepeatedSequence
     {
-        public static void GetLRS(string str1)
+        public static string GetLRS(string str)
         {
-            char[] xChars = str1.ToCharArray();
-            char[] yChars = xChars;
+            int length = str.Length + 1;
 
-            int xLength = xChars.Length + 1;
-
-            int[,] matrix = new int[xLength, xLength];
-            for (int i = 1; i < xLength; i++)
+            int[,] matrix = new int[length, length];
+            for (int i = 1; i < length; i++)
             {
-                for (int j = 1; j < xLength; j++)
+                for (int j = 1; j < length; j++)
                 {
-                    if(i!=j && xChars[i-1] == yChars[j - 1])
+                    if(i != j && str[i - 1] == str[j - 1])
                     {
                         matrix[i, j] = matrix[i - 1, j - 1] + 1;
                     }else
@@ -28,21 +28,9 @@ namespace AlgorithmExcercise.BranchAndBounds
                 }
             }
 
-            Console.WriteLine("The longest length of repeated sequence is : " + matrix[xLength-1, xLength - 1]);
+            var chars = new Stack<char>();
 
-            Console.WriteLine("The matrix is like this : ");
-            for (int i = 0; i < xLength; i++)
-            {
-                for (int j = 0; j < xLength; j++)
-                {
-                    Console.Write(matrix[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
-
-            List<char> chars = new List<char>();
-
-            int m = xLength-1;
+            int m = length-1;
             int n = m;
 
             while (m > 0 && n > 0)
@@ -59,15 +47,13 @@ namespace AlgorithmExcercise.BranchAndBounds
                 }
                 else
                 {
-                    chars.Add(xChars[m - 1]);
+                    chars.Push(str[m - 1]);
                     m--;
                     n--;
                 }
             }
 
-            chars.Reverse();
-
-            Console.WriteLine("The result of the string is : "+ new string(chars.ToArray()));
+            return new string(chars.ToArray());
         }
     }
 }

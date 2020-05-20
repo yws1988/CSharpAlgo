@@ -1,38 +1,53 @@
-﻿using System;
+﻿// Get the longest palindrome substring (LPS) 
 
-namespace AlgorithmExcercise.BranchAndBounds.Simple
+namespace String.PatternSearching
 {
     public class LongestPanlindromicSubstring
     {
-        public static int[,] dp;
-        public static void Start(string str)
+        public static string GetLongestSubstr(string str)
         {
-            int n = str.Length;
-            dp = new int[n, n];
-            int x=0, y=0;
-            for (int i = 0; i < n; i++)
+            int maxLength = 1;
+            int start = 0;
+            int len = str.Length;
+
+            int low, high;
+
+            // One by one consider every character as center point 
+            // of even and length palindromes 
+            for (int i = 1; i < len; ++i)
             {
-                dp[i, i] = 1;
-                if (i<n-1 && str[i + 1] == str[i])
+                // Find the longest even length palindrome with center points as i-1 and i. 
+                low = i - 1;
+                high = i;
+                while (low >= 0 && high < len && str[low] == str[high])
                 {
-                    dp[i, i + 1] = 1;
-                    x = i; y = i + 1;
-                    
-                }
-            }
-            for (int len = 3; len <= n; len++)
-            {
-                for (int i = 0; i+len-1 < n; i++)
-                {
-                    if(dp[i+1, i+len-2] == 1 && str[i]==str[i + len - 1])
+                    if (high - low + 1 > maxLength)
                     {
-                        dp[i, i + len - 1] = 1;
-                        x = i;
-                        y = i + len - 1;
+                        start = low;
+                        maxLength = high - low + 1;
                     }
+
+                    --low;
+                    ++high;
+                }
+
+                // Find the longest odd length palindrome with center point as i 
+                low = i - 1;
+                high = i + 1;
+                while (low >= 0 && high < len && str[low] == str[high])
+                {
+                    if (high - low + 1 > maxLength)
+                    {
+                        start = low;
+                        maxLength = high - low + 1;
+                    }
+                    --low;
+                    ++high;
                 }
             }
-            Console.WriteLine($"The longest panlindrone is : {str.Substring(x, y-x+1)}");
+
+            return str.Substring(start, maxLength);
         }
+
     }
 }

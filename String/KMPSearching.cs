@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PatternSearching
+namespace String.PatternSearching
 {
     public class KMPSearching
     {

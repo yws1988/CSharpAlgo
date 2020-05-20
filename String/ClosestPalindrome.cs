@@ -1,4 +1,8 @@
-﻿namespace StringProblem
+﻿// Given a number N.our task is to find the closest Palindrome number
+// whose absolute difference with given number is minimum and absolute 
+// difference must be greater than 0.
+
+namespace String.PatternSearching
 {
     using DataStructure.Graph.Heap;
     using System;
@@ -7,10 +11,6 @@
 
     public class ClosestPalindrome
     {
-        // Given a number N.our task is to find the closest Palindrome number
-        // whose absolute difference with given number is minimum and absolute 
-        // difference must be greater than 0.
-
         public static string GetClosestPalindromeString(string str)
         {
             long rN = long.Parse(str);

@@ -1,4 +1,4 @@
-﻿namespace AlgorithmExcercise.DynamicProgramming
+﻿namespace String.PatternSearching
 {
     using System;
     using System.Collections.Generic;
