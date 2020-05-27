@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\LongestArithmeticProgression.cs" />
+    <Compile Include="Array\LongestIncreasingSequence.cs" />
     <Compile Include="Array\MaximizeBitonicSequenceSum.cs" />
     <Compile Include="Array\MaximizeSumOfTwoSubArray.cs" />
     <Compile Include="Array\MaximumSumOfSubArray.cs" />
