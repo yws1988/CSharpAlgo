@@ -4,7 +4,7 @@
  1 is included.
  */
 
-namespace AlgorithmExcercise.DynamicProgramming
+namespace Math
 {
     //Optimized solution
     public class UglyNum
@@ -24,7 +24,7 @@ namespace AlgorithmExcercise.DynamicProgramming
             while(i < index)
             {
                 int newUglyNum = System.Math.Min(newUglyNums1, System.Math.Min(newUglyNums2, newUglyNums3));
-                if (uglyNums[i - 1] != newUglyNum)
+                if (uglyNums[i-1] != newUglyNum)
                 {
                     uglyNums[i++] = newUglyNum;
                 }

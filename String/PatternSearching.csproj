@@ -46,7 +46,6 @@
     <Compile Include="LongestCommonSubstring.cs" />
     <Compile Include="LongestPanlindromicSubstring.cs" />
     <Compile Include="LongestRepeatedSequence.cs" />
-    <Compile Include="LongestSubSequence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
