@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.DFS.BFS", "Graph\Grap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructure", "DataStructure", "{F8F69CAD-5FEF-4C75-B074-CCEAFAE13CA5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collection", "Collection", "{82AEF049-5E7E-4BDC-91FF-FC5E71BA2D27}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicProgramming", "DynamicProgramming", "{82AEF049-5E7E-4BDC-91FF-FC5E71BA2D27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collection", "Collection\Collection.csproj", "{40828EC9-F4C6-4100-8AF9-5DE6BFF9DF61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProgramming.Collection", "DynamicProgramming\DynamicProgramming.Collection\DynamicProgramming.Collection.csproj", "{40828EC9-F4C6-4100-8AF9-5DE6BFF9DF61}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7AA8226A-BB02-4F10-9249-941307F86412}"
 EndProject
@@ -53,11 +53,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsTest", "Test\UtilsTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitOperationTest", "Test\BitOperationTest\BitOperationTest.csproj", "{5A160924-9EA9-4615-8330-F57942A944CD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "String", "String", "{B0366A0E-DD1A-45C5-B280-4884899F5413}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Searching", "Searching", "{B0366A0E-DD1A-45C5-B280-4884899F5413}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math", "Geometry\Math\Math.csproj", "{C7AC4EBC-025C-4951-A40D-5952B3B2502C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternSearching", "String\PatternSearching.csproj", "{4A1FC679-E57A-4565-9F6D-D417DC059935}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternSearching", "Searches\Searches.PatternSearching\PatternSearching.csproj", "{4A1FC679-E57A-4565-9F6D-D417DC059935}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathTest", "Test\MathTest\MathTest.csproj", "{1F27346E-82F2-49D7-9689-D246C6B5C41A}"
 EndProject

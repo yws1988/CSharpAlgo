@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40828EC9-F4C6-4100-8AF9-5DE6BFF9DF61}</ProjectGuid>
+    <ProjectGuid>{4A1FC679-E57A-4565-9F6D-D417DC059935}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Collection</RootNamespace>
-    <AssemblyName>Collection</AssemblyName>
+    <RootNamespace>PatternSearching</RootNamespace>
+    <AssemblyName>PatternSearching</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,16 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Array\LongestArithmeticProgression.cs" />
-    <Compile Include="Array\LongestIncreasingSequence.cs" />
-    <Compile Include="Array\MaximizeBitonicSequenceSum.cs" />
-    <Compile Include="Array\MaximizeSumOfTwoSubArray.cs" />
-    <Compile Include="Array\MaximumSumOfSubArray.cs" />
-    <Compile Include="Array\MaximumSumRectangleInMatrix.cs" />
-    <Compile Include="Array\MaximumSumZeroRectangleInMatrix.cs" />
-    <Compile Include="Array\MaximumSumZeroSubArray.cs" />
-    <Compile Include="Array\SumOfArrayElementsLowerOrEqualThanK.cs" />
+    <Compile Include="ClosestPalindrome.cs" />
+    <Compile Include="KMPSearching.cs" />
+    <Compile Include="LongestCommonSequence.cs" />
+    <Compile Include="LongestCommonSubstring.cs" />
+    <Compile Include="LongestPanlindromicSubstring.cs" />
+    <Compile Include="LongestRepeatedSequence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataStructure\DataStructure.csproj">
+      <Project>{0CF9B7EC-8494-416C-955D-A566CA20F0FB}</Project>
+      <Name>DataStructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

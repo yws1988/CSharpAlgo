@@ -54,9 +54,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Collection\Collection.csproj">
+    <ProjectReference Include="..\..\DynamicProgramming\DynamicProgramming.Collection\DynamicProgramming.Collection.csproj">
       <Project>{40828ec9-f4c6-4100-8af9-5de6bff9df61}</Project>
-      <Name>Collection</Name>
+      <Name>DynamicProgramming.Collection</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\DataStructure\DataStructure.csproj">
       <Project>{0CF9B7EC-8494-416C-955D-A566CA20F0FB}</Project>
