@@ -1,4 +1,4 @@
-﻿namespace graph.Cycle
+﻿namespace Graph.Cycle
 {
     using System.Collections.Generic;
 

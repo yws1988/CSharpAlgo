@@ -1,4 +1,4 @@
-﻿namespace graph.Flow
+﻿namespace Graph.Flow
 {
     using System;
     using System.Collections.Generic;

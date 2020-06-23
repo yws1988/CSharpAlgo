@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Utils.Graph.Helper;
 
-namespace graph.Connectivity
+namespace Graph.Connectivity
 {
     public class StronglyConnectedComponentList
     {

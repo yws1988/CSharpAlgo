@@ -1,4 +1,4 @@
-﻿namespace graph.Other
+﻿namespace Graph.Other
 {
     public class MColoring
     {

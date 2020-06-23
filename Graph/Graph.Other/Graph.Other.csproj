@@ -58,12 +58,6 @@
   <ItemGroup>
     <Content Include="Description\MColoring.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Collection\Collection.csproj">
-      <Project>{ba3e048e-5d0b-4b55-9b51-d9a8b5d20bed}</Project>
-      <Name>Collection</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

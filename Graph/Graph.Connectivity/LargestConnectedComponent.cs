@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace graph.Exercise.Connectivity
+namespace Graph.Exercise.Connectivity
 {
     public class LargestConnectedComponentInGrid
     {

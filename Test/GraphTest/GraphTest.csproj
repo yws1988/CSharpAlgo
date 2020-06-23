@@ -53,6 +53,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graph.Cycle\CycleDirectedGraphTest.cs" />
     <Compile Include="Graph.Path\LongestPathInDirectedAcyclicGraphTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +64,10 @@
     <ProjectReference Include="..\..\DataStructure\DataStructure.csproj">
       <Project>{0CF9B7EC-8494-416C-955D-A566CA20F0FB}</Project>
       <Name>DataStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Graph\Graph.Cycle\Graph.Cycle.csproj">
+      <Project>{7ecc1890-9015-43a6-8bc1-f122e6020de4}</Project>
+      <Name>Graph.Cycle</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Graph\Graph.ShortestPath\Graph.Path.csproj">
       <Project>{180F3DE8-5011-4D61-90E1-34835B2CDCFE}</Project>

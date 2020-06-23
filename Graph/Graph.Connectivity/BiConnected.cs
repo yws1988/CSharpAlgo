@@ -1,4 +1,4 @@
-﻿namespace graph.Connectivity
+﻿namespace Graph.Connectivity
 {
     using DataStructure.Models;
     using DataStructure.Models.Graph;

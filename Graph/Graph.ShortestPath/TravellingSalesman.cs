@@ -4,7 +4,7 @@
  * city exactly once and returns to the starting point.
  */
  
-namespace graph.ShortestPath
+namespace Graph.ShortestPath
 {
     using System;
 

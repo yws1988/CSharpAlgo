@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace graph.Connectivity
+namespace Graph.Connectivity
 {
     public class ArticulationPoints
     {

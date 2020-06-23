@@ -1,4 +1,4 @@
-﻿//namespace graph.Tree
+﻿//namespace Graph.Tree
 //{
 //    using System;
 

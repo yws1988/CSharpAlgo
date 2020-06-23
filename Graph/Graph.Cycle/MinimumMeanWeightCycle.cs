@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace graph.Cycle
+namespace Graph.Cycle
 {
     /// <summary>
     /// Karp’s minimum mean (or average) weight cycle algorithm

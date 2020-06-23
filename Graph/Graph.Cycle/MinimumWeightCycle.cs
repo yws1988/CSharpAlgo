@@ -1,6 +1,6 @@
-﻿namespace graph.Cycle
+﻿namespace Graph.Cycle
 {
-    using graph.ShortestPath;
+    using Graph.ShortestPath;
     using System;
 
     public class MinimumWeightCycle

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace graph.Tree
+namespace Graph.Tree
 {
     public class NAryTreeDiameter
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace graph.ShortestPath
+namespace Graph.ShortestPath
 {
     public class HamiltonianPath
     {

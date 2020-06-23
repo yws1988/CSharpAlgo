@@ -1,4 +1,4 @@
-﻿namespace graph.Cycle
+﻿namespace Graph.Cycle
 {
     using System.Collections.Generic;
 
@@ -11,26 +11,33 @@
 
             for (int i = 0; i < v; i++)
             {
-                if (!vs[i] && DFSUtil(i, vs, graph))
+                
+                if (!vs[i])
                 {
-                    return true;
+                    bool[] currentVs = new bool[v];
+                    vs.CopyTo(currentVs, 0);
+
+                    if(DFSUtil(i, vs, currentVs, graph))
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
         }
 
-        static bool DFSUtil(int i, bool[] vs, List<int>[] graph)
+        static bool DFSUtil(int i, bool[] vs, bool[] currentVs, List<int>[] graph)
         {
             vs[i] = true;
 
             foreach (int child in graph[i])
             {
-                if (vs[child])
+                if (vs[child] && !currentVs[child])
                 {
                     return true;
                 }
 
-                if (!vs[child] && DFSUtil(child, vs, graph))
+                if (!vs[child] && DFSUtil(child, vs, currentVs, graph))
                 {
                     return true;
                 }

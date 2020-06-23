@@ -1,4 +1,4 @@
-﻿namespace graph.MinimumSpanningTree
+﻿namespace Graph.MinimumSpanningTree
 {
     using System;
     using System.Collections.Generic;
