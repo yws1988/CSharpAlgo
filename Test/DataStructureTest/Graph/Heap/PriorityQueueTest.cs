@@ -1,7 +1,7 @@
 ﻿namespace DataStructureTest.Graph.Heap
 {
-    using DataStructure.Graph.Heap;
-    using DataStructure.Models;
+    using DataStructure.Heap;
+    using DataStructure.Model;
     using NUnit.Framework;
     using System;
 

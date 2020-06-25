@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Models
+﻿namespace DataStructure.Model
 {
     using System;
 

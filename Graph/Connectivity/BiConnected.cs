@@ -1,7 +1,6 @@
 ﻿namespace Graph.Connectivity
 {
-    using DataStructure.Models;
-    using DataStructure.Models.Graph;
+    using DataStructure.Graph;
     using System;
     using System.Collections.Generic;
 

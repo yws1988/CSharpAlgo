@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace String.PatternSearching
+﻿namespace Searching.String
 {
+    using System.Collections.Generic;
+
     public class KMPSearching
     {
         /// <summary>

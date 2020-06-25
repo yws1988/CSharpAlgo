@@ -60,9 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Math\Math.csproj">
+    <ProjectReference Include="..\..\Math\Maths.csproj">
       <Project>{c7ac4ebc-025c-4951-a40d-5952b3b2502c}</Project>
-      <Name>Math</Name>
+      <Name>Maths</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

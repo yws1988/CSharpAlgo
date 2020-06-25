@@ -1,6 +1,6 @@
 ﻿namespace Geometry
 {
-    using DataStructure.Models.Geometry;
+    using DataStructure.Geometry;
     using System;
     using System.Linq;
 

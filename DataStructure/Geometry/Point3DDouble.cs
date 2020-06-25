@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Models.Geometry
+﻿namespace DataStructure.Geometry
 {
     using System;
 

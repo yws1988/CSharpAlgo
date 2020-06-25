@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -55,12 +56,12 @@
     <Compile Include="Cycle\MinimumMeanWeightCycle.cs" />
     <Compile Include="Cycle\MinimumWeightCycle.cs" />
     <Compile Include="Cycle\Program.cs" />
-    <Compile Include="DFS.BFS\BFS\BFSIteration.cs" />
-    <Compile Include="DFS.BFS\DFS\DFSIteration.cs" />
-    <Compile Include="DFS.BFS\DFS\KCoreGraphUndirectedGraph.cs" />
-    <Compile Include="DFS.BFS\DFS\TopologicalOrderedStrings.cs" />
-    <Compile Include="DFS.BFS\DFS\TopologicalSorting.cs" />
-    <Compile Include="DFS.BFS\Program.cs" />
+    <Compile Include="Tranversal\BFS\BFSIteration.cs" />
+    <Compile Include="Tranversal\DFS\DFSIteration.cs" />
+    <Compile Include="Tranversal\DFS\KCoreGraphUndirectedGraph.cs" />
+    <Compile Include="Tranversal\DFS\TopologicalOrderedStrings.cs" />
+    <Compile Include="Tranversal\DFS\TopologicalSorting.cs" />
+    <Compile Include="Tranversal\Program.cs" />
     <Compile Include="Flow\BiPartiteGraph.cs" />
     <Compile Include="Flow\FordFulkersonMaximumFlow.cs" />
     <Compile Include="Flow\MaximumBiPartiteGraph.cs" />

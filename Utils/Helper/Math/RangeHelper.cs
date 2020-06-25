@@ -1,6 +1,6 @@
 ﻿namespace Utils.Helper.Math
 {
-    using DataStructure.Models.Math;
+    using DataStructure.Math;
     using System;
     using System.Collections.Generic;
     using System.Linq;

@@ -1,10 +1,9 @@
-﻿using DataStructure.Models;
-using DataStructure.Models.Graph;
-using System;
-using System.Collections.Generic;
-
-namespace Graph.Connectivity
+﻿namespace Graph.Connectivity
 {
+    using DataStructure.Graph;
+    using System;
+    using System.Collections.Generic;
+
     public class Briges
     {
         public static int Step;

@@ -1,4 +1,4 @@
-﻿namespace Math
+﻿namespace Maths
 {
     using System.Collections.Generic;
 

@@ -1,6 +1,6 @@
 ﻿namespace MathTest
 {
-    using Math;
+    using Maths;
     using NUnit.Framework;
 
     [TestFixture]

@@ -1,7 +1,7 @@
 ﻿namespace Geometry.Helper
 {
-    using DataStructure.Models.Geometry;
-    using DataStructure.Models.Math;
+    using DataStructure.Geometry;
+    using DataStructure.Math;
     using Utils.Helper.Math;
 
     public class LineHelper

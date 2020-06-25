@@ -65,9 +65,9 @@
       <Project>{84D2C1C9-15F0-4E0A-B8C1-203455378ECF}</Project>
       <Name>Geometry</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Math\Math.csproj">
+    <ProjectReference Include="..\..\Math\Maths.csproj">
       <Project>{C7AC4EBC-025C-4951-A40D-5952B3B2502C}</Project>
-      <Name>Math</Name>
+      <Name>Maths</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

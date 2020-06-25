@@ -2,7 +2,7 @@
 // str = "aadsdkeke"
 // output = "adke"
 
-namespace AlgorithmExcercise.BranchAndBounds
+namespace Searching.String
 {
     using System;
     using System.Collections.Generic;

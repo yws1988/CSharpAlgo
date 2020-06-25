@@ -65,6 +65,10 @@
       <Project>{0CF9B7EC-8494-416C-955D-A566CA20F0FB}</Project>
       <Name>DataStructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Graph\Graph.csproj">
+      <Project>{c7825b97-0fdd-40d4-97aa-771793ccf469}</Project>
+      <Name>Graph</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Utils\Utils.csproj">
       <Project>{7E719EA7-F582-41D1-97E2-87B016D0D42B}</Project>
       <Name>Utils</Name>

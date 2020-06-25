@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Graph.Cycle
+﻿namespace Graph.Cycle
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// Karp’s minimum mean (or average) weight cycle algorithm
     /// </summary>

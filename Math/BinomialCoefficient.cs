@@ -1,4 +1,4 @@
-﻿namespace AlgorithmExcercise.DynamicProgramming.Math
+﻿namespace Maths
 {
     public class BinomialCoefficient
     {

@@ -1,8 +1,8 @@
-﻿using DataStructure.Models.Geometry;
-using System;
-
-namespace Geometry.Helper
+﻿namespace Geometry.Helper
 {
+    using DataStructure.Geometry;
+    using System;
+
     public class Point3DHeper
     {
         /// <summary>

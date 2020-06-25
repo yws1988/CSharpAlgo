@@ -4,7 +4,7 @@
  1 is included.
  */
 
-namespace Math
+namespace Maths
 {
     //Optimized solution
     public class UglyNum

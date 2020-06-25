@@ -1,6 +1,6 @@
 ﻿namespace Graph.Path.ShortestPath
 {
-    using DataStructure.Graph.Heap;
+    using DataStructure.Heap;
     using System;
     using System.Collections.Generic;
     using System.Linq;

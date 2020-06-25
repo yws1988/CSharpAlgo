@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-
     public class EulerianPathAndCircle
     {
         public static bool IsEulerianPathAndCircle(List<int>[] graph)

@@ -1,4 +1,4 @@
-﻿using DataStructure.Models.Graph;
+﻿using DataStructure.Graph;
 using Graph.Path.LongestPath;
 using NUnit.Framework;
 using System.Linq;

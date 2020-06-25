@@ -1,6 +1,6 @@
 ﻿namespace GeometryTest
 {
-    using Math;
+    using Maths;
     using NUnit.Framework;
 
     public class HungarianMatchingTest

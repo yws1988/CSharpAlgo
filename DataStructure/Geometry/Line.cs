@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Models.Geometry
+﻿namespace DataStructure.Geometry
 {
     public class Line
     {

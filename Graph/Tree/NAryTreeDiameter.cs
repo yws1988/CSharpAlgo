@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Graph.Tree
+﻿namespace Graph.Tree
 {
+    using System;
+    using System.Collections.Generic;
+
     public class NAryTreeDiameter
     {
         public static int GetNAryTreeDiameter(List<int>[] tree)

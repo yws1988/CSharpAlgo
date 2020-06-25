@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Graph.Graph
+﻿namespace DataStructure.Graph
 {
     public class AdjacencyMatrix
     {

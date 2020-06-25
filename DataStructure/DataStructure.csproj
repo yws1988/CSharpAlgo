@@ -40,22 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graph\Graph\AdjacencyList.cs" />
-    <Compile Include="Graph\Graph\AdjacencyListWithEdgeWeight.cs" />
-    <Compile Include="Graph\Graph\AdjacencyMatrix.cs" />
-    <Compile Include="Graph\Heap\PriorityQueue.cs" />
+    <Compile Include="Geometry\Line.cs" />
+    <Compile Include="Geometry\Point.cs" />
+    <Compile Include="Geometry\Point3D.cs" />
+    <Compile Include="Geometry\Point3DDouble.cs" />
+    <Compile Include="Graph\AdjacencyList.cs" />
+    <Compile Include="Graph\AdjacencyListWithEdgeWeight.cs" />
+    <Compile Include="Graph\AdjacencyMatrix.cs" />
+    <Compile Include="Graph\Edge.cs" />
+    <Compile Include="Graph\TreeNode.cs" />
+    <Compile Include="Heap\PriorityQueue.cs" />
+    <Compile Include="Math\Range.cs" />
     <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\Geometry\Line.cs" />
-    <Compile Include="Models\Geometry\Point3DDouble.cs" />
-    <Compile Include="Models\Graph\Edge.cs" />
-    <Compile Include="Models\Geometry\Point.cs" />
-    <Compile Include="Models\Graph\TreeNode.cs" />
-    <Compile Include="Models\Geometry\Point3D.cs" />
-    <Compile Include="Models\Math\Range.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Graph\Tree\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

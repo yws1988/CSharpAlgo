@@ -1,8 +1,8 @@
-﻿using DataStructure.Models.Geometry;
-using System;
-
-namespace Geometry.Helper
+﻿namespace Geometry.Helper
 {
+    using DataStructure.Geometry;
+    using System;
+
     public class PointHelper
     {
         public static int OrientationOfThreePoints(Point<double> p1, Point<double> p2, Point<double> p3)

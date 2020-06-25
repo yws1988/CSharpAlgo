@@ -3,7 +3,7 @@
  * For example if a = 5 and b = 11, then answer is 38 (5 + 6 + 7 + 8 + 9 + 1 + 0 + 1 + 1)
  */
 
-namespace AlgorithmExcercise.DynamicProgramming
+namespace Maths
 {
     using System.Collections.Generic;
 

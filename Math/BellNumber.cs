@@ -10,7 +10,7 @@
     { {1, 2, 3} }
  */
 
-namespace AlgorithmExcercise.DynamicProgramming.Math
+namespace Maths
 {
     public class BellNumber
     {

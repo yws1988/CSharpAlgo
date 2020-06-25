@@ -1,6 +1,6 @@
 ﻿namespace Geometry.Helper
 {
-    using DataStructure.Models.Geometry;
+    using DataStructure.Geometry;
     using System;
 
     public class LinePointHelper

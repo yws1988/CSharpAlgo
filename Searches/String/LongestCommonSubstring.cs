@@ -1,4 +1,4 @@
-﻿namespace String.PatternSearching
+﻿namespace Searching.String
 {
     using System;
     using System.Collections.Generic;

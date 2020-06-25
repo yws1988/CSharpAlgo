@@ -16,10 +16,10 @@ Output
 mojito < fraise < club-mate < pamplemousse < grenadine
  */
 
-namespace Graph.DFS.BFS.DFS
+namespace Graph.Tranversal.DFS
 {
     using Graph.Cycle;
-    using Graph.DFS.BFS.DFS;
+    using Graph.Tranversal.DFS;
     using System.Collections.Generic;
     using System.Linq;
 

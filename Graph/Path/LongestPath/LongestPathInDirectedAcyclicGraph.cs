@@ -1,7 +1,7 @@
 ﻿namespace Graph.Path.LongestPath
 {
-    using DataStructure.Models;
-    using DataStructure.Models.Graph;
+    using DataStructure.Model;
+    using DataStructure.Graph;
     //Given a Weighted Directed Acyclic Graph(DAG) and a source vertex s in it,
     //find the longest distances from s to all other vertices in the given graph.
 

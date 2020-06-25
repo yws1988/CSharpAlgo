@@ -1,4 +1,4 @@
-﻿namespace Graph.DFS.BFS.BFS
+﻿namespace Graph.Tranversal.DFS
 {
     using System;
     using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Models.Geometry
+﻿namespace DataStructure.Geometry
 {
     public class Point3D<T>
     {

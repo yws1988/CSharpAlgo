@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Graph.Connectivity
+﻿namespace Graph.Connectivity
 {
+    using System;
+    using System.Collections.Generic;
+
     public class ArticulationPoints
     {
         public static int Step;

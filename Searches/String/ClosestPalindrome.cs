@@ -2,9 +2,9 @@
 // whose absolute difference with given number is minimum and absolute 
 // difference must be greater than 0.
 
-namespace String.PatternSearching
+namespace Searching.String
 {
-    using DataStructure.Graph.Heap;
+    using DataStructure.Heap;
     using System;
     using System.Collections.Generic;
     using System.Linq;

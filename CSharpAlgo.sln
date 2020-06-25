@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitOperationTest", "Test\Bi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Searching", "Searching", "{B0366A0E-DD1A-45C5-B280-4884899F5413}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math", "Math\Math.csproj", "{C7AC4EBC-025C-4951-A40D-5952B3B2502C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maths", "Math\Maths.csproj", "{C7AC4EBC-025C-4951-A40D-5952B3B2502C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Searching", "Searches\Searching.csproj", "{4A1FC679-E57A-4565-9F6D-D417DC059935}"
 EndProject
@@ -45,7 +45,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathTest", "Test\MathTest\M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Graph\Graph.csproj", "{C7825B97-0FDD-40D4-97AA-771793CCF469}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math", "Math", "{1C18AE22-375E-48BC-808B-387A584503F9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maths", "Maths", "{1C18AE22-375E-48BC-808B-387A584503F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProgramming", "DynamicProgramming\DynamicProgramming.csproj", "{AEDB9D2E-8CD6-401D-B326-D1B95374A517}"
 EndProject

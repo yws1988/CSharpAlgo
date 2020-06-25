@@ -1,6 +1,6 @@
 ﻿// Get the longest palindrome substring (LPS) 
 
-namespace String.PatternSearching
+namespace Searching.String
 {
     public class LongestPanlindromicSubstring
     {

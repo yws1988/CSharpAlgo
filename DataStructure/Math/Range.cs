@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Models.Math
+﻿namespace DataStructure.Math
 {
     using System;
 
