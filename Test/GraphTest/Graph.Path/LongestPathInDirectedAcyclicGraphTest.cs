@@ -1,5 +1,5 @@
-﻿using Algorithmne.Graph.Graph.Path.LongestPath;
-using DataStructure.Models.Graph;
+﻿using DataStructure.Models.Graph;
+using Graph.Path.LongestPath;
 using NUnit.Framework;
 using System.Linq;
 using Utils.Graph.Helper;

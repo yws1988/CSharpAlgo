@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7825B97-0FDD-40D4-97AA-771793CCF469}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Graph</RootNamespace>
+    <AssemblyName>Graph</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connectivity\ArticulationPoints.cs" />
+    <Compile Include="Connectivity\BiConnected.cs" />
+    <Compile Include="Connectivity\Briges.cs" />
+    <Compile Include="Connectivity\EulerianPathAndCircle.cs" />
+    <Compile Include="Connectivity\LargestConnectedComponent.cs" />
+    <Compile Include="Connectivity\NumConnectedGraphInMatrix.cs" />
+    <Compile Include="Connectivity\Program.cs" />
+    <Compile Include="Connectivity\StronglyConnectedComponentList.cs" />
+    <Compile Include="Connectivity\StronglyConnectedGraph.cs" />
+    <Compile Include="Connectivity\TransitiveClosureGraph.cs" />
+    <Compile Include="Cycle\CycleDirectedGraph.cs" />
+    <Compile Include="Cycle\CycleUnDirectedGraph.cs" />
+    <Compile Include="Cycle\MinimumMeanWeightCycle.cs" />
+    <Compile Include="Cycle\MinimumWeightCycle.cs" />
+    <Compile Include="Cycle\Program.cs" />
+    <Compile Include="DFS.BFS\BFS\BFSIteration.cs" />
+    <Compile Include="DFS.BFS\DFS\DFSIteration.cs" />
+    <Compile Include="DFS.BFS\DFS\KCoreGraphUndirectedGraph.cs" />
+    <Compile Include="DFS.BFS\DFS\TopologicalOrderedStrings.cs" />
+    <Compile Include="DFS.BFS\DFS\TopologicalSorting.cs" />
+    <Compile Include="DFS.BFS\Program.cs" />
+    <Compile Include="Flow\BiPartiteGraph.cs" />
+    <Compile Include="Flow\FordFulkersonMaximumFlow.cs" />
+    <Compile Include="Flow\MaximumBiPartiteGraph.cs" />
+    <Compile Include="Flow\Program.cs" />
+    <Compile Include="Flow\STMinCutMaximumFlow.cs" />
+    <Compile Include="MinimumSpanningTree\MinimumSpanningTree.cs" />
+    <Compile Include="MinimumSpanningTree\Program.cs" />
+    <Compile Include="Other\MColoring.cs" />
+    <Compile Include="Other\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Path\HamiltonianPath.cs" />
+    <Compile Include="Path\LongestPath\LongestPathInDirectedAcyclicGraph.cs" />
+    <Compile Include="Path\ShortestPath\BellmanFordShortestPath.cs" />
+    <Compile Include="Path\ShortestPath\DijsktraShortestPath.cs" />
+    <Compile Include="Path\ShortestPath\WarshallShortestPath.cs" />
+    <Compile Include="Path\ShortestPath\TravellingSalesman.cs" />
+    <Compile Include="Tree\AVLTree.cs" />
+    <Compile Include="Tree\BinaryTreeLowestCommonAncestor.cs" />
+    <Compile Include="Tree\LowestCommonAncestorWithDpSolution.cs" />
+    <Compile Include="Tree\NAryTreeDiameter.cs" />
+    <Compile Include="Tree\NAryTreeDiameterWithBFS.cs" />
+    <Compile Include="Tree\PrefixTree.cs" />
+    <Compile Include="Tree\Program.cs" />
+    <Compile Include="Tree\SegmentTreeCompare.cs" />
+    <Compile Include="Tree\SegmentTreeSum.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connectivity\Description\LargestConnectedComponentInGrid.txt" />
+    <Content Include="Cycle\Description\MagicalIndices.txt" />
+    <Content Include="Cycle\Description\MinimumMeanWeightCycle.txt" />
+    <Content Include="Cycle\Description\MinimumWeightCycle.txt" />
+    <Content Include="Flow\Description\BiPartiteGraph.txt" />
+    <Content Include="Flow\Description\FordFulkersonMaximumFlow.txt" />
+    <Content Include="Flow\Description\MaximumBiPartiteMatching.txt" />
+    <Content Include="Other\Description\MColoring.txt" />
+    <Content Include="Path\Description\TravellingSalesmanProblem.txt" />
+    <Content Include="Tree\Description\NAryTreeDiameter.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataStructure\DataStructure.csproj">
+      <Project>{0cf9b7ec-8494-416c-955d-a566ca20f0fb}</Project>
+      <Name>DataStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{7e719ea7-f582-41d1-97e2-87b016d0d42b}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
