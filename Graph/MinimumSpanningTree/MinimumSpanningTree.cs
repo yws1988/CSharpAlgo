@@ -1,4 +1,4 @@
-﻿namespace Graph.MinimumSpanningTree
+﻿namespace CSharpAlgo.Graph.MinimumSpanningTree
 {
     using System;
     using System.Collections.Generic;

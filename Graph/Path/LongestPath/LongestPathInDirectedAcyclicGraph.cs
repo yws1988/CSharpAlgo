@@ -1,4 +1,4 @@
-﻿namespace Graph.Path.LongestPath
+﻿namespace CSharpAlgo.Graph.Path.LongestPath
 {
     using DataStructure.Model;
     using DataStructure.Graph;

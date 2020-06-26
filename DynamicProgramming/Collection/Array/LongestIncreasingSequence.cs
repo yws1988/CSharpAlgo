@@ -2,7 +2,7 @@
 // Input { 10, 2, 36, 7, 9, 25, 12, 2 }
 // Output 4 {2, 7, 9, 12 }
 
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     using System;
     using System.Linq;

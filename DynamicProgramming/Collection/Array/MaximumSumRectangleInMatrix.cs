@@ -7,7 +7,7 @@
  *  {3, 8, 10, 1, 3},  
  *  {-4, -1, 1, 7, -6}};  
  */
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     public class MaximumSumRectangleInMatrix
     {

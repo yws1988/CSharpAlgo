@@ -2,7 +2,7 @@
  * Given an array arr[] of size n, find the maximum sum of the array elements 
  * to make the sum <= k
  */
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     using System;
 

@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Geometry
+﻿namespace CSharpAlgo.DataStructure.Geometry
 {
     public class Point3D<T>
     {

@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Model
+﻿namespace CSharpAlgo.DataStructure.Model
 {
     using System;
 

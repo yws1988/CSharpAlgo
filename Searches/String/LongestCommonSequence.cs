@@ -1,4 +1,4 @@
-﻿namespace Searching.String
+﻿namespace CSharpAlgo.Searching.String
 {
     using System.Collections.Generic;
 

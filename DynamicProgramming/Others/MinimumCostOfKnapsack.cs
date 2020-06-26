@@ -28,7 +28,7 @@
     not make exactly W kg weight, therefore answer 
     is -1.
 */
-namespace DynamicProgramming.Other
+namespace CSharpAlgo.DynamicProgramming.Other
 {
     using System;
 

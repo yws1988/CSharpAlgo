@@ -5,7 +5,7 @@
     Output:  True  //There is a subset (4, 5) with sum 9.
 */
 
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     using System.Collections.Generic;
 

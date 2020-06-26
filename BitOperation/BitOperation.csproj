@@ -7,8 +7,8 @@
     <ProjectGuid>{2C0D34EF-DCBB-40F9-8E10-F78D122FFBE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BitOperation</RootNamespace>
-    <AssemblyName>BitOperation</AssemblyName>
+    <RootNamespace>CSharpAlgo.BitOperation</RootNamespace>
+    <AssemblyName>CSharpAlgo.BitOperation</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

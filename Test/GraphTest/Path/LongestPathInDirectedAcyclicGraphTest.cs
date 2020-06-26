@@ -1,10 +1,10 @@
-﻿using DataStructure.Graph;
-using Graph.Path.LongestPath;
+﻿using CSharpAlgo.DataStructure.Graph;
+using CSharpAlgo.Graph.Path.LongestPath;
 using NUnit.Framework;
 using System.Linq;
 using Utils.Graph.Helper;
 
-namespace GraphTest
+namespace CSharpAlgo.GraphTest
 {
     [TestFixture]
     public class LongestPathInDirectedAcyclicGraphTest

@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Geometry
+﻿namespace CSharpAlgo.DataStructure.Geometry
 {
     public class Line
     {

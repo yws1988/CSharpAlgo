@@ -7,7 +7,7 @@
  * So output should be 4. 
  */
 
-namespace DynamicProgramming.Other
+namespace CSharpAlgo.DynamicProgramming.Other
 {
     public class CoinChange
     {

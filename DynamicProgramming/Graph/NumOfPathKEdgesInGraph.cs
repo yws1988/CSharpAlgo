@@ -3,7 +3,7 @@
  * count all possible walks from ‘u’ to ‘v’ with exactly k edges on the walk.
  */
 
-namespace DynamicProgramming.Graph
+namespace CSharpAlgo.DynamicProgramming.Graph
 {
     public class NumOfPathKEdgesInGraph
     {

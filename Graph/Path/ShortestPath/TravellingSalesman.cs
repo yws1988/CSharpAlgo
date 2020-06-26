@@ -4,7 +4,7 @@
  * city exactly once and returns to the starting point.
  */
 
-namespace Graph.Path.ShortestPath
+namespace CSharpAlgo.Graph.Path.ShortestPath
 {
     using System;
 

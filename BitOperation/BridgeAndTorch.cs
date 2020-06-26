@@ -4,7 +4,7 @@
  * There cannot be more than two persons on the bridge at any time,
  * and when two people cross the bridge together, they must move at the slower person’s pace.
  */
-namespace BitOperation
+namespace CSharpAlgo.BitOperation
 {
     using System;
 

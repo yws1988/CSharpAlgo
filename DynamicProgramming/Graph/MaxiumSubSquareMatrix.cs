@@ -12,7 +12,7 @@
     1 1
  */
 
-namespace DynamicProgramming.Graph
+namespace CSharpAlgo.DynamicProgramming.Graph
 {
     using System;
 

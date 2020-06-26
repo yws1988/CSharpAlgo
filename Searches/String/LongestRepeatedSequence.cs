@@ -2,7 +2,7 @@
 // str = "aadsdkeke"
 // output = "adke"
 
-namespace Searching.String
+namespace CSharpAlgo.Searching.String
 {
     using System;
     using System.Collections.Generic;

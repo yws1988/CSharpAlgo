@@ -1,4 +1,4 @@
-﻿namespace Graph.Other
+﻿namespace CSharpAlgo.Graph.Other
 {
     public class MColoring
     {

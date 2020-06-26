@@ -2,7 +2,7 @@
 // whose absolute difference with given number is minimum and absolute 
 // difference must be greater than 0.
 
-namespace Searching.String
+namespace CSharpAlgo.Searching.String
 {
     using DataStructure.Heap;
     using System;

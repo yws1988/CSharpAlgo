@@ -1,4 +1,4 @@
-﻿namespace Graph.Path
+﻿namespace CSharpAlgo.Graph.Path
 {
     using System.Collections.Generic;
 

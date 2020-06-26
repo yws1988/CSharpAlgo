@@ -1,4 +1,4 @@
-﻿namespace Graph.Flow
+﻿namespace CSharpAlgo.Graph.Flow
 {
     using System.Collections.Generic;
 

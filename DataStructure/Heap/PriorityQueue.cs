@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Heap
+﻿namespace CSharpAlgo.DataStructure.Heap
 {
     using System;
     using System.Collections.Generic;

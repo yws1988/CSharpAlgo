@@ -1,4 +1,4 @@
-﻿namespace GeometryTest
+﻿namespace CSharpAlgo.GeometryTest
 {
     using Geometry;
     using NUnit.Framework;

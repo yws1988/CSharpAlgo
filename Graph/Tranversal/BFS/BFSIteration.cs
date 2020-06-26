@@ -1,4 +1,4 @@
-﻿namespace Graph.Tranversal.BFS
+﻿namespace CSharpAlgo.Graph.Tranversal.BFS
 {
     using System.Collections.Generic;
 

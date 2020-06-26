@@ -5,7 +5,7 @@
  * The longest arithmetic progression is {1, 15, 29}
  */
 
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     using System.Collections.Generic;
     using System.Linq;

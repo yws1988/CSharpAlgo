@@ -1,8 +1,8 @@
-﻿using Graph.Cycle;
+﻿using CSharpAlgo.Graph.Cycle;
 using NUnit.Framework;
 using Utils.Graph.Helper;
 
-namespace GraphTest
+namespace CSharpAlgo.GraphTest
 {
     [TestFixture]
     public class CycleDirectedGraphTest

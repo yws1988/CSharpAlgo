@@ -1,4 +1,4 @@
-﻿namespace Graph.Tree
+﻿namespace CSharpAlgo.Graph.Tree
 {
     public class BinaryTreeLowestCommonAncestor
     {

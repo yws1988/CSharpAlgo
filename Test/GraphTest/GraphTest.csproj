@@ -53,9 +53,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graph.Cycle\CycleDirectedGraphTest.cs" />
-    <Compile Include="Graph.Path\LongestPathInDirectedAcyclicGraphTest.cs" />
+    <Compile Include="Cycle\CycleDirectedGraphTest.cs" />
+    <Compile Include="Path\LongestPathInDirectedAcyclicGraphTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tranversal\TopologicalOrderedStringsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -73,6 +74,14 @@
       <Project>{7E719EA7-F582-41D1-97E2-87B016D0D42B}</Project>
       <Name>Utils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IOFiles\TopologicalOrderedStringsInput1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOFiles\TopologicalOrderedStringsInput2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

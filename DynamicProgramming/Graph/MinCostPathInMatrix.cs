@@ -15,7 +15,7 @@
      Min cost path to point (2, 2) is 1+2+2+3 = 8
  */
 
-namespace DynamicProgramming.Graph
+namespace CSharpAlgo.DynamicProgramming.Graph
 {
     public class MinCostPathInMatrix
     {

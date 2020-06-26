@@ -1,4 +1,4 @@
-﻿namespace Maths
+﻿namespace CSharpAlgo.Maths
 {
     public class BinomialCoefficient
     {

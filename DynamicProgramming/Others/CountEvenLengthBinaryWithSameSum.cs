@@ -15,7 +15,7 @@
     and 1111
  */
 
-namespace DynamicProgramming.Other
+namespace CSharpAlgo.DynamicProgramming.Other
 {
     public class CountEvenLengthBinaryWithSameSum
     {

@@ -14,7 +14,7 @@
     We can convert str1 into str2 by inserting a 's'.
  */
 
-namespace DynamicProgramming.Other
+namespace CSharpAlgo.DynamicProgramming.Other
 {
     public class MinOperationConvertionStrings
     {

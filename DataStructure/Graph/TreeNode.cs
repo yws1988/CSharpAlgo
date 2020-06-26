@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Graph
+﻿namespace CSharpAlgo.DataStructure.Graph
 {
     public class TreeNode
     {

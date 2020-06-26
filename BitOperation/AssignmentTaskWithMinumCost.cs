@@ -1,4 +1,4 @@
-﻿namespace BitOperation
+﻿namespace CSharpAlgo.BitOperation
 {
     using BitOperation.Helper;
     using System;

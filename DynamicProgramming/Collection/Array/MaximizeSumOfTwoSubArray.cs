@@ -4,7 +4,7 @@
  * Array {4, 8, 9, 2, 20}
  * Then the maximum such value is 23 (9 - 4 + 20 - 2)
  */
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     using System;
 

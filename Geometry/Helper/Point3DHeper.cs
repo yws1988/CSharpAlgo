@@ -1,4 +1,4 @@
-﻿namespace Geometry.Helper
+﻿namespace CSharpAlgo.Geometry.Helper
 {
     using DataStructure.Geometry;
     using System;

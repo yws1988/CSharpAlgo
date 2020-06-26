@@ -10,7 +10,7 @@
     { {1, 2, 3} }
  */
 
-namespace Maths
+namespace CSharpAlgo.Maths
 {
     public class BellNumber
     {

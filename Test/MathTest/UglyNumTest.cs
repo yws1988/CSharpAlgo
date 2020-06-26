@@ -1,6 +1,6 @@
 ﻿namespace MathTest
 {
-    using Maths;
+    using CSharpAlgo.Maths;
     using NUnit.Framework;
 
     [TestFixture]

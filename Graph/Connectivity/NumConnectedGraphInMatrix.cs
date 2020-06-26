@@ -1,4 +1,4 @@
-﻿namespace Graph.Connectivity
+﻿namespace CSharpAlgo.Graph.Connectivity
 {
     public class NumConnectedGraphInMatrix
     {

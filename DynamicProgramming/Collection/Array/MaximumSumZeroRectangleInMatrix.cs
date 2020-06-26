@@ -9,7 +9,7 @@
  *  (Bottom, Right) (3, 2)
  *  sum is: 0
  */
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     using System;
     using System.Collections.Generic;

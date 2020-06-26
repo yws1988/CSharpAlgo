@@ -1,4 +1,4 @@
-﻿namespace Graph.Path.ShortestPath
+﻿namespace CSharpAlgo.Graph.Path.ShortestPath
 {
     using System;
     using System.Collections.Generic;

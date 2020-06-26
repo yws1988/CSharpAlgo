@@ -1,4 +1,4 @@
-﻿//namespace Graph.Cycle
+﻿//namespace CSharpAlgo.Graph.Cycle
 //{
 //    using System;
 //    using Graph.Base;

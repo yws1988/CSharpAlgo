@@ -2,7 +2,7 @@
  * Given an array arr[] of size n, find the maximum size of the subarray 
  * which of the sum is zero
  */
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     using System.Collections.Generic;
     using System.Linq;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Graph.Tree
+namespace CSharpAlgo.Graph.Tree
 {
     public class AVLTree
     {

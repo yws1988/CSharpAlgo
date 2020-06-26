@@ -4,7 +4,7 @@
  * The result is 10
  */
 
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     public class MaximumSumOfSubArray
     {

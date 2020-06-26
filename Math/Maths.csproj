@@ -7,8 +7,8 @@
     <ProjectGuid>{C7AC4EBC-025C-4951-A40D-5952B3B2502C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Maths</RootNamespace>
-    <AssemblyName>Maths</AssemblyName>
+    <RootNamespace>CSharpAlgo.Maths</RootNamespace>
+    <AssemblyName>CSharpAlgo.Maths</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

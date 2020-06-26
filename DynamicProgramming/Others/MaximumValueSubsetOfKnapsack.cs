@@ -2,17 +2,17 @@
 /// respectively. Find out the maximum value subset of val[] such that sum of the weights of this subset is smaller than or equal
 /// to Knapsack capacity cap.
 
-namespace DynamicProgramming.Other
+namespace CSharpAlgo.DynamicProgramming.Other
 {
         using System;
 
         public class MaximumValueSubsetOfKnapsack
         {
-            public static int GetMaxValue((int, int)[] arr, int capacity)
+            public static int GetMaxValue((int, int)[] arr, int capacity, out int[,] dp)
             {
                 int n = arr.Length;
 
-                int[,] dp = new int[capacity + 1, n];
+                dp = new int[capacity + 1, n];
 
                 for (int i = 1; i <= capacity; i++)
                 {

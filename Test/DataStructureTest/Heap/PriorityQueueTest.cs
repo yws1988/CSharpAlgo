@@ -1,4 +1,4 @@
-﻿namespace DataStructureTest.Graph.Heap
+﻿namespace CSharpAlgo.DataStructureTest.Graph.Heap
 {
     using DataStructure.Heap;
     using DataStructure.Model;

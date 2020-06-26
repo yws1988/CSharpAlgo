@@ -1,6 +1,6 @@
 ﻿// Get the longest palindrome substring (LPS) 
 
-namespace Searching.String
+namespace CSharpAlgo.Searching.String
 {
     public class LongestPanlindromicSubstring
     {

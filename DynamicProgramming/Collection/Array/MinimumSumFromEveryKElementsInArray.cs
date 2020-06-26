@@ -9,7 +9,7 @@
   You can pick 3th et au 7th elements, So the minumum sum is 2+1 = 3 
  */
 
-namespace DynamicProgramming.Collection.Array
+namespace CSharpAlgo.DynamicProgramming.Collection.Array
 {
     using System;
 

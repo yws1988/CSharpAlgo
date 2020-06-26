@@ -1,4 +1,4 @@
-﻿namespace BitOperationTest
+﻿namespace CSharpAlgo.BitOperationTest
 {
     using BitOperation;
     using NUnit.Framework;

@@ -1,4 +1,4 @@
-﻿namespace Geometry
+﻿namespace CSharpAlgo.Geometry
 {
     using System;
     using System.Collections.Generic;

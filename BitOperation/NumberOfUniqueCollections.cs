@@ -19,7 +19,7 @@
     4
     Explanation: All valid possible ways are (5, 2, 100),  (100, 2, 5), (1, 2, 5) and  (1, 2, 100)
 */
-namespace BitOperation
+namespace CSharpAlgo.BitOperation
 {
     using System.Collections.Generic;
 

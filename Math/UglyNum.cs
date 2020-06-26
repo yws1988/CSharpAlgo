@@ -4,7 +4,7 @@
  1 is included.
  */
 
-namespace Maths
+namespace CSharpAlgo.Maths
 {
     //Optimized solution
     public class UglyNum

@@ -1,4 +1,4 @@
-﻿namespace BitOperation.Helper
+﻿namespace CSharpAlgo.BitOperation.Helper
 {
     public class BitMaskingHelper
     {
