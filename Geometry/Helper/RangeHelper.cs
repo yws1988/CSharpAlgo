@@ -1,4 +1,4 @@
-﻿namespace Utils.Helper.Math
+﻿namespace CSharpAlgo.Geometry.Helper
 {
     using CSharpAlgo.DataStructure.Math;
     using System;

@@ -55,5 +55,36 @@ namespace Utils.Helper
 
             return str.ToString();
         }
+
+        /// <summary>
+        /// Determine if string contains the sequence
+        /// </summary>
+        /// <param name="sequence"></param>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static bool IsSequenceInString(string sequence, string str)
+        {
+            int i = 0, j = 0;
+
+            while (i < sequence.Length && j < str.Length)
+            {
+                if (sequence[i] == str[j])
+                {
+                    i++;
+                    j++;
+                }
+                else
+                {
+                    j++;
+                }
+            }
+
+            if (i == sequence.Length)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

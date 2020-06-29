@@ -32,5 +32,14 @@
 
             return cArray;
         }
+
+        public static T[] CopyArray<T>(T[] array)
+        {
+            int len = array.Length;
+            T[] copyArray = new T[len];
+            array.CopyTo(copyArray, 0);
+
+            return copyArray;
+        }
     }
 }

@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\RangeHelper.cs" />
+    <Compile Include="MaximumNumOfIntersectionsForRanges.cs" />
     <Compile Include="MinimumDistanceOfTwoPoints.cs" />
     <Compile Include="FindTheClosestPathOfPoints.cs" />
     <Compile Include="Helper\LineHelper.cs" />

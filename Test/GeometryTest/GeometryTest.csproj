@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HungarianMatchingTest.cs" />
+    <Compile Include="MaximumNumOfIntersectionsForRangesTest.cs" />
     <Compile Include="SmallestEnclosingCircleTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +70,15 @@
       <Project>{C7AC4EBC-025C-4951-A40D-5952B3B2502C}</Project>
       <Name>Maths</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Utils\Utils.csproj">
+      <Project>{7e719ea7-f582-41d1-97e2-87b016d0d42b}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IOFiles\MaximumNumOfIntersectionsForRangesInput.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -58,6 +58,7 @@
     <Compile Include="Cycle\Program.cs" />
     <Compile Include="Tranversal\BFS\BFSIteration.cs" />
     <Compile Include="Tranversal\DFS\DFSIteration.cs" />
+    <Compile Include="Tranversal\DFS\IntegerToStringGraphMatching.cs" />
     <Compile Include="Tranversal\DFS\KCoreGraphUndirectedGraph.cs" />
     <Compile Include="Tranversal\DFS\TopologicalOrderedStrings.cs" />
     <Compile Include="Tranversal\DFS\TopologicalSorting.cs" />

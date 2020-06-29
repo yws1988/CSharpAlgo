@@ -30,5 +30,26 @@
 
             return matrix;
         }
+
+        /// <summary>
+        /// Get the matrix to calculate the max costs for Hungarian Matching
+        /// </summary>
+        /// <param name="matrix">cost matrix</param>
+        /// <returns></returns>
+        public static int[,] GetMaxMatrixForHungarianMatching(int[,] matrix, int max)
+        {
+            int n = matrix.GetLength(0);
+
+            var rGraph = new int[n, n];
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    rGraph[i, j] = max - matrix[i, j];
+                }
+            }
+
+            return rGraph;
+        }
     }
 }
