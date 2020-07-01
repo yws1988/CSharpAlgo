@@ -1,4 +1,4 @@
-﻿namespace CSharpAlgo.Graph.Tranversal.DFS
+﻿namespace CSharpAlgo.Graph.Traversal.DFS
 {
     using System.Collections.Generic;
 

@@ -1,6 +1,6 @@
-﻿namespace IsogradTest
+﻿namespace CSharpAlgo.GraphTest.Traversal
 {
-    using CSharpAlgo.Graph.Tranversal.DFS;
+    using CSharpAlgo.Graph.Traversal.DFS;
     using NUnit.Framework;
     using System;
     using System.IO;

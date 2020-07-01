@@ -38,7 +38,7 @@
     Output:
     Returns the number and string matching relations
  */
-namespace CSharpAlgo.Graph.Tranversal.DFS
+namespace CSharpAlgo.Graph.Traversal.DFS
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -54,10 +54,9 @@ namespace CSharpAlgo.Graph.Tranversal.DFS
         /// <returns></returns>
         public static string[] GetMatches(HashSet<int>[] oldGraph, Dictionary<string, HashSet<string>> newGraph)
         {
-           
-
             var availableNodes = new Queue<string>(newGraph.Keys);
-            var match = new string[14];
+            int n = oldGraph.Length;
+            var match = new string[n];
 
             Dfs(0, match, availableNodes, oldGraph, newGraph);
 
@@ -74,24 +73,27 @@ namespace CSharpAlgo.Graph.Tranversal.DFS
                 var hypoMatch = ArrayHelper.CopyArray(match);
                 hypoMatch[src] = node;
 
-                bool isConsistent = true;
+                bool isConsistent = oldGraph[src].Count == newGraph[node].Count;
 
-                foreach (var c in oldGraph[src])
+                if (isConsistent)
                 {
-                    if (!string.IsNullOrEmpty(hypoMatch[c]))
+                    foreach (var c in oldGraph[src])
                     {
-                        if (!newGraph[hypoMatch[c]].Contains(hypoMatch[src]))
+                        if (!string.IsNullOrEmpty(hypoMatch[c]))
                         {
-                            isConsistent = false;
-                            break;
+                            if (!newGraph[hypoMatch[c]].Contains(hypoMatch[src]))
+                            {
+                                isConsistent = false;
+                                break;
+                            }
                         }
-                    }
-                    else
-                    {
-                        if (!Dfs(c, hypoMatch, new Queue<string>(used.Concat(availableNodes)), oldGraph, newGraph))
+                        else
                         {
-                            isConsistent = false;
-                            break;
+                            if (!Dfs(c, hypoMatch, new Queue<string>(used.Concat(availableNodes)), oldGraph, newGraph))
+                            {
+                                isConsistent = false;
+                                break;
+                            }
                         }
                     }
                 }

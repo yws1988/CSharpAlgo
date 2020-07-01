@@ -1,21 +1,21 @@
-﻿namespace CSharpAlgo.Graph.Tranversal.DFS
+﻿namespace CSharpAlgo.Graph.Traversal.BFS
 {
     using System.Collections.Generic;
 
-    public class DFSIteration
+    public class BFSIteration
     {
-        public static IList<int> GetDFSIterationList(List<int>[] graph, int src)
+        public static IList<int> GetBFSIterationList(List<int>[] graph, int src)
         {
             var result = new List<int>();
             int v = graph.Length;
             bool[] visited = new bool[v];
 
-            Stack<int> stack = new Stack<int>();
-            stack.Push(src);
+            Queue<int> queue = new Queue<int>();
+            queue.Enqueue(src);
 
-            while (stack.Count > 0)
+            while (queue.Count > 0)
             {
-                int next = stack.Pop();
+                int next = queue.Dequeue();
                 visited[next] = true;
                 result.Add(next);
 
@@ -23,7 +23,7 @@
                 {
                     if (!visited[c])
                     {
-                        stack.Push(c);
+                        queue.Enqueue(c);
                     }
                 }
             }

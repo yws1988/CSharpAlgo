@@ -16,10 +16,10 @@ Output
 mojito < fraise < club-mate < pamplemousse < grenadine
  */
 
-namespace CSharpAlgo.Graph.Tranversal.DFS
+namespace CSharpAlgo.Graph.Traversal.DFS
 {
     using Graph.Cycle;
-    using Graph.Tranversal.DFS;
+    using Graph.Traversal.DFS;
     using System.Collections.Generic;
     using System.Linq;
 
