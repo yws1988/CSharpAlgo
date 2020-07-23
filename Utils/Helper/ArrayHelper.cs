@@ -41,5 +41,26 @@
 
             return copyArray;
         }
+
+        /// <summary>
+        /// Inverse the position of the first k elements of the array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="k"></param>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static T[] Inverse<T>(T[] array, int k)
+        {
+            var newArray = new T[array.Length];
+            array.CopyTo(newArray, 0);
+            for (int i = 0, j = k; i <= k / 2; i++, j--)
+            {
+                T temp = newArray[i];
+                newArray[i] = newArray[j];
+                newArray[j] = temp;
+            }
+
+            return newArray;
+        }
     }
 }

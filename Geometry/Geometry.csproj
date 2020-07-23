@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\RangeHelper.cs" />
+    <Compile Include="MatrixRotation.cs" />
     <Compile Include="MaximumNumOfIntersectionsForRanges.cs" />
     <Compile Include="MinimumDistanceOfTwoPoints.cs" />
     <Compile Include="FindTheClosestPathOfPoints.cs" />
