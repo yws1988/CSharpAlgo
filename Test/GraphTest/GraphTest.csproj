@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cycle\CycleDirectedGraphTest.cs" />
+    <Compile Include="Flow\PushRelabelMaximumFlowTest.cs" />
     <Compile Include="Path\LongestPathInDirectedAcyclicGraphTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tranversal\IntegerToStringGraphMatchingTest.cs" />
