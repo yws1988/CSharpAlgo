@@ -44,7 +44,7 @@
     <Compile Include="Others\CoinChange.cs" />
     <Compile Include="Collection\Array\LongestArithmeticProgression.cs" />
     <Compile Include="Collection\Array\LongestIncreasingSequence.cs" />
-    <Compile Include="Collection\Array\MaximizeBitonicSequenceSum.cs" />
+    <Compile Include="Collection\Array\LongestAndMaximumSumBitonicSequence.cs" />
     <Compile Include="Collection\Array\MaximizeSumOfTwoSubArray.cs" />
     <Compile Include="Collection\Array\MaximumSumOfSubArray.cs" />
     <Compile Include="Collection\Array\MaximumSumRectangleInMatrix.cs" />
@@ -55,10 +55,11 @@
     <Compile Include="Collection\Array\SumOfArrayElementsLowerOrEqualThanK.cs" />
     <Compile Include="Collection\List\MaximumLengthChainPairs.cs" />
     <Compile Include="Others\CountEvenLengthBinaryWithSameSum.cs" />
-    <Compile Include="Others\MaximumValueSubsetOfKnapsack.cs" />
+    <Compile Include="Others\MaximumValueToReachAtMostWeight.cs" />
     <Compile Include="Graph\MaxiumSubSquareMatrix.cs" />
     <Compile Include="Graph\MinCostPathInMatrix.cs" />
-    <Compile Include="Others\MinimumCostOfKnapsack.cs" />
+    <Compile Include="Others\MinimumCostToReachWeight.cs" />
+    <Compile Include="Others\MinimumCostToReachAtLeastWeight.cs" />
     <Compile Include="Others\MinOperationConvertionStrings.cs" />
     <Compile Include="Graph\NumOfPathKEdgesInGraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

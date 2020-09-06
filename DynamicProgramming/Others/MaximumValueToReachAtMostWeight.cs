@@ -6,7 +6,7 @@ namespace CSharpAlgo.DynamicProgramming.Other
 {
         using System;
 
-        public class MaximumValueSubsetOfKnapsack
+        public class MaximumValueToReachAtMostWeight
         {
             public static int GetMaxValue((int, int)[] arr, int capacity, out int[,] dp)
             {
