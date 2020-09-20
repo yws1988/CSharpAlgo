@@ -5,6 +5,11 @@
 
     public class StronglyConnectedComponentList
     {
+        /// <summary>
+        /// Get strongly Connected Component, return array vetex number and componenet id
+        /// </summary>
+        /// <param name="graph"></param>
+        /// <returns></returns>
         public static int[] GetSCC(List<int>[] graph)
         {
             var stack = new Stack<int>();
@@ -34,7 +39,7 @@
                 int i = stack.Pop();
                 if (scc[i]==-1)
                 {
-                    DFSComponents(i, scc, graph, numCompoents);
+                    DFSComponents(i, scc, rGraph, numCompoents);
                 }
                 numCompoents++;
             }

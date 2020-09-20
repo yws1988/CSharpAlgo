@@ -46,6 +46,7 @@
     <Compile Include="Connectivity\Briges.cs" />
     <Compile Include="Connectivity\EulerianPathAndCircle.cs" />
     <Compile Include="Connectivity\LargestConnectedComponent.cs" />
+    <Compile Include="Connectivity\MaxCliqueOfRanges.cs" />
     <Compile Include="Connectivity\NumConnectedGraphInMatrix.cs" />
     <Compile Include="Connectivity\Program.cs" />
     <Compile Include="Connectivity\StronglyConnectedComponentList.cs" />
