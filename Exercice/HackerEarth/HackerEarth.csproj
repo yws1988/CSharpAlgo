@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73EDDC9A-4D81-4906-917A-3FDD8A2BC67A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CSharpAlgo.Excercise.HackerEarth</RootNamespace>
+    <AssemblyName>CSharpAlgo.Excercise.HackerEarth</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DynamiqueProgramming\AmazingTest.cs" />
+    <Compile Include="DynamiqueProgramming\AmolAndMaximumNumber.cs" />
+    <Compile Include="DynamiqueProgramming\ArrayConversion.cs" />
+    <Compile Include="DynamiqueProgramming\ArrayShuffling.cs" />
+    <Compile Include="DynamiqueProgramming\BooleanExpression.cs" />
+    <Compile Include="DynamiqueProgramming\BooleanExpressionEvaluationFull.cs" />
+    <Compile Include="DynamiqueProgramming\FaceDetection.cs" />
+    <Compile Include="DynamiqueProgramming\List.cs" />
+    <Compile Include="DynamiqueProgramming\NextLuckyNumber.cs" />
+    <Compile Include="DynamiqueProgramming\NumberOfRs.cs" />
+    <Compile Include="DynamiqueProgramming\PandaNumbers.cs" />
+    <Compile Include="DynamiqueProgramming\PatternsInString.cs" />
+    <Compile Include="DynamiqueProgramming\TheMazeRunner.cs" />
+    <Compile Include="DynamiqueProgramming\WithoutStatement.cs" />
+    <Compile Include="Graph\Graph.Base\BalckAndWhite.cs" />
+    <Compile Include="Graph\Graph.Base\BuggyBot.cs" />
+    <Compile Include="Graph\Graph.Base\BuggyBot1.cs" />
+    <Compile Include="Graph\Graph.Base\CountingTriplets.cs" />
+    <Compile Include="Graph\Graph.Base\GardenNum.cs" />
+    <Compile Include="Graph\Graph.Base\GraphicalSequenceVetexDegree.cs" />
+    <Compile Include="Graph\Graph.Base\MancunianAndLiverbirdGoBarHopping.cs" />
+    <Compile Include="Graph\Graph.Base\MinMaxWeightedEdge.cs" />
+    <Compile Include="Graph\Graph.Base\OptimalConnectivity.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\ConnectedHorses.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\EightPuzzles.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\HiddenTreasure.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\MinimumCost.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\MrinalAndThreeMusketeers.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\NumberOfCity.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\PermutationSwaps.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\SettingTheAlarm.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\SheltersAndTunnels.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\StrangeCity.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\TravelDiaries.cs" />
+    <Compile Include="Graph\Graph.BFS.DFS\WeakNode.cs" />
+    <Compile Include="Graph\Graph.Path\MinimumValidPath.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DynamiqueProgramming\ProblemDescription\BooleanExpressionEvaluationFull.txt" />
+    <Content Include="DynamiqueProgramming\test\AmazingTest.txt" />
+    <Content Include="DynamiqueProgramming\test\AmolAndMaximumNumber.txt" />
+    <Content Include="DynamiqueProgramming\test\ArrayConversion.txt" />
+    <Content Include="DynamiqueProgramming\test\ArrayShuffling.txt" />
+    <Content Include="DynamiqueProgramming\test\BooleanExpression.txt" />
+    <Content Include="DynamiqueProgramming\test\FaceDetection.txt" />
+    <Content Include="DynamiqueProgramming\test\LuckyNumber.txt" />
+    <Content Include="DynamiqueProgramming\test\NumberOfRs.txt" />
+    <Content Include="DynamiqueProgramming\test\PandaNumbers.txt" />
+    <Content Include="DynamiqueProgramming\test\PatternsInString.txt" />
+    <Content Include="DynamiqueProgramming\test\TheMazeRunner.txt" />
+    <Content Include="DynamiqueProgramming\test\WithoutStatement.txt" />
+    <Content Include="Graph\Graph.Base\Problems\BuggyBot.txt" />
+    <Content Include="Graph\Graph.Base\test\BalckAndWhite.txt" />
+    <Content Include="Graph\Graph.Base\test\BuggyBot.txt" />
+    <Content Include="Graph\Graph.Base\test\CountingTriplets.txt" />
+    <Content Include="Graph\Graph.Base\test\GardenNum.txt" />
+    <Content Include="Graph\Graph.Base\test\GraphicalSequenceVetexDegree.txt" />
+    <Content Include="Graph\Graph.Base\test\MancunianAndLiverbirdGoBarHopping.txt" />
+    <Content Include="Graph\Graph.Base\test\MinMaxWeightedEdge.txt" />
+    <Content Include="Graph\Graph.Base\test\OptimalConnectivity.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\ConnectedHorses.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\EightPuzzles.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\HiddenTreasure.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\MinimumCost.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\MrinalAndThreeMusketeers.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\NumberOfCity.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\PermutationSwaps.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\SettingTheAlarm.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\SheltersAndTunnels.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\StrangeCity.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\TravelDiaries.txt" />
+    <Content Include="Graph\Graph.BFS.DFS\test\WeekNode.txt" />
+    <Content Include="Graph\Graph.Path\Problems\MinimumValidPath.txt" />
+    <Content Include="Graph\Graph.Path\test\MinimumValidPath.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Utils\Utils.csproj">
+      <Project>{7E719EA7-F582-41D1-97E2-87B016D0D42B}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

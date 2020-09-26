@@ -1,0 +1,24 @@
+﻿Roy is intrigued by the fact that the evaluated value of boolean expressions can easily vary depending upon the order of evaluation !
+
+For instance, consider the example:
+
+Expression: 1 xor 1 and 0
+We can have following two interpretations:
+1.  ((1 xor 1) and 0) => (0 and 0) => 0
+2.  (1 xor (1 and 0)) => (1 xor 0) => 1
+Now, he is further interested into finding the number of possible different parenthesizations such that the result of computation is res.
+
+Input:
+
+The first line of input file contains two space-separated strings. The first string denotes the literals of our boolean expression S, the second string denotes the operators. The next line denotes an integer q, i.e. the number of queries to follow. Each of the next q lines contain two space separated integers l and r and a string res, which is either true or false.
+
+Output:
+
+For each query. output in a new line, the number of ways in which the boolean expression [m, n] of substring [l,r] can be parenthesized so that the full expression evaluates to res. As the output can be very large, please print the answer modulo 1000000009.
+
+Constraints:
+
+1 <= |S| <= 300
+1 <= q <= 90000
+1 <= l <= r <= |S|
+1 <= l <= m <= n <= r <= |S|

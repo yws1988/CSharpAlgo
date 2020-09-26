@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{935F300F-6795-4951-9C80-9C76382BD5FC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSharpAlgo.Excercise.Excercises</RootNamespace>
+    <AssemblyName>CSharpAlgo.Excercise.Excercises</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSharpAlgo.DataStructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PackageLibs\CSharpAlgo.DataStructure.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpAlgo.DynamicProgramming">
+      <HintPath>..\PackageLibs\CSharpAlgo.DynamicProgramming.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpAlgo.Graph">
+      <HintPath>..\PackageLibs\CSharpAlgo.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpAlgo.Maths">
+      <HintPath>..\PackageLibs\CSharpAlgo.Maths.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpAlgo.Utils">
+      <HintPath>..\PackageLibs\CSharpAlgo.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backtracking\KnightsTour.cs" />
+    <Compile Include="Backtracking\NQueen.cs" />
+    <Compile Include="BitMasking\CommonSequenceInStrings.cs" />
+    <Compile Include="BranchAndBounds\EightPuzzles.cs" />
+    <Compile Include="BranchAndBounds\JobAssignment.cs" />
+    <Compile Include="BranchAndBounds\Knapsack.cs" />
+    <Compile Include="BranchAndBounds\TravellingSalesman.cs" />
+    <Compile Include="BruteForce\DNASequence.cs" />
+    <Compile Include="BruteForce\StudentClassesArrangementWithBruteForce.cs" />
+    <Compile Include="DivideAndConquer\ClassementBattle.cs" />
+    <Compile Include="DynamicProgramming\Other\StonesAndPowderKnapsack.cs" />
+    <Compile Include="Graph\ArrayReversionSorting.cs" />
+    <Compile Include="Graph\FromTopToBottonInGraphMatrix.cs" />
+    <Compile Include="Graph\MaximumCommonNeigboursAssignment.cs" />
+    <Compile Include="Graph\LongestDirectoryName.cs" />
+    <Compile Include="Graph\MissingRobots.cs" />
+    <Compile Include="Graph\StudentClassesArrangement.cs" />
+    <Compile Include="Graph\SubwayStationIntersection.cs" />
+    <Compile Include="Other\FlowerBouquetsComposition.cs" />
+    <Compile Include="Other\MagicFunction.cs" />
+    <Compile Include="Other\TowerDefense.cs" />
+    <Compile Include="PatternSearching\ValidNumber.cs" />
+    <Compile Include="PatternSearching\WordLadder.cs" />
+    <Compile Include="DynamicProgramming\Graph\MaximumLengthSnakeInMatrix.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Temp\Aventurier.cs" />
+    <Compile Include="Temp\BattleDev2020Problem3.cs" />
+    <Compile Include="Temp\BattleDev2020Problem4.cs" />
+    <Compile Include="Temp\Demineur.cs" />
+    <Compile Include="Temp\Dodecagone.cs" />
+    <Compile Include="Temp\PizzaDelivery.cs" />
+    <Compile Include="Temp\SalesForceFloor.cs" />
+    <Compile Include="Temp\Spirale.cs" />
+    <Compile Include="Temp\Warrior.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ProblemDescription\ClassementBattle.pdf" />
+    <None Include="ProblemDescription\CommonSequenceInStrings.pdf" />
+    <None Include="ProblemDescription\DNASequence.pdf" />
+    <None Include="ProblemDescription\FlowerBouquetsComposition.pdf" />
+    <None Include="ProblemDescription\MagicFunction.pdf" />
+    <None Include="ProblemDescription\MaximumCommonNeigboursAssignment.pdf" />
+    <None Include="ProblemDescription\MissingRobots.pdf" />
+    <None Include="ProblemDescription\StonesAndPowderKnapsack.pdf" />
+    <None Include="ProblemDescription\StudentClassesArrangement.pdf" />
+    <None Include="ProblemDescription\StudentClassesArrangementWithBruteForce.pdf" />
+    <None Include="ProblemDescription\SubwayStationIntersection.pdf" />
+    <None Include="ProblemDescription\TowerDefense.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DynamicProgramming\Collection\" />
+    <Folder Include="DynamicProgramming\String\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IOFiles\MaximumCommonNeigboursAssignmentInput.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IOFiles\MagicFunction.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOFiles\StudentClassesArrangementInput.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="IOFiles\FlowerBouquetsCompositionInput.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
