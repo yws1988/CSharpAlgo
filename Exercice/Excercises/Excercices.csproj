@@ -70,8 +70,10 @@
     <Compile Include="BruteForce\DNASequence.cs" />
     <Compile Include="BruteForce\StudentClassesArrangementWithBruteForce.cs" />
     <Compile Include="DivideAndConquer\ClassementBattle.cs" />
+    <Compile Include="DynamicProgramming\Other\MoneyCurrencyChange.cs" />
     <Compile Include="DynamicProgramming\Other\StonesAndPowderKnapsack.cs" />
     <Compile Include="Graph\ArrayReversionSorting.cs" />
+    <Compile Include="Graph\FloodFillMaximumAreaInMatrix.cs" />
     <Compile Include="Graph\FromTopToBottonInGraphMatrix.cs" />
     <Compile Include="Graph\MaximumCommonNeigboursAssignment.cs" />
     <Compile Include="Graph\LongestDirectoryName.cs" />
@@ -93,23 +95,28 @@
     <Compile Include="Temp\Dodecagone.cs" />
     <Compile Include="Temp\PizzaDelivery.cs" />
     <Compile Include="Temp\SalesForceFloor.cs" />
-    <Compile Include="Temp\Spirale.cs" />
+    <Compile Include="Graph\SpiralGraphConstruction.cs" />
     <Compile Include="Temp\Warrior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ProblemDescription\ClassementBattle.pdf" />
-    <None Include="ProblemDescription\CommonSequenceInStrings.pdf" />
-    <None Include="ProblemDescription\DNASequence.pdf" />
-    <None Include="ProblemDescription\FlowerBouquetsComposition.pdf" />
-    <None Include="ProblemDescription\MagicFunction.pdf" />
-    <None Include="ProblemDescription\MaximumCommonNeigboursAssignment.pdf" />
-    <None Include="ProblemDescription\MissingRobots.pdf" />
-    <None Include="ProblemDescription\StonesAndPowderKnapsack.pdf" />
-    <None Include="ProblemDescription\StudentClassesArrangement.pdf" />
-    <None Include="ProblemDescription\StudentClassesArrangementWithBruteForce.pdf" />
-    <None Include="ProblemDescription\SubwayStationIntersection.pdf" />
-    <None Include="ProblemDescription\TowerDefense.pdf" />
+    <None Include="ProblemDescription\BruteForce\FightAttemptPermutation.pdf" />
+    <None Include="ProblemDescription\Graph\FloodFillFromSourceToDestinationInMatrix.pdf" />
+    <None Include="ProblemDescription\DivideAndConquer\ClassementBattle.pdf" />
+    <None Include="ProblemDescription\BitMasking\CommonSequenceInStrings.pdf" />
+    <None Include="ProblemDescription\BruteForce\DNASequence.pdf" />
+    <None Include="ProblemDescription\Graph\FloodFillMaximumAreaInMatrix.pdf" />
+    <None Include="ProblemDescription\Other\FlowerBouquetsComposition.pdf" />
+    <None Include="ProblemDescription\Other\MagicFunction.pdf" />
+    <None Include="ProblemDescription\Graph\MaximumCommonNeigboursAssignment.pdf" />
+    <None Include="ProblemDescription\Graph\MissingRobots.pdf" />
+    <None Include="ProblemDescription\DynamicProgramming\MoneyCurrencyChange.pdf" />
+    <None Include="ProblemDescription\Graph\SpiralGraphConstruction.pdf" />
+    <None Include="ProblemDescription\DynamicProgramming\StonesAndPowderKnapsack.pdf" />
+    <None Include="ProblemDescription\Graph\StudentClassesArrangement.pdf" />
+    <None Include="ProblemDescription\BruteForce\StudentClassesArrangementWithBruteForce.pdf" />
+    <None Include="ProblemDescription\Graph\SubwayStationIntersection.pdf" />
+    <None Include="ProblemDescription\Other\TowerDefense.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DynamicProgramming\Collection\" />

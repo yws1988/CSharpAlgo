@@ -19,6 +19,7 @@
         public static int[] ReadIntArray() { return ReadStringArray().Select(int.Parse).ToArray(); }
         public static long[] ReadLongArray() { return ReadStringArray().Select(long.Parse).ToArray(); }
         public static double[] ReadDoubleArray() { return ReadStringArray().Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray(); }
+        public static double[][] ReadDoubleMatrix(int numberOfRows) { double[][] matrix = new double[numberOfRows][]; for (int i = 0; i < numberOfRows; i++) matrix[i] = ReadDoubleArray(); return matrix; }
         public static int[][] ReadIntMatrix(int numberOfRows) { int[][] matrix = new int[numberOfRows][]; for (int i = 0; i < numberOfRows; i++) matrix[i] = ReadIntArray(); return matrix; }
         public static int[][] ReadAndTransposeIntMatrix(int numberOfRows)
         {

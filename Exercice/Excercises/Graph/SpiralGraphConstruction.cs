@@ -1,12 +1,13 @@
-﻿using System;
-namespace MDF._2017
+﻿namespace CSharpAlgo.Excercise.Excercises.Graph
 {
-    class Spirale
+    using System;
+
+    public class SpiralGraphConstruction
     {
         static int N;
         static char[,] chars;
 
-        static void Start(string[] args)
+        public static void Start(string[] args)
         {
             N = int.Parse(Console.ReadLine());
             chars = new char[N, N];
