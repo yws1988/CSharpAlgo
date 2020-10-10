@@ -68,11 +68,13 @@
     <Compile Include="BranchAndBounds\Knapsack.cs" />
     <Compile Include="BranchAndBounds\TravellingSalesman.cs" />
     <Compile Include="BruteForce\DNASequence.cs" />
+    <Compile Include="BruteForce\FightAttemptPermutation.cs" />
     <Compile Include="BruteForce\StudentClassesArrangementWithBruteForce.cs" />
     <Compile Include="DivideAndConquer\ClassementBattle.cs" />
     <Compile Include="DynamicProgramming\Other\MoneyCurrencyChange.cs" />
     <Compile Include="DynamicProgramming\Other\StonesAndPowderKnapsack.cs" />
     <Compile Include="Graph\ArrayReversionSorting.cs" />
+    <Compile Include="Graph\FloodFillFromSourceToDestinationInMatrix.cs" />
     <Compile Include="Graph\FloodFillMaximumAreaInMatrix.cs" />
     <Compile Include="Graph\FromTopToBottonInGraphMatrix.cs" />
     <Compile Include="Graph\MaximumCommonNeigboursAssignment.cs" />
@@ -86,7 +88,6 @@
     <Compile Include="PatternSearching\ValidNumber.cs" />
     <Compile Include="PatternSearching\WordLadder.cs" />
     <Compile Include="DynamicProgramming\Graph\MaximumLengthSnakeInMatrix.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Temp\Aventurier.cs" />
     <Compile Include="Temp\BattleDev2020Problem3.cs" />
@@ -128,6 +129,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="IOFiles\test.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="IOFiles\MagicFunction.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

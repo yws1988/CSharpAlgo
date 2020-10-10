@@ -1,24 +1,16 @@
-﻿
-//***************************************************************
-//*
-//*
-//* SOLUTION BY seb_delmas
-//*
-//*
-//******************************************************************
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CSharpContestProject
+﻿namespace CSharpAlgo.Excercise.Excercises.Graph
 {
-    class Demineur
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class MineSweeper
     {
         static string[][] strs;
         static int H, L;
         static int startX, startY;
 
-        static void Start(string[] args)
+        public static void Start(string[] args)
         {
             var input = new List<string>();
             string line;
@@ -58,7 +50,7 @@ namespace CSharpContestProject
             Console.WriteLine(result);
         }
 
-        public static void ConvertArray(int x, int y)
+        static void ConvertArray(int x, int y)
         {
             if (strs[x][y] != "*")
             {
@@ -78,7 +70,7 @@ namespace CSharpContestProject
             }
         }
 
-        public static int GetNum(int x, int y)
+        static int GetNum(int x, int y)
         {
             if (strs[x][y] == "v") return 0;
             if (strs[x][y] == "*" || strs[x][y] == "d")
