@@ -17,7 +17,7 @@
     In above grid, the longest snake sequence is: (9, 8, 7, 6, 5, 6, 7)
  */
 
-namespace CSharpAlgo.Excercise.Excercises.BranchAndBounds.Simple
+namespace CSharpAlgo.Excercise.Excercises.DynamicProgramming.Graph
 {
     using System;
     using System.Collections.Generic;

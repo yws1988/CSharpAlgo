@@ -57,8 +57,10 @@
     <Compile Include="Cycle\MinimumMeanWeightCycle.cs" />
     <Compile Include="Cycle\MinimumWeightCycle.cs" />
     <Compile Include="Cycle\Program.cs" />
+    <Compile Include="Flow\ConnectedAreasBidirectionalPathCostInGrid.cs" />
     <Compile Include="Flow\ConnectedAreasPathCostInGrid.cs" />
     <Compile Include="Flow\PushRelabelToFrontMaximumFlow.cs" />
+    <Compile Include="Path\ShortestPath\ShortestCirclePathForOrderedPoints.cs" />
     <Compile Include="Traversal\BFS\BFSIteration.cs" />
     <Compile Include="Traversal\DFS\DFSIteration.cs" />
     <Compile Include="Traversal\DFS\IntegerToStringGraphMatching.cs" />

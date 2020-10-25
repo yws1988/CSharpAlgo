@@ -53,6 +53,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomHungarianMatchingTest.cs" />
     <Compile Include="HungarianMatchingTest.cs" />
     <Compile Include="MaximumNumOfIntersectionsForRangesTest.cs" />
     <Compile Include="SmallestEnclosingCircleTest.cs" />

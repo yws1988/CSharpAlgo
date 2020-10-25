@@ -1,36 +1,55 @@
-﻿namespace BattleDev
+﻿/*
+    Give a char matrix,  in the char grid it contains the following characters:
+    '.' represents a crossable cell
+    '#' represents a wall cell, is not crossable
+    '!' an door cell
+    's' source crossable cell axis(0, 0)
+    'd' destination crossable cell(n-1, n-1)
+
+    once you've walked on such a door cell, it becomes impassable.
+    Indicating the minimum number of door cells to cross in order to reach the destination and return back
+    to source. If it is possible to reach destination but not come back then return -1. 
+    If it is not possible to reach the source from destination, return -2.
+
+    Input char grid like this:
+    .....
+    ##!!#
+    #!!!#
+    #!!##
+    .....
+
+    Output -1
+
+    Input char grid:
+    ....
+    #!!#
+    #!!#
+    ....
+
+    return 4
+ */
+
+namespace CSharpAlgo.Graph.Flow
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using input = System.Console;
 
 
-    public class Aventurier
+    public class ConnectedAreasBidirectionalPathCostInGrid
     {
-        public static int n;
-        public static char[][] s;
-        static Dictionary<int, List<(int, int)>> g;
+        static int n;
+        static Dictionary<int, List<(int, int)>> nodesByArea;
         static Dictionary<int, char> type=new Dictionary<int, char>();
         static int[,] map;
         static int[] dx = { 0, 1, 0, -1 };
         static int[] dy = { 1, 0, -1, 0 };
         const int INF = int.MaxValue;
 
-        public static void Start(string[] args)
+        public static int GetCost(string[] grid)
         {
-#if true
-            System.IO.StreamReader input = new System.IO.StreamReader(@"test\test.txt");
-#endif
             n = int.Parse(input.ReadLine());
-            g = new Dictionary<int, List<(int, int)>>();
-            s = new char[n][];
-
-            for (int i = 0; i < n; i++)
-            {
-                s[i] = input.ReadLine().ToCharArray();
-            }
-            
+            nodesByArea = new Dictionary<int, List<(int, int)>>();
             map = new int[n, n];
             for (int i = 0; i < n; i++)
             {
@@ -47,26 +66,26 @@
                 {
                     if(map[i, j] == -1)
                     {
-                        if (s[i][j] == '.')
+                        if (grid[i][j] == '.')
                         {
-                            g[area] = dfs(i, j, area);
+                            nodesByArea[area] = dfs(i, j, area, grid);
                             type[area] = '.';
                             area++;
-                        }else if(s[i][j] == '!')
+                        }else if(grid[i][j] == '!')
                         {
                             var list = new List<(int, int)>();
                             for (int k = 0; k < 4; k++)
                             {
                                 int tx = i + dx[k];
                                 int ty = j + dy[k];
-                                if (tx >= 0 && tx < n && ty >= 0 && ty < n && s[tx][ty]!='#')
+                                if (tx >= 0 && tx < n && ty >= 0 && ty < n && grid[tx][ty]!='#')
                                 {
                                     list.Add((tx, ty));
                                 }
                             }
 
                             map[i, j] = area;
-                            g[area] = list;
+                            nodesByArea[area] = list;
                             type[area] = '!';
                             area++;
                         }
@@ -95,7 +114,7 @@
             {
                 if (type[i] == '!')
                 {
-                    foreach (var item in g[i])
+                    foreach (var item in nodesByArea[i])
                     {
                         ng[twin[i]].Add(new Node(map[item.Item1, item.Item2], 0, INF));
                     }
@@ -104,36 +123,21 @@
                 }
                 else
                 {
-                    foreach (var item in g[i])
+                    foreach (var item in nodesByArea[i])
                     {
                         ng[i].Add(new Node(map[item.Item1, item.Item2], 0, INF));
                     }
                 }
             }
 
-            //for (int i = 0; i < ng.GetLength(0); i++)
-            //{
-            //    for (int j = 0; j < ng[i].Count; j++)
-            //    {
-            //        Console.WriteLine(i + "=>" + ng[i][j].d + "  (w:" + ng[i][j].w + " t:" + ng[i][j].t + ")");
-            //    }
-            //}
+            var routeFromSourceToDestination1 = bellmanford(ng, 0, map[n - 1, n - 1]);
 
-            //Console.WriteLine("-------------------------------------");
-
-            var r = bellmanford(ng, 0, map[n - 1, n - 1]);
-
-            if(s[0][0]=='#' || r.dis == INF)
+            if(grid[0][0]=='#' || routeFromSourceToDestination1.dis == INF)
             {
-                Console.WriteLine("-2");
-                return;
+                return -2;
             }
 
-            var path = r.path.ToArray();
-
-           
-            //Console.WriteLine(string.Join("=>", path));
-            //Console.WriteLine("-------------------------------------");
+            var path = routeFromSourceToDestination1.path.ToArray();
 
             int lp = path.Length;
             for (int i = 0; i < lp-1; i++)
@@ -143,34 +147,23 @@
 
                 for (int j = 0; j < ng[bn].Count; j++)
                 {
-                    if (ng[bn][j].d == fn)
+                    if (ng[bn][j].destination == fn)
                     {
-                        ng[bn][j].t -= 1;
-                        ng[fn].Add(new Node(bn, -ng[bn][j].w, 1));
+                        ng[bn][j].times -= 1;
+                        ng[fn].Add(new Node(bn, -ng[bn][j].cost, 1));
                         break;
                     }
                 }
             }
 
-            var r1 = bellmanford(ng, 0, map[n - 1, n - 1]);
+            var routeFromSourceToDestination2 = bellmanford(ng, 0, map[n - 1, n - 1]);
 
-            //for (int i = 0; i < ng.GetLength(0); i++)
-            //{
-            //    for (int j = 0; j < ng[i].Count; j++)
-            //    {
-            //        Console.WriteLine(i + "=>" + ng[i][j].d + "  (w:"+ ng[i][j].w +" t:"+ ng[i][j].t+")");
-            //    }
-            //}
-
-            if (r1.dis == INF)
+            if (routeFromSourceToDestination2.dis == INF)
             {
-                Console.WriteLine("-1");
-                return;
+                return -1;
             }
 
-            Console.WriteLine(r1.dis+r.dis);
-
-            Console.ReadKey();
+            return routeFromSourceToDestination2.dis + routeFromSourceToDestination2.dis;
         }
 
         static (Stack<int> path, int dis) bellmanford(List<Node>[] ng, int s, int d)
@@ -193,10 +186,10 @@
                 {
                     foreach (var e in ng[j])
                     {
-                        if(e.t>0 && dis[j]!=INF && dis[j] + e.w < dis[e.d])
+                        if(e.times>0 && dis[j]!=INF && dis[j] + e.cost < dis[e.destination])
                         {
-                            dis[e.d] = dis[j] + e.w;
-                            ps[e.d] = j;
+                            dis[e.destination] = dis[j] + e.cost;
+                            ps[e.destination] = j;
                         }
                     }
                 }
@@ -214,7 +207,7 @@
             return (path, dis[d]);
         }
 
-        static List<(int, int)> dfs(int x, int y, int a)
+        static List<(int, int)> dfs(int x, int y, int a, string[] grid)
         {
             List<(int, int)> list = new List<(int, int)>();
             Stack<(int, int)> stack = new Stack<(int, int)>();
@@ -230,11 +223,11 @@
                     int ty = next.Item2 + dy[i];
                     if (tx >= 0 && tx < n && ty >= 0 && ty < n)
                     {
-                        if(map[tx, ty] == -1 && s[tx][ty] == '.')
+                        if(map[tx, ty] == -1 && grid[tx][ty] == '.')
                         {
                             map[tx, ty] = a;
                             stack.Push((tx, ty));
-                        }else if (s[tx][ty] == '!')
+                        }else if (grid[tx][ty] == '!')
                         {
                             list.Add((tx, ty));
                         }
@@ -248,15 +241,15 @@
 
     class Node
     {
-        public int d;
-        public int w;
-        public int t;
+        public int destination;
+        public int cost;
+        public int times;
 
         public Node(int d, int w, int t)
         {
-            this.d = d;
-            this.w = w;
-            this.t = t;
+            this.destination = d;
+            this.cost = w;
+            this.times = t;
         }
     }
 }

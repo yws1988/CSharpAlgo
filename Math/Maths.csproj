@@ -44,6 +44,7 @@
     <Compile Include="BinomialCoefficient.cs" />
     <Compile Include="CatalanNumber.cs" />
     <Compile Include="DigitSum.cs" />
+    <Compile Include="CustomHungarianMatching.cs" />
     <Compile Include="HungarianMatching.cs" />
     <Compile Include="NumberOfEquationSolution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
