@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercices", "Exercice\Exce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerEarth", "Exercice\HackerEarth\HackerEarth.csproj", "{73EDDC9A-4D81-4906-917A-3FDD8A2BC67A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProgrammingTest", "Test\DynamicProgrammingTest\DynamicProgrammingTest.csproj", "{3D1A8D03-A495-432D-8F11-A8561FF55100}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,10 @@ Global
 		{73EDDC9A-4D81-4906-917A-3FDD8A2BC67A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73EDDC9A-4D81-4906-917A-3FDD8A2BC67A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73EDDC9A-4D81-4906-917A-3FDD8A2BC67A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D1A8D03-A495-432D-8F11-A8561FF55100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D1A8D03-A495-432D-8F11-A8561FF55100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D1A8D03-A495-432D-8F11-A8561FF55100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D1A8D03-A495-432D-8F11-A8561FF55100}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +182,7 @@ Global
 		{F4B98647-802A-49DE-B92B-B6E5C6124B3A} = {47572221-9D65-4907-ACA0-0F9DCC0C92F7}
 		{935F300F-6795-4951-9C80-9C76382BD5FC} = {47572221-9D65-4907-ACA0-0F9DCC0C92F7}
 		{73EDDC9A-4D81-4906-917A-3FDD8A2BC67A} = {47572221-9D65-4907-ACA0-0F9DCC0C92F7}
+		{3D1A8D03-A495-432D-8F11-A8561FF55100} = {7AA8226A-BB02-4F10-9249-941307F86412}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3987C77-BDC5-4F2C-8E06-AE566FD808CC}

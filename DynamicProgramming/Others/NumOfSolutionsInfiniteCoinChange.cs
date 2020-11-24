@@ -9,8 +9,9 @@
 
 namespace CSharpAlgo.DynamicProgramming.Other
 {
-    public class CoinChange
+    public class NumOfSolutionsInfiniteCoinChange
     {
+
         public static int[] dp;
 
         public static int GetNumOfSolutions(int sum, int[] coins)
