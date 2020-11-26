@@ -1,4 +1,6 @@
 ﻿/*
+    MinOperationConvertionStrings with equal costs:
+
     Given two strings str1 and str2 and below operations that can performed on str1. 
     Find minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.
     You can do the following operations:
@@ -14,44 +16,104 @@
     We can convert str1 into str2 by inserting a 's'.
  */
 
+/*
+    MinOperationConvertionStrings with different costs:
+
+    Given two strings str1 and str2 and below operations that can performed on str1. 
+    Find minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.
+    You can do the following operations:
+    Insert : cost 2
+    Remove : cost 2
+    Replace : cost 3
+    Exchange consecutif characters : cost 3
+
+    Examples:
+    Input:   str1 = "algorithme ", str2 = "rythme"
+    Output:  11
+    We can convert str1 into str2 by delete 4 characters and replace one.
+ */
+
 namespace CSharpAlgo.DynamicProgramming.Other
 {
+    using System;
+
     public class MinOperationConvertionStrings
     {
-        public static int GetMinimumOperation(string str1, string str2)
+        public static int GetMinimumOperationWithEqualCosts(string str1, string str2)
         {
-            var dp = new int[str1.Length, str2.Length];
+            int m = str1.Length+1;
+            int n = str2.Length+1;
 
-            for (int i = 0; i < str1.Length; i++)
+            var dp = new int[m, n];
+
+            for (int i = 0; i < m; i++)
             {
-                for (int j = 0; j < str2.Length; j++)
+                for (int j = 0; j < n; j++)
                 {
-                    dp[i, j] = -1;
+                    if (i == 0 || j==0)
+                    {
+                        dp[i, j] = i + j;
+                    }
                 }
             }
 
-            return GetMin(str1.Length - 1, str2.Length - 1, str1, str2, dp);
+            for (int i = 1; i < m; i++)
+            {
+                for (int j = 1; j < n; j++)
+                {
+                    if (str1[i - 1] == str2[j - 1])
+                    {
+                        dp[i, j] = dp[i - 1, j - 1];
+                    }
+                    else
+                    {
+                        dp[i, j] = GetMinValue(dp[i - 1, j - 1] + 3, dp[i - 1, j] + 1, dp[i, j - 1] + 1);
+                    }
+                }
+            }
+
+            return dp[m - 1, n - 1];
         }
 
-        static int GetMin(int m, int n, string str1, string str2, int[,] dp)
+        public static int GetMinimumOperationWithDifferentCosts(string str1, string str2)
         {
-            if (n < 0) return m+1;
-            if (m < 0) return n+1;
+            int m = str1.Length + 1;
+            int n = str2.Length + 1;
 
-            if(dp[m, n] != -1)
+            var dp = new int[m, n];
+
+            for (int i = 0; i < m; i++)
             {
-                return dp[m, n];
+                for (int j = 0; j < n; j++)
+                {
+                    if (i == 0 || j == 0)
+                    {
+                        dp[i, j] = (i + j)*2;
+                    }
+                }
             }
 
-            if(str1[m] == str2[n])
+            for (int i = 1; i < m; i++)
             {
-                dp[m, n] = GetMin(m - 1, n - 1, str1, str2, dp);
-            }else
-            {
-                dp[m, n] =1 + GetMinValue(GetMin(m, n-1, str1, str2, dp), GetMin(m-1, n-1, str1, str2, dp), GetMin(m-1, n, str1, str2, dp));
+                for (int j = 1; j < n; j++)
+                {
+                    if (str1[i - 1] == str2[j - 1])
+                    {
+                        dp[i, j] = dp[i - 1, j - 1];
+                    }
+                    else
+                    {
+                        dp[i, j] = GetMinValue(dp[i - 1, j - 1] + 3, dp[i - 1, j] + 2, dp[i, j - 1] + 2);
+                        
+                        if(i>=2 && j >= 2 && str1[i - 1] == str2[j - 2]&& str1[i - 2] == str2[j - 1])
+                        {
+                            dp[i, j] = Math.Min(dp[i, j], dp[i - 2, j - 2] + 3);
+                        }
+                    }
+                }
             }
 
-            return dp[m, n];
+            return dp[m - 1, n - 1];
         }
 
         static int GetMinValue(int n1, int n2, int n3)

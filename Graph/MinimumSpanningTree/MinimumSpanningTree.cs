@@ -58,7 +58,7 @@
             return minCost;
         }
 
-        public static void GraphSetting(int n, int s, int d, int w)
+        public static void InitialGraphWithOneEdge(int n, int s, int d, int w)
         {
             var graph = Enumerable.Range(0, n).Select(e => new List<Pair>()).ToArray();
 

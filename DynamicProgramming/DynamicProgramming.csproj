@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Graph\MaximumSumOfNonIntersectionElementsInMatrix.cs" />
-    <Compile Include="Others\NumOfSolutionsLimitedCoinChange.cs" />
+    <Compile Include="Others\MinimumCoinsToReachSumWithLimitedCoinChange.cs" />
     <Compile Include="Others\NumOfSolutionsInfiniteCoinChange.cs" />
     <Compile Include="Collection\Array\LongestArithmeticProgression.cs" />
     <Compile Include="Collection\Array\LongestIncreasingSequence.cs" />
