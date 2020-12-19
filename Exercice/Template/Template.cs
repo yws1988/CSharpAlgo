@@ -46,5 +46,23 @@
         public static string ReadString() { return Reader.ReadLine(); }
         public static string[] ReadStringArray() { return Reader.ReadLine().Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries); }
         public static string[] ReadLines(int quantity) { string[] lines = new string[quantity]; for (int i = 0; i < quantity; i++) lines[i] = Reader.ReadLine().Trim(); return lines; }
+
+        public static List<int>[] CreateListArray(int n, int[][] arr, bool isDirected = false)
+        {
+            var graph = Enumerable.Range(0, n).Select(s => new List<int>()).ToArray();
+            foreach (var item in arr)
+            {
+                int src = item[0];
+                int des = item[1];
+                graph[src].Add(des);
+
+                if (!isDirected)
+                {
+                    graph[des].Add(src);
+                }
+            }
+
+            return graph;
+        }
     }
 }
