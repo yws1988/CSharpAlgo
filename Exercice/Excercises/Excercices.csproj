@@ -92,9 +92,9 @@
     <Compile Include="Temp\BattleDev2020Problem3.cs" />
     <Compile Include="Temp\BattleDev2020Problem4.cs" />
     <Compile Include="Graph\MineSweeper.cs" />
-    <Compile Include="Temp\SalesForceFloor.cs" />
     <Compile Include="Graph\SpiralGraphConstruction.cs" />
     <Compile Include="Graph\MaximumNumOfElementsInCollection.cs" />
+    <Compile Include="Temp\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

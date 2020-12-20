@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collection\Array\LongestDescreasingIncreasingSequence.cs" />
     <Compile Include="Graph\MaximumSumOfNonIntersectionElementsInMatrix.cs" />
     <Compile Include="Others\MinimumCoinsToReachSumWithLimitedCoinChange.cs" />
     <Compile Include="Others\NumOfSolutionsInfiniteCoinChange.cs" />
