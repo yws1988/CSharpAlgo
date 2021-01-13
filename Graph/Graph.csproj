@@ -89,6 +89,7 @@
     <Compile Include="Path\ShortestPath\TravellingSalesman.cs" />
     <Compile Include="Tree\AVLTree.cs" />
     <Compile Include="Tree\BinaryTreeLowestCommonAncestor.cs" />
+    <Compile Include="Tree\LargetestWeightSumOfTwoChildrentInTree.cs" />
     <Compile Include="Tree\LowestCommonAncestorWithDpSolution.cs" />
     <Compile Include="Tree\NAryTreeDiameter.cs" />
     <Compile Include="Tree\NAryTreeDiameterWithBFS.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Tree\Program.cs" />
     <Compile Include="Tree\SegmentTreeCompare.cs" />
     <Compile Include="Tree\SegmentTreeSum.cs" />
+    <Compile Include="Tree\UnionFind.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connectivity\Description\LargestConnectedComponentInGrid.txt" />

@@ -20,7 +20,7 @@ namespace CSharpAlgo.Graph.MinimumSpanningTree
 
             for (int i = 0; i < n; i++)
             {
-                var degree = g[i].Count;
+                var degree = graph[i].Count;
                 numOfNodes[i] = 1;
 
                 if (degree == 1)
