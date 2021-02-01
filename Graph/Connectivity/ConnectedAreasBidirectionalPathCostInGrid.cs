@@ -29,7 +29,7 @@
     return 4
  */
 
-namespace CSharpAlgo.Graph.Flow
+namespace CSharpAlgo.Graph.Connectivity
 {
     using System.Collections.Generic;
     using System.Linq;

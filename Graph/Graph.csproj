@@ -57,8 +57,9 @@
     <Compile Include="Cycle\MinimumMeanWeightCycle.cs" />
     <Compile Include="Cycle\MinimumWeightCycle.cs" />
     <Compile Include="Cycle\Program.cs" />
-    <Compile Include="Flow\ConnectedAreasBidirectionalPathCostInGrid.cs" />
-    <Compile Include="Flow\ConnectedAreasPathCostInGrid.cs" />
+    <Compile Include="Connectivity\ConnectedAreasBidirectionalPathCostInGrid.cs" />
+    <Compile Include="Connectivity\ConnectedAreasPathCostForSingleSourceInGrid.cs" />
+    <Compile Include="Connectivity\ConnectedAreasPathCostForMultipleSourcesInGrid.cs" />
     <Compile Include="Flow\MinimumPathsToTransverAllPointsInGrid.cs" />
     <Compile Include="Flow\PushRelabelToFrontMaximumFlow.cs" />
     <Compile Include="MinimumSpanningTree\MaximumNodesToBeCutInMinimumSpanningTree.cs" />

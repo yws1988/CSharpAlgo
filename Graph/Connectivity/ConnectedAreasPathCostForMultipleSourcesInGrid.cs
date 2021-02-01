@@ -9,24 +9,25 @@
 
     Input char grid like this:
     .?.#.?.
-    p#.#.#c
+    s#.#.#d
     .#.#.#.
     ##.?.##
     .#.#.#.
-    p#.#.#c
+    s#.#.#d
     .?.#.?.
 
     You just have to close the door (?) in the center of the grid to separate the sources from
     the destinations, so the expected answer is 1.
  */
 
-namespace CSharpAlgo.Graph.Flow
+namespace CSharpAlgo.Graph.Connectivity
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using CSharpAlgo.Graph.Flow;
 
-    public class ConnectedAreasPathCostInGrid
+    public class ConnectedAreasPathCostForMultipleSourcesInGrid
     {
         static int n;
         static int[] dx = { 1, 0, -1, 0 };
