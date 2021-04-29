@@ -62,7 +62,9 @@
     <Compile Include="Connectivity\ConnectedAreasPathCostForMultipleSourcesInGrid.cs" />
     <Compile Include="Flow\MinimumPathsToTransverAllPointsInGrid.cs" />
     <Compile Include="Flow\PushRelabelToFrontMaximumFlow.cs" />
+    <Compile Include="MinimumSpanningTree\AnyTwoPointsDistanceFromMinimumSpanningTree.cs" />
     <Compile Include="MinimumSpanningTree\MaximumNodesToBeCutInMinimumSpanningTree.cs" />
+    <Compile Include="MinimumSpanningTree\QuantitativeCoefficient.cs" />
     <Compile Include="Path\ShortestPath\ShortestCirclePathForOrderedPoints.cs" />
     <Compile Include="Traversal\BFS\BFSIteration.cs" />
     <Compile Include="Traversal\DFS\DFSIteration.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Tree\BinaryTreeLowestCommonAncestor.cs" />
     <Compile Include="Tree\LargetestWeightSumOfTwoChildrentInTree.cs" />
     <Compile Include="Tree\LowestCommonAncestorWithDpSolution.cs" />
+    <Compile Include="Tree\MaximumDistanceForNGroupsWithUnionFind.cs" />
     <Compile Include="Tree\NAryTreeDiameter.cs" />
     <Compile Include="Tree\NAryTreeDiameterWithBFS.cs" />
     <Compile Include="Tree\PrefixTree.cs" />

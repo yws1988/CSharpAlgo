@@ -26,7 +26,7 @@
 
     public class MinimumSpanningTree
     {
-        public static int GetMinimumSpanningTree(List<Pair>[] graph, List<Pair> path)
+        public static int GetMinimumSpanningTree(List<Pair>[] graph, out List<Pair> path)
         {
             path = new List<Pair>();
             int v = graph.Length;
@@ -38,16 +38,25 @@
             {
                 queue.Enqueue(item);
             }
+
             visited[0] = true;
+            int visitedNumOfNode = 1;
             while (queue.Count() > 0)
             {
                 var p = queue.Dequeue();
-                path.Add(p);
 
                 if (!visited[p.Des])
                 {
+                    path.Add(p);
                     minCost += p.Weight;
                     visited[p.Des] = true;
+                    ++visitedNumOfNode;
+
+                    if (visitedNumOfNode == v)
+                    {
+                        return minCost;
+                    }
+
                     foreach (var item in graph[p.Des])
                     {
                         queue.Enqueue(item);
