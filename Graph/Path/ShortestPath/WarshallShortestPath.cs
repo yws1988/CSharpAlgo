@@ -6,7 +6,7 @@
 
     public class WarshallShortestPath
     {
-        public static int GetShortestPath(int start, int end, int[,] graph)
+        public static (int[,], int[,]) GetShortestCostsAndPath(int[,] graph)
         {
             int v = graph.GetLength(0);
             var path = new int[v, v];
@@ -51,12 +51,12 @@
                     if (costs[i, i] < 0)
                     {
                         Console.WriteLine("There is a negative cycle");
-                        return 0;
+                        return (null, null);
                     }
                 }
             }
 
-            return costs[start, end];
+            return (costs, path);
         }
 
         public static List<int> GetPath(int start, int end, int[,] path)

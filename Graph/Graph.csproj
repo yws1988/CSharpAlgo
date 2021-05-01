@@ -63,8 +63,8 @@
     <Compile Include="Flow\MinimumPathsToTransverAllPointsInGrid.cs" />
     <Compile Include="Flow\PushRelabelToFrontMaximumFlow.cs" />
     <Compile Include="MinimumSpanningTree\AnyTwoPointsDistanceFromMinimumSpanningTree.cs" />
+    <Compile Include="MinimumSpanningTree\EdgeBelongsToMinimumSpanningTree.cs" />
     <Compile Include="MinimumSpanningTree\MaximumNodesToBeCutInMinimumSpanningTree.cs" />
-    <Compile Include="MinimumSpanningTree\QuantitativeCoefficient.cs" />
     <Compile Include="Path\ShortestPath\ShortestCirclePathForOrderedPoints.cs" />
     <Compile Include="Traversal\BFS\BFSIteration.cs" />
     <Compile Include="Traversal\DFS\DFSIteration.cs" />

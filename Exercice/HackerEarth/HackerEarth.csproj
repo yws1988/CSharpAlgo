@@ -82,6 +82,7 @@
     <Compile Include="Graph\Graph.BFS.DFS\TravelDiaries.cs" />
     <Compile Include="Graph\Graph.BFS.DFS\WeakNode.cs" />
     <Compile Include="Graph\Graph.MST\MarsTrip.cs" />
+    <Compile Include="Graph\Graph.MST\QuantitativeCoefficient.cs" />
     <Compile Include="Graph\Graph.Path\MinimumValidPath.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

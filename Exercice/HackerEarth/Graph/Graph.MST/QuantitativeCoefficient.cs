@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using CSharpAlgo.DataStructure.Heap;
 
-namespace CSharpAlgo.Graph.MinimumSpanningTree
+namespace CSharpAlgo.Excercise.HackerEarth.Graph.Graph.MST
 {
     public class QuantitativeCoefficient
     {

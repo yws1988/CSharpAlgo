@@ -41,9 +41,6 @@
     <Reference Include="CSharpAlgo.DynamicProgramming">
       <HintPath>..\PackageLibs\CSharpAlgo.DynamicProgramming.dll</HintPath>
     </Reference>
-    <Reference Include="CSharpAlgo.Graph">
-      <HintPath>..\PackageLibs\CSharpAlgo.Graph.dll</HintPath>
-    </Reference>
     <Reference Include="CSharpAlgo.Maths">
       <HintPath>..\PackageLibs\CSharpAlgo.Maths.dll</HintPath>
     </Reference>
@@ -80,7 +77,9 @@
     <Compile Include="Graph\GameOfLifeWithUnionFindMethod.cs" />
     <Compile Include="Graph\MaximumCommonNeigboursAssignment.cs" />
     <Compile Include="Graph\LongestDirectoryName.cs" />
+    <Compile Include="Graph\MinimumSpanningTree\MinimumSpanningTreeWithPartOfPoints.cs" />
     <Compile Include="Graph\MissingRobots.cs" />
+    <Compile Include="Graph\SegmentTree\NumOfVetexToBeDeletedGraphNoConnections.cs" />
     <Compile Include="Graph\StudentClassesArrangement.cs" />
     <Compile Include="Graph\SubwayStationIntersection.cs" />
     <Compile Include="Other\FlowerBouquetsComposition.cs" />
