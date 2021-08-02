@@ -82,6 +82,7 @@
     <Compile Include="Graph\SegmentTree\NumOfVetexToBeDeletedGraphNoConnections.cs" />
     <Compile Include="Graph\StudentClassesArrangement.cs" />
     <Compile Include="Graph\SubwayStationIntersection.cs" />
+    <Compile Include="Graph\Tree\ShortestPathInInfiniteKTree.cs" />
     <Compile Include="Other\FlowerBouquetsComposition.cs" />
     <Compile Include="Other\MagicFunction.cs" />
     <Compile Include="Other\TowerDefense.cs" />

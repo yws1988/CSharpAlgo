@@ -91,6 +91,7 @@
     <Compile Include="Path\ShortestPath\WarshallShortestPath.cs" />
     <Compile Include="Path\ShortestPath\TravellingSalesman.cs" />
     <Compile Include="Tree\AVLTree.cs" />
+    <Compile Include="Tree\BinarySearchTree.cs" />
     <Compile Include="Tree\BinaryTreeLowestCommonAncestor.cs" />
     <Compile Include="Tree\LargetestWeightSumOfTwoChildrentInTree.cs" />
     <Compile Include="Tree\LowestCommonAncestorWithDpSolution.cs" />
