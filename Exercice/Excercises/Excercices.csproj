@@ -71,6 +71,7 @@
     <Compile Include="DynamicProgramming\Other\MoneyCurrencyChange.cs" />
     <Compile Include="DynamicProgramming\Other\StonesAndPowderKnapsack.cs" />
     <Compile Include="Graph\ArrayReversionSorting.cs" />
+    <Compile Include="Graph\BinaryIndexTree\KthSmallestSegmentsContainsPoint.cs" />
     <Compile Include="Graph\FloodFillFromSourceToDestinationInMatrix.cs" />
     <Compile Include="Graph\FloodFillMaximumAreaInMatrix.cs" />
     <Compile Include="Graph\FromTopToBottonInGraphMatrix.cs" />

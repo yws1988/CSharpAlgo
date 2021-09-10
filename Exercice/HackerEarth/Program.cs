@@ -8,7 +8,7 @@ namespace CSharpAlgo.Excercise.HackerEarth.HackerEarth
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainF(string[] args)
         {
         }
     }
