@@ -67,6 +67,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerEarth", "Exercice\Hac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProgrammingTest", "Test\DynamicProgrammingTest\DynamicProgrammingTest.csproj", "{3D1A8D03-A495-432D-8F11-A8561FF55100}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CollectionOperation", "CollectionOperation", "{A51BC91E-59B0-4C0F-AAC9-46A7C022B036}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionOperation", "CollectionOperation\CollectionOperation.csproj", "{0BAB6D1D-7516-4FEE-BC12-05D3BAC562DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +161,10 @@ Global
 		{3D1A8D03-A495-432D-8F11-A8561FF55100}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D1A8D03-A495-432D-8F11-A8561FF55100}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D1A8D03-A495-432D-8F11-A8561FF55100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BAB6D1D-7516-4FEE-BC12-05D3BAC562DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAB6D1D-7516-4FEE-BC12-05D3BAC562DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAB6D1D-7516-4FEE-BC12-05D3BAC562DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAB6D1D-7516-4FEE-BC12-05D3BAC562DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,6 +191,7 @@ Global
 		{935F300F-6795-4951-9C80-9C76382BD5FC} = {47572221-9D65-4907-ACA0-0F9DCC0C92F7}
 		{73EDDC9A-4D81-4906-917A-3FDD8A2BC67A} = {47572221-9D65-4907-ACA0-0F9DCC0C92F7}
 		{3D1A8D03-A495-432D-8F11-A8561FF55100} = {7AA8226A-BB02-4F10-9249-941307F86412}
+		{0BAB6D1D-7516-4FEE-BC12-05D3BAC562DE} = {A51BC91E-59B0-4C0F-AAC9-46A7C022B036}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3987C77-BDC5-4F2C-8E06-AE566FD808CC}

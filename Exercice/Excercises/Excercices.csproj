@@ -67,6 +67,7 @@
     <Compile Include="BruteForce\DNASequence.cs" />
     <Compile Include="BruteForce\FightAttemptPermutation.cs" />
     <Compile Include="BruteForce\StudentClassesArrangementWithBruteForce.cs" />
+    <Compile Include="Collection\Array\NumOfSubArraysEqualsToK.cs" />
     <Compile Include="DivideAndConquer\ClassementBattle.cs" />
     <Compile Include="DynamicProgramming\Other\MoneyCurrencyChange.cs" />
     <Compile Include="DynamicProgramming\Other\StonesAndPowderKnapsack.cs" />
