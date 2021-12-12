@@ -62,9 +62,10 @@
     <Compile Include="Connectivity\ConnectedAreasPathCostForMultipleSourcesInGrid.cs" />
     <Compile Include="Flow\MinimumPathsToTransverAllPointsInGrid.cs" />
     <Compile Include="Flow\PushRelabelToFrontMaximumFlow.cs" />
-    <Compile Include="MinimumSpanningTree\AnyTwoPointsDistanceFromMinimumSpanningTree.cs" />
-    <Compile Include="MinimumSpanningTree\EdgeBelongsToMinimumSpanningTree.cs" />
-    <Compile Include="MinimumSpanningTree\MaximumNodesToBeCutInMinimumSpanningTree.cs" />
+    <Compile Include="Tree\BinaryIndexTree\NumOfPairsElementAIsGreaterThanBInArray.cs" />
+    <Compile Include="Tree\MinimumSpanningTree\AnyTwoPointsDistanceFromMinimumSpanningTree.cs" />
+    <Compile Include="Tree\MinimumSpanningTree\EdgeBelongsToMinimumSpanningTree.cs" />
+    <Compile Include="Tree\MinimumSpanningTree\MaximumNodesToBeCutInMinimumSpanningTree.cs" />
     <Compile Include="Path\ShortestPath\ShortestCirclePathForOrderedPoints.cs" />
     <Compile Include="Traversal\BFS\BFSIteration.cs" />
     <Compile Include="Traversal\DFS\DFSIteration.cs" />
@@ -79,8 +80,8 @@
     <Compile Include="Flow\MaximumBiPartiteGraph.cs" />
     <Compile Include="Flow\Program.cs" />
     <Compile Include="Flow\STMinCutMaximumFlow.cs" />
-    <Compile Include="MinimumSpanningTree\MinimumSpanningTree.cs" />
-    <Compile Include="MinimumSpanningTree\Program.cs" />
+    <Compile Include="Tree\MinimumSpanningTree\MinimumSpanningTree.cs" />
+    <Compile Include="Tree\MinimumSpanningTree\Program.cs" />
     <Compile Include="Other\MColoring.cs" />
     <Compile Include="Other\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -72,6 +72,7 @@
     <Compile Include="DynamicProgramming\Other\MoneyCurrencyChange.cs" />
     <Compile Include="DynamicProgramming\Other\StonesAndPowderKnapsack.cs" />
     <Compile Include="Graph\ArrayReversionSorting.cs" />
+    <Compile Include="Graph\BinaryIndexTree\CalculateKAdjencentValueSumFromSubArray.cs" />
     <Compile Include="Graph\BinaryIndexTree\KthSmallestSegmentsContainsPoint.cs" />
     <Compile Include="Graph\BinaryIndexTree\KthOccurrenceOfElementInArrays.cs" />
     <Compile Include="Graph\BinaryIndexTree\NumOfPermutationsSequenceAGreaterThanSequenceB.cs" />
@@ -95,8 +96,6 @@
     <Compile Include="PatternSearching\WordLadder.cs" />
     <Compile Include="DynamicProgramming\Graph\MaximumLengthSnakeInMatrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Temp\BattleDev2020Problem3.cs" />
-    <Compile Include="Temp\BattleDev2020Problem4.cs" />
     <Compile Include="Graph\MineSweeper.cs" />
     <Compile Include="Graph\SpiralGraphConstruction.cs" />
     <Compile Include="Graph\MaximumNumOfElementsInCollection.cs" />
