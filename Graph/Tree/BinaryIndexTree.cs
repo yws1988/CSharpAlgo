@@ -13,7 +13,7 @@
             BITree = new int[n + 1];
         }
 
-        public void constructBITree(int[] arr)
+        public BinaryIndexedTree(int[] arr)
         {
             n = arr.Count();
             BITree = new int[n + 1];

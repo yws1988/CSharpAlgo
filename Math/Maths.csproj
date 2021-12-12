@@ -46,6 +46,7 @@
     <Compile Include="DigitSum.cs" />
     <Compile Include="CustomHungarianMatching.cs" />
     <Compile Include="HungarianMatching.cs" />
+    <Compile Include="ModularExponentiation.cs" />
     <Compile Include="NumberOfEquationSolution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UglyNum.cs" />
